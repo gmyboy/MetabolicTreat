@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="header_bg">#03A9F4</color>
+    <color name="background_tab_pressed">#6633B5E5</color>
+    <!--tabs-->
+    <color name="tab_txt_normal">#000000</color>
+    <color name="tab_txt_selected">#03A9F4</color>
+    <color name="tab_indicator">#fa5f19</color>
+    <color name="tab_bg">#ffffff</color>
+
+    <color name="red">#ff0000</color>
+
+    <color name="grey_line">#dddddd</color>
+    <color name="grey">#efefef</color>
+</resources>

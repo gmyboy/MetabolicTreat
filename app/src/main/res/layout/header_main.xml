@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:background="@color/header_bg"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="@string/header_main_name" />
+
+    <View style="@style/LineVertical" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="@string/header_main_sex" />
+
+    <View style="@style/LineVertical" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="@string/header_main_birthday" />
+
+    <View style="@style/LineVertical" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="@string/header_main_recordID" />
+</LinearLayout>

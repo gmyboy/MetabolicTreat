@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">门诊及随访系统</string>
+    <string name="action_settings">设置</string>
+    <!--登陆-->
+    <string name="app_full_name">内分泌代谢病门诊及随访系统</string>
+    <string name="et_hint_login_username">用户名</string>
+    <string name="et_hint_login_password">密码</string>
+    <string name="cb_login">记住密码</string>
+    <string name="btn_login">登陆</string>
+    <!--首页-->
+    <string name="btn_main_newrecord">新建病历</string>
+    <string name="btn_main_search">查询</string>
+    <string name="header_main_name">姓名</string>
+    <string name="header_main_sex">性别</string>
+    <string name="header_main_birthday">出生日期</string>
+    <string name="header_main_recordID">病历编号</string>
+    <!--病历基本信息-->
+    <string name="action_certain">确认</string>
+    <string name="label_record">病历基本信息</string>
+    <string name="tv_record_name">姓&#160;&#160;&#160;&#160;&#160;&#160;&#160;名</string>
+    <string name="tv_record_sex">性&#160;&#160;&#160;&#160;&#160;&#160;&#160;别</string>
+    <string name="tv_record_birthday">出生日期</string>
+    <string name="tv_record_phone">联系方式</string>
+    <string name="tv_record_weinum">微&#160;&#160;信&#160;&#160;号</string>
+    <string name="tv_record_ID">编&#160;&#160;&#160;&#160;&#160;&#160;&#160;号</string>
+    <!--病历详细信息+编辑-->
+    <string name="label_recordfull">病历详细信息</string>
+    <!--病历选择-->
+    <string name="label_recordchoose">病历选择</string>
+    <string name="header_recordchoose_Diagnosistime">就诊时间</string>
+    <string name="header_recordchoose_Diagnosiscount">就诊次数</string>
+    <string name="header_recordchoose_Doctor">医生</string>
+    <!--科室选择-->
+    <string name="label_departmentchoose">科室选择</string>
+    <string name="departmentchoose_Disease">选择疾病</string>
+    <string name="departmentchoose_Diagnosis">诊断类型</string>
+    <string name="btn_departmentchoose_nfm">内分泌科</string>
+    <string name="btn_departmentchoose_fs">风湿科</string>
+    <string name="btn_departmentchoose_xn">心内科</string>
+    <string name="btn_departmentchoose_ebh">耳鼻喉科</string>
+    <!--体格检查-->
+    <string name="header_physical_index">测量指标</string>
+    <string name="header_physical_input">指标录入</string>
+    <string name="header_physical_unit">单位</string>
+    <string name="tv_physical_xy">血压</string>
+    <string name="tv_unit_physical_xy">mmHg</string>
+    <string name="tv_physical_xl">心率</string>
+    <string name="tv_unit_physical_xl">次/分</string>
+    <string name="tv_physical_tz">体重</string>
+    <string name="tv_unit_physical_tz">Kg</string>
+    <string name="tv_physical_sg">身高</string>
+    <string name="tv_unit_physical_sg">cm</string>
+    <string name="tv_physical_bmi">BMI</string>
+    <string name="tv_unit_physical_bmi">Kg/m2</string>
+    <string name="tv_physical_yw">腰围</string>
+    <string name="tv_unit_physical_yw">cm</string>
+    <string name="tv_physical_tzhl">体脂含量</string>
+    <string name="tv_unit_physical_tzhl">？</string>
+    <string name="tv_physical_j">节？</string>
+    <string name="tv_unit_physical_j">Kg</string>
+    <string name="tv_physical_xzpf">下肢皮肤</string>
+
+    <string name="tv_physical_xzsz">下肢水肿</string>
+    <string name="tv_physical_zbdm">足背动脉</string>
+
+</resources>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tv_login_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/app_full_name"
+        android:textSize="40sp" />
+
+    <EditText
+        android:id="@+id/et_login_username"
+        android:layout_width="250dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_login_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dip"
+        android:hint="@string/et_hint_login_username" />
+
+    <EditText
+        android:id="@+id/et_login_password"
+        android:layout_width="250dip"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_login_username"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dip"
+        android:hint="@string/et_hint_login_password" />
+
+    <CheckBox
+        android:id="@+id/cb_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/et_login_password"
+        android:layout_below="@+id/et_login_password"
+        android:layout_marginTop="19dip"
+        android:checked="true"
+        android:text="@string/cb_login" />
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/et_login_password"
+        android:layout_below="@+id/et_login_password"
+        android:layout_marginTop="10dip"
+        android:text="@string/btn_login" />
+</RelativeLayout>

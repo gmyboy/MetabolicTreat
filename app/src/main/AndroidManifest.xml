@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.shwootide.metabolictreat">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="landscape"
+            android:theme="@style/FullScreenTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RecordActivity"
+            android:label="@string/label_record"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RecordFullActivity"
+            android:label="@string/label_recordfull"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".RecordChooseActivity"
+            android:label="@string/label_recordchoose"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".DepartmentChooseActivity"
+            android:label="@string/label_departmentchoose"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".DiagnosisActivity"
+            android:screenOrientation="landscape" />
+    </application>
+
+</manifest>

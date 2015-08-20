@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/header_physical" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/grey_line">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_xy" />
+
+                <TextView style="@style/StarTextView" />
+
+                <EditText
+                    style="@style/ItemEditText"
+                    android:layout_weight="1"
+                    android:hint="@string/header_physical_input" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_unit_physical_xy" />
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_xl" />
+
+                <TextView style="@style/StarTextView" />
+
+                <EditText
+                    style="@style/ItemEditText"
+                    android:layout_weight="1"
+                    android:hint="@string/header_physical_input" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_unit_physical_xl" />
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_tz" />
+
+                <TextView style="@style/StarTextView" />
+
+                <EditText
+                    style="@style/ItemEditText"
+                    android:layout_weight="1"
+                    android:hint="@string/header_physical_input" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_unit_physical_tz" />
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_sg" />
+
+                <TextView style="@style/StarTextView" />
+
+                <EditText
+                    style="@style/ItemEditText"
+                    android:layout_weight="1"
+                    android:hint="@string/header_physical_input" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_unit_physical_sg" />
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_bmi" />
+
+                <TextView style="@style/StarTextView" />
+
+                <EditText
+                    style="@style/ItemEditText"
+                    android:layout_weight="1"
+                    android:hint="@string/header_physical_input" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_unit_physical_bmi" />
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_yw" />
+
+                <TextView style="@style/StarTextView" />
+
+                <EditText
+                    style="@style/ItemEditText"
+                    android:layout_weight="1"
+                    android:hint="@string/header_physical_input" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_unit_physical_yw" />
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_tzhl" />
+
+                <TextView style="@style/StarTextView" />
+
+                <EditText
+                    style="@style/ItemEditText"
+                    android:layout_weight="1"
+                    android:hint="@string/header_physical_input" />
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_unit_physical_tzhl" />
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_j" />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_physical_j1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="齐" />
+
+                    <RadioButton
+                        android:id="@+id/rb_physical_j2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="不齐" />
+
+                    <RadioButton
+                        android:id="@+id/rb_physical_j3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="早搏" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_xzpf" />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="完好" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="破溃" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_xzsz" />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="有" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="无" />
+
+                </RadioGroup>
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp"
+                android:weightSum="3">
+
+                <TextView
+                    style="@style/ItemTextView"
+                    android:layout_weight="1"
+                    android:text="@string/tv_physical_zbdm" />
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="有结节" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="无结节" />
+
+                </RadioGroup>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

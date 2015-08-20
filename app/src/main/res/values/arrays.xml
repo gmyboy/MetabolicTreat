@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Department">
+        <item>内分泌科</item>
+        <item>风湿科</item>
+        <item>心内科</item>
+        <item>耳鼻喉科</item>
+    </string-array>
+    <string-array name="Disease">
+        <item>DM及代谢病</item>
+        <item>甲状腺疾病</item>
+        <item>Pcos及不孕不育</item>
+        <item>其他</item>
+    </string-array>
+    <string-array name="Diagnosis">
+        <item>初诊</item>
+        <item>复诊</item>
+        <item>病历编辑</item>
+    </string-array>
+</resources>

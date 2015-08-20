@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:background="@color/header_bg"
+    android:layout_marginTop="10dip"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="@string/header_physical_index" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="@string/header_physical_input" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="@string/header_physical_unit" />
+</LinearLayout>
