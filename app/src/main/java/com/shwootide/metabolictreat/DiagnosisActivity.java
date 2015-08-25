@@ -11,7 +11,9 @@ import com.shwootide.metabolictreat.widget.PagerSlidingTabStrip;
 import butterknife.Bind;
 
 /**
- * Created by Administrator on 2015/8/20.
+ * 诊疗tab父页
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
  */
 public class DiagnosisActivity extends BaseActivity {
     @Bind(R.id.tabs)

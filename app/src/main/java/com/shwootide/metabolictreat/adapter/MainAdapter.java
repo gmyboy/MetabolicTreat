@@ -17,25 +17,18 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by Administrator on 2015/8/19.
+ * 主页面查询结果适配器
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
  */
 public class MainAdapter extends BaseAdapter {
     private List<Record> datas = new ArrayList<>();
     private Context context;
 
 
-    public MainAdapter(Context context) {
+    public MainAdapter(Context context, List<Record> datas) {
         this.context = context;
-        for (int i = 0; i < 100; i++) {
-            Record record = new Record();
-            record.setId(String.valueOf(i));
-            record.setBirthday("2015年3月6日" + i);
-            record.setName("Name" + i);
-            if (i % 2 == 0) record.setSex("男");
-            else record.setSex("女");
-            datas.add(record);
-        }
-
+        this.datas = datas;
     }
 
     @Override
@@ -65,7 +58,7 @@ public class MainAdapter extends BaseAdapter {
             convertView.setTag(holder);
         }
         record = datas.get(position);
-        holder.tvItemMainRecordID.setText(record.getId());
+        holder.tvItemMainRecordID.setText(String.valueOf(record.getId()));
         holder.tvItemMainBirthday.setText(record.getBirthday());
         holder.tvItemMainName.setText(record.getName());
         holder.tvItemMainSex.setText(record.getSex());

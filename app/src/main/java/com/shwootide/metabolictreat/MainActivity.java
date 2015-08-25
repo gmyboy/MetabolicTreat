@@ -10,11 +10,27 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.shwootide.metabolictreat.adapter.MainAdapter;
+import com.shwootide.metabolictreat.entity.Record;
+import com.shwootide.metabolictreat.event.MessageEvent;
+import com.shwootide.metabolictreat.network.WebServiceFetcher;
+import com.shwootide.metabolictreat.utils.Common;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
+import de.greenrobot.event.EventBus;
 
+/**
+ * 主界面,用户可以新建病历+选择已有病例编辑
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
+ */
 public class MainActivity extends BaseActivity {
 
     @Bind(R.id.btn_main_new)
@@ -32,7 +48,13 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.btn_main_search)
     void search() {
-        lvMain.setAdapter(new MainAdapter(MainActivity.this));
+        Map<String, String> params = new WeakHashMap<>();
+        String function = "function";
+//        params.put("userCode", userCode);
+//        params.put("password", password);
+//        params.put("deviceCode", deviceid);
+//        params.put("phoneNumber", phoneNumber);
+        new WebServiceFetcher<List<Record>>().fetch(mContext, function, params);
     }
 
     @OnItemClick(R.id.lv_main)
@@ -51,40 +73,36 @@ public class MainActivity extends BaseActivity {
 
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        //        setTwiceExit(true);
-//        lvMain.setAdapter(new TestAdapter(MainActivity.this));
-        lvMain.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(mContext, RecordActivity.class);
-                startActivity(intent);
-            }
-        });
+    /**
+     * 接收list消息
+     *
+     * @param records
+     */
+    public void onEventMainThread(List<Record> records) {
+        if (records != null) {
+            lvMain.setAdapter(new MainAdapter(mContext, records));
+        }
     }
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        setTwiceExit(true);
+        setRegisterEvent(true);
+        super.onCreate(savedInstanceState);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
-
         return super.onOptionsItemSelected(item);
     }
 }

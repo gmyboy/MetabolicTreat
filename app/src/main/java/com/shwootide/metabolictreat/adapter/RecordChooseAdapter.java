@@ -17,7 +17,9 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * Created by Administrator on 2015/8/19.
+ * 科室选择适配器
+ * Created by GMY on 2015/8/25 09:20.
+ * Contact me via email gmyboy@qq.com.
  */
 public class RecordChooseAdapter extends BaseAdapter {
     private List<Record> datas = new ArrayList<>();

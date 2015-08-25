@@ -2,7 +2,6 @@ package com.shwootide.metabolictreat;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
@@ -14,25 +13,40 @@ import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 
 /**
- * Created by Administrator on 2015/8/17.
+ * 所有activity 的父类
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
  */
 public abstract class BaseActivity extends AppCompatActivity {
 
-    private long exitTime = 0;
+    /**
+     * 是否按两次退出
+     */
     private boolean isTwiceExit = false;
+    /**
+     * 是否注册事件
+     */
     private boolean doRegisterEvent = false;
-    public String TAG = this.getClass().getSimpleName();
     public Context mContext = this;
     public Toolbar mToolbar;
+    private Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        /**
+         * 添加activity进堆栈
+         */
         SysApplication.getInstance().addActivity(this);
         if (doRegisterEvent)
             EventBus.getDefault().register(mContext);
+        if (isTwiceExit)
+            toast = Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT);
         setLayout();
         setTitleBarOption();
+        /**
+         * 注册ButterKnife
+         */
         ButterKnife.bind(this);
     }
 
@@ -63,7 +77,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      */
     public abstract void setTitleBarOption();
 
-
     /**
      * 在oncreate之前调用
      *
@@ -82,25 +95,23 @@ public abstract class BaseActivity extends AppCompatActivity {
         this.isTwiceExit = isTwiceExit;
     }
 
+
     /**
      * 实现联系按两次推出
      */
     @Override
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_BACK && isTwiceExit) {
+    public void onBackPressed() {
+        if (isTwiceExit)
             twiceexit();
-            return false;
-        }
-        return super.onKeyDown(keyCode, event);
+        else
+            super.onBackPressed();
     }
 
     private void twiceexit() {
-        if ((System.currentTimeMillis() - exitTime) > 2000) {
-            showToast("再按一次退出程序");
-            exitTime = System.currentTimeMillis();
-        } else {
+        if (toast.getView().getParent() == null)
+            toast.show();
+        else
             exit();
-        }
     }
 
     /**

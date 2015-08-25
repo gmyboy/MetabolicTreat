@@ -12,7 +12,9 @@ import butterknife.Bind;
 import butterknife.OnItemClick;
 
 /**
- * Created by Administrator on 2015/8/19.
+ * 科室->疾病->诊断类型   选择页
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
  */
 public class RecordChooseActivity extends BaseActivity {
     @Bind(R.id.lv_recordchoose)

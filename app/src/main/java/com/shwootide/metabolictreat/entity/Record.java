@@ -2,26 +2,27 @@ package com.shwootide.metabolictreat.entity;
 
 /**
  * 病历单
- * Created by Administrator on 2015/8/19.
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
  */
 public class Record {
-    private String id;//病历编号
+    private int id;//病历编号
     private String name;//姓名
     private String sex;//性别
     private String birthday;//出生日期
     private String diagnosisTime;//就诊时间
     private String diagnosisCount;//就诊次数
-    private String Doctor;//医生
+    private String doctor;//医生
 
 
     public Record() {
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -66,10 +67,10 @@ public class Record {
     }
 
     public String getDoctor() {
-        return Doctor;
+        return doctor;
     }
 
     public void setDoctor(String doctor) {
-        Doctor = doctor;
+        doctor = doctor;
     }
 }

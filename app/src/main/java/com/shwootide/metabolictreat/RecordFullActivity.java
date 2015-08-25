@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 /**
- * Created by Administrator on 2015/8/19.
+ * 病历完整信息页
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
  */
 public class RecordFullActivity extends BaseActivity {
     @Override
@@ -23,6 +25,7 @@ public class RecordFullActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

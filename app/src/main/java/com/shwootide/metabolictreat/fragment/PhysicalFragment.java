@@ -10,7 +10,8 @@ import android.view.ViewGroup;
 import com.shwootide.metabolictreat.R;
 
 /**
- * Created by Administrator on 2015/8/20.
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
  */
 public class PhysicalFragment extends Fragment {
 

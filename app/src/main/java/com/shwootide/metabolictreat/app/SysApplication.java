@@ -1,21 +1,16 @@
 package com.shwootide.metabolictreat.app;
 
-import java.io.File;
-import java.util.Stack;
-
 import android.app.Activity;
 import android.app.Application;
 
+import java.io.File;
+import java.util.Stack;
 
 /**
- * app
- *
- * @author GMY
- * @mail 2275964276@qq.com
- * @date 2015年6月2日
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
  */
 public class SysApplication extends Application {
-
     private File dir;
     //堆栈，用来管理activity
     private static Stack<Activity> mStack;

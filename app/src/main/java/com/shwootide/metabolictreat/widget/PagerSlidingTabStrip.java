@@ -44,7 +44,10 @@ import android.widget.TextView;
 
 import com.shwootide.metabolictreat.R;
 
-
+/**
+ * Expanded by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
+ */
 public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     public interface IconTabProvider {

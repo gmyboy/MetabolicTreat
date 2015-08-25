@@ -6,7 +6,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 /**
- * Created by Administrator on 2015/8/19.
+ * 病历基本信息页
+ * Created by GMY on 2015/8/25 09:36.
+ * Contact me via email gmyboy@qq.com.
  */
 public class RecordActivity extends BaseActivity {
     @Override

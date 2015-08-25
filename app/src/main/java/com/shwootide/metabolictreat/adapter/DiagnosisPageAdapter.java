@@ -7,7 +7,9 @@ import android.support.v4.app.FragmentPagerAdapter;
 import com.shwootide.metabolictreat.fragment.PhysicalFragment;
 
 /**
- * Created by Administrator on 2015/8/20.
+ * 诊断页tab适配器
+ * Created by GMY on 2015/8/25 09:50.
+ * Contact me via email gmyboy@qq.com.
  */
 public class DiagnosisPageAdapter extends FragmentPagerAdapter {
     private final String[] TITLES = {"体格检查", "实验室检查", "辅助检查", "血糖检测", "现治疗用药", "诊断", "治疗"};
