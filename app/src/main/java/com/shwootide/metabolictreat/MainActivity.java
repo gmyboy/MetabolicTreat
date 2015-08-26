@@ -10,21 +10,18 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.shwootide.metabolictreat.adapter.MainAdapter;
+import com.shwootide.metabolictreat.entity.Common;
 import com.shwootide.metabolictreat.entity.Record;
-import com.shwootide.metabolictreat.event.MessageEvent;
 import com.shwootide.metabolictreat.network.WebServiceFetcher;
-import com.shwootide.metabolictreat.utils.Common;
 
-import java.util.HashMap;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 import java.util.WeakHashMap;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
-import de.greenrobot.event.EventBus;
 
 /**
  * 主界面,用户可以新建病历+选择已有病例编辑

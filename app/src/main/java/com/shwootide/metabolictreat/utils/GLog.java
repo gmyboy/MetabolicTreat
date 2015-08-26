@@ -44,7 +44,6 @@ public class GLog {
 
     private static Boolean isDebug() {
 //        return BuildConfig.DEBUG;
-
         return true;
     }
 }

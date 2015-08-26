@@ -8,7 +8,7 @@ import android.widget.Toast;
  * Created by GMY on 2015/8/25 10:08.
  * Contact me via email gmyboy@qq.com.
  */
-public class Common {
+public class CommonUtil {
     /**
      * 显示Toast信息
      *

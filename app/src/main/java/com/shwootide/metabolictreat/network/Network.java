@@ -4,7 +4,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-import com.shwootide.metabolictreat.utils.Common;
+import com.shwootide.metabolictreat.utils.CommonUtil;
 
 /**
  * 网络请求+工具类
@@ -21,7 +21,7 @@ public class Network {
     public static boolean isAvailable(Context context) {
         ConnectivityManager connectivity = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         if (connectivity == null) {
-            Common.showToast(context,"网络不可用");
+            CommonUtil.showToast(context, "网络不可用");
             return false;
         } else {
             NetworkInfo[] info = connectivity.getAllNetworkInfo();
@@ -33,7 +33,7 @@ public class Network {
                 }
             }
         }
-        Common.showToast(context,"网络不可用");
+        CommonUtil.showToast(context, "网络不可用");
         return false;
     }
 }

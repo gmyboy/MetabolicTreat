@@ -2,20 +2,15 @@ package com.shwootide.metabolictreat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 
-import com.shwootide.metabolictreat.entity.Record;
-import com.shwootide.metabolictreat.event.MessageEvent;
+import com.shwootide.metabolictreat.entity.Common;
 import com.shwootide.metabolictreat.network.WebServiceFetcher;
-import com.shwootide.metabolictreat.utils.Common;
+import com.shwootide.metabolictreat.utils.CommonUtil;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 import java.util.WeakHashMap;
 
 import butterknife.Bind;
@@ -39,11 +34,9 @@ public class LoginActivity extends BaseActivity {
     @OnClick(R.id.btn_login)
     void login() {
         Map<String, String> params = new WeakHashMap<>();
-
-        params.put("wordKey", etLoginUsername.getText().toString().trim());
-//        params.put("userId", "");
-
-        new WebServiceFetcher<Record>().fetch(mContext, "TranslatorString", params);
+        params.put("UserName", etLoginUsername.getText().toString().trim());
+        params.put("usrPwd", etLoginPassword.getText().toString().trim());
+        new WebServiceFetcher<>().fetch(mContext, "UserLogin", params);
     }
 
     @Override
@@ -59,16 +52,17 @@ public class LoginActivity extends BaseActivity {
     /**
      * 接收简单数据
      *
-     * @param record 病历单
+     * @param common 病历单
      */
-    public void onEventMainThread(Record record) {
-        if (record != null) {
-            if (record.getId() == 12) {
-                Common.showToast(mContext, "登陆成功");
+    public void onEventMainThread(Common common) {
+        if (common != null) {
+            if (common.getCode() == 200) {
+                CommonUtil.showToast(mContext, "登陆成功");
                 Intent intent = new Intent(mContext, MainActivity.class);
                 startActivity(intent);
                 finish();
-            }
+            } else
+                CommonUtil.showToast(mContext, common.getMessage());
         }
     }
 

@@ -11,9 +11,11 @@ public class Config {
      *手机区号
      */
 //    public static final String ENDPOINT = "http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx";
-    public static final String NAMESPACE = "http://WebXml.com.cn";
-    /**
-     * 英汉互译
-     */
-    public static final String ENDPOINT = " http://fy.webxml.com.cn/webservices/EnglishChinese.asmx";
+//    public static final String NAMESPACE = "http://WebXml.com.cn";
+//    /**
+//     * 英汉互译
+//     */
+//    public static final String ENDPOINT = "http://fy.webxml.com.cn/webservices/EnglishChinese.asmx";
+    public static final String NAMESPACE = "http://tempuri.org/";
+    public static final String ENDPOINT = "http://test11.mypatroller.com/AppService/AppServiceForAndroid.asmx";
 }

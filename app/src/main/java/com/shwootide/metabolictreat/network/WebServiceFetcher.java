@@ -6,9 +6,12 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.shwootide.metabolictreat.entity.Common;
 import com.shwootide.metabolictreat.utils.Config;
 import com.shwootide.metabolictreat.utils.GLog;
 
+import org.kobjects.util.Strings;
+import org.kobjects.util.Util;
 import org.ksoap2.SoapEnvelope;
 
 import org.ksoap2.SoapFault;
@@ -16,6 +19,10 @@ import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 import de.greenrobot.event.EventBus;
@@ -27,6 +34,7 @@ import de.greenrobot.event.EventBus;
  */
 public class WebServiceFetcher<T> {
     private Gson gson;
+    private T t;
 
     public WebServiceFetcher() {
         gson = new Gson();
@@ -35,6 +43,7 @@ public class WebServiceFetcher<T> {
     /**
      * 取到返回单层数据
      *
+     * @param list
      * @param function 方法名
      * @param params   参数集合
      * @return
@@ -44,7 +53,6 @@ public class WebServiceFetcher<T> {
             new Thread() {
                 @Override
                 public void run() {
-                    T t = null;
                     String json = post(function, params);
                     if (!TextUtils.isEmpty(json)) {
                         t = gson.fromJson(json, new TypeToken<T>() {
@@ -67,7 +75,7 @@ public class WebServiceFetcher<T> {
         String json = "-99";
         Runtime.getRuntime().gc();
         String endPoint = Config.ENDPOINT;
-        String soapAction = Config.NAMESPACE + "/" + function;
+        String soapAction = Config.NAMESPACE + function;
         try {
             /**
              * 为webService指定方法名为命名空间
@@ -80,23 +88,22 @@ public class WebServiceFetcher<T> {
                 GLog.d(strKey + "-------" + params.get(strKey));
                 rpc.addProperty(strKey, params.get(strKey));
             }
-            System.setProperty("http.keepAlive", "false");
+//            System.setProperty("http.keepAlive", "false");
             /**
              * 生成调用 webService的方法的soap请求信息，并指定soap版本
              */
             SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(SoapEnvelope.VER11);
             /**
-             * 设置是否调用的是.net开发的webservice
+             * 设置是否调用的是.net开发的webservice(.net开发必须设置)
              */
-            envelope.dotNet = false;
+            envelope.dotNet = true;
             envelope.setOutputSoapObject(rpc);
-            HttpTransportSE mtransport = new HttpTransportSE(endPoint, 3000000);
+            HttpTransportSE mtransport = new HttpTransportSE(endPoint, 30000);
             try {
                 mtransport.call(soapAction, envelope);
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
             /**
              * debug
              */
@@ -110,19 +117,14 @@ public class WebServiceFetcher<T> {
             if (object == null) {
                 GLog.d("object is null");
             } else {
-                for (int i = 0; i < object.getPropertyCount(); i++) {
-                    SoapObject soapChilds = (SoapObject) object.getProperty(i);
-                    Log.i("out", soapChilds.getProperty(0).toString());
-                }
                 json = object.getProperty(0).toString();
             }
-            GLog.d(json);
         } catch (Exception e) {
             GLog.d(e.getMessage());
         }
         if (json.equals("anyType{}"))
             json = "-99";
-
+        GLog.d(json);
         return json;
     }
 
