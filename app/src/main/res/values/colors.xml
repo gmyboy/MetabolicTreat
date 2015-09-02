@@ -10,6 +10,10 @@
 
     <color name="red">#ff0000</color>
 
-    <color name="grey_line">#dddddd</color>
     <color name="grey">#efefef</color>
+    <color name="grey_line">#dddddd</color>
+    <color name="grey_dark">#d3d3d3</color>
+
+    <color name="main_light">#2F9ACF</color>
+    <color name="main_dark">#005BAB</color>
 </resources>

@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="45dip"
     android:orientation="horizontal">
-
+    <View style="@style/LineVertical" />
     <TextView
         android:id="@+id/tv_item_main_name"
         style="@style/ItemTextView"
@@ -33,4 +33,5 @@
         style="@style/ItemTextView"
         android:layout_weight="1"
         android:text="@string/header_main_recordID" />
+    <View style="@style/LineVertical" />
 </LinearLayout>

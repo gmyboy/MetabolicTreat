@@ -19,7 +19,8 @@
     <string name="label_record">病历基本信息</string>
     <string name="tv_record_name">姓&#160;&#160;&#160;&#160;&#160;&#160;&#160;名</string>
     <string name="tv_record_sex">性&#160;&#160;&#160;&#160;&#160;&#160;&#160;别</string>
-    <string name="tv_record_birthday">出生日期</string>
+    <string name="tv_record_birthday">出生年月</string>
+    <string name="tv_record_hospital">就诊医院</string>
     <string name="tv_record_phone">联系方式</string>
     <string name="tv_record_weinum">微&#160;&#160;信&#160;&#160;号</string>
     <string name="tv_record_ID">编&#160;&#160;&#160;&#160;&#160;&#160;&#160;号</string>
@@ -34,10 +35,9 @@
     <string name="label_departmentchoose">科室选择</string>
     <string name="departmentchoose_Disease">选择疾病</string>
     <string name="departmentchoose_Diagnosis">诊断类型</string>
-    <string name="btn_departmentchoose_nfm">内分泌科</string>
-    <string name="btn_departmentchoose_fs">风湿科</string>
-    <string name="btn_departmentchoose_xn">心内科</string>
-    <string name="btn_departmentchoose_ebh">耳鼻喉科</string>
+    <string name="btn_choose_nfm">DM及代谢病</string>
+    <string name="btn_choose_fs">甲状腺疾病</string>
+    <string name="btn_choose_xn">PCOS及不孕不育</string>
     <!--体格检查-->
     <string name="header_physical_index">测量指标</string>
     <string name="header_physical_input">指标录入</string>

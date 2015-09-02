@@ -1,51 +1,121 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/main_bg"
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/ll_full1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginRight="100dp"
         android:orientation="horizontal">
 
-
-        <TextView
+        <Button
+            android:id="@+id/btn_full_certain"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:text="PCOS及不孕不育病史" />
+            android:background="@drawable/btn_common_bg"
+            android:text="确认"
+            android:textColor="@android:color/white" />
 
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_common_bg"
+            android:text="返回"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/iv_record"
+        android:layout_width="140dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="170dp"
+        android:src="@mipmap/logo" />
+
+    <View
+        android:id="@+id/v_record"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/iv_record"
+        android:background="@color/main_dark" />
+
+    <RelativeLayout
+        android:id="@+id/rl_full"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/v_record"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="170dp"
+        android:layout_marginRight="170dp"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:id="@+id/btn_fuul_title"
+            android:layout_width="220dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:background="@mipmap/btn_newrecord"
+            android:text="PCOS及不孕不育病史"
+            android:paddingRight="20dp"
+            android:paddingLeft="5dp"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/tv_main_name_tip"
+            style="@style/TitleTextView"
+            android:layout_marginLeft="30dip"
+            android:layout_toRightOf="@+id/btn_fuul_title"
             android:text="就诊次数" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/et_main_name"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="4dip"
-            android:text="2" />
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@+id/tv_main_name_tip"
+            android:background="@drawable/bg_edit"
+            android:gravity="center"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:text="2"
+            android:textColor="@android:color/black"
+            android:textSize="18sp" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dip"
-            android:text="就诊医师" />
+            android:id="@+id/tv_main_sex_tip"
+            style="@style/TitleTextView"
+            android:layout_marginLeft="30dip"
+            android:layout_toRightOf="@+id/et_main_name"
+            android:text="就诊医师:" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="4dip"
+            android:id="@+id/tv_main_sex"
+            style="@style/TitleTextView"
+            android:layout_marginLeft="5dip"
+            android:layout_toRightOf="@+id/tv_main_sex_tip"
             android:text="李四" />
+    </RelativeLayout>
 
-    </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/ll_full"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_full1"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/rl_full"
         android:orientation="horizontal">
 
         <ScrollView
@@ -61,210 +131,155 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
@@ -282,117 +297,87 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
+                    android:gravity="center"
                     android:orientation="horizontal"
                     android:padding="20dp">
 
                     <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
+                        style="@style/FullTextTip"
                         android:text="@string/tv_record_name" />
 
-                    <EditText
-                        android:layout_width="300dip"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="100dp" />
+                    <EditText style="@style/InputText" />
                 </LinearLayout>
             </LinearLayout>
         </ScrollView>
     </LinearLayout>
-</LinearLayout>
+</RelativeLayout>

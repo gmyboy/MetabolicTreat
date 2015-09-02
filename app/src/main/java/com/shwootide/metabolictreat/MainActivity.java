@@ -22,6 +22,7 @@ import java.util.WeakHashMap;
 import butterknife.Bind;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
+import de.greenrobot.event.EventBus;
 
 /**
  * 主界面,用户可以新建病历+选择已有病例编辑
@@ -51,7 +52,19 @@ public class MainActivity extends BaseActivity {
 //        params.put("password", password);
 //        params.put("deviceCode", deviceid);
 //        params.put("phoneNumber", phoneNumber);
-        new WebServiceFetcher<List<Record>>().fetch(mContext, function, params);
+//        new WebServiceFetcher<List<Record>>().fetch(mContext, function, params);
+        List<Record> records=new ArrayList<>();
+        for (int i=0;i<100;i++){
+            Record r=new Record();
+            r.setId(i);
+            r.setSex("男");
+            r.setDoctor("Doctor"+i);
+            r.setName("name"+i);
+            r.setBirthday("birthday"+i);
+            records.add(r);
+            r=null;
+        }
+        EventBus.getDefault().post(records);
     }
 
     @OnItemClick(R.id.lv_main)

@@ -4,6 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+
+import butterknife.Bind;
+import butterknife.OnClick;
 
 /**
  * 病历完整信息页
@@ -11,6 +15,15 @@ import android.view.MenuItem;
  * Contact me via email gmyboy@qq.com.
  */
 public class RecordFullActivity extends BaseActivity {
+    @Bind(R.id.btn_full_certain)
+    Button btnFullCertain;
+
+    @OnClick(R.id.btn_full_certain)
+    void certina() {
+        Intent intent = new Intent(mContext, DiagnosisActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public void setLayout() {
         setContentView(R.layout.activity_recordfull);
@@ -42,8 +55,7 @@ public class RecordFullActivity extends BaseActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_certain) {
-            Intent intent = new Intent(mContext, DiagnosisActivity.class);
-            startActivity(intent);
+
             return true;
         }
 

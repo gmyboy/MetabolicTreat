@@ -1,133 +1,234 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
+    android:background="@mipmap/main_bg"
     android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_record"
+        android:layout_width="140dp"
+        android:layout_height="130dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="170dp"
+        android:src="@mipmap/logo" />
+
+    <View
+        android:id="@+id/v_record"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_below="@+id/iv_record"
+        android:background="@color/main_dark" />
+
+    <Button
+        android:id="@+id/btn_record"
+        android:layout_width="200dp"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/v_record"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@mipmap/btn_newrecord"
+        android:text="基本信息"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/ll_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="100dp"
+        android:layout_marginRight="100dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_reocrd_certain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_common_bg"
+            android:text="确认"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/btn_common_bg"
+            android:text="返回"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/ll_record"
+        android:layout_below="@+id/btn_record"
+        android:layout_marginLeft="100dp"
+        android:layout_marginRight="100dp"
+        android:layout_marginTop="20dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:padding="20dp">
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/tv_record_name" />
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
 
-                <EditText
-                    android:layout_width="300dip"
+                    <TextView style="@style/StarTextView" />
+
+                    <TextView
+                        style="@style/TitleTextView"
+                        android:text="@string/tv_record_name" />
+
+                    <EditText style="@style/InputText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp" />
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView style="@style/StarTextView" />
+
+                    <TextView
+                        style="@style/TitleTextView"
+                        android:text="@string/tv_record_hospital" />
+
+                    <EditText style="@style/InputText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView style="@style/StarTextView" />
+
+                    <TextView
+                        style="@style/TitleTextView"
+                        android:text="@string/tv_record_sex" />
+
+                    <RadioGroup
+                        android:layout_width="250dip"
+                        android:layout_height="50dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/rb_record1"
+                            style="@style/RadioButtonStyle"
+                            android:background="@drawable/rb_bg_l"
+                            android:paddingLeft="30dp"
+                            android:paddingRight="15dp"
+                            android:text="男" />
+
+                        <RadioButton
+                            android:id="@+id/rb_record2"
+                            style="@style/RadioButtonStyle"
+                            android:background="@drawable/rb_bg_r"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="30dp"
+                            android:text="女" />
+
+                    </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView style="@style/StarTextView" />
+
+                    <TextView
+                        style="@style/TitleTextView"
+                        android:text="@string/tv_record_birthday" />
+
+                    <EditText
+                        android:id="@+id/et_record_birthday"
+                        style="@style/InputText" />
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:padding="20dp">
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/tv_record_sex" />
 
-                <EditText
-                    android:layout_width="300dip"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp" />
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        style="@style/TitleTextView"
+                        android:text="@string/tv_record_phone" />
+
+                    <EditText style="@style/InputText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        style="@style/TitleTextView"
+                        android:text="@string/tv_record_weinum" />
+
+                    <EditText style="@style/InputText" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:padding="20dp">
+
+                    <TextView
+                        style="@style/TitleTextView"
+                        android:text="@string/tv_record_ID" />
+
+                    <TextView
+                        style="@style/InputText"
+                        android:text="12345656" />
+                </LinearLayout>
+
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/tv_record_birthday" />
-
-                <EditText
-                    android:layout_width="300dip"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/tv_record_phone" />
-
-                <EditText
-                    android:layout_width="300dip"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/tv_record_weinum" />
-
-                <EditText
-                    android:layout_width="300dip"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="horizontal"
-                android:padding="20dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/tv_record_ID" />
-
-                <EditText
-                    android:layout_width="300dip"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp" />
-            </LinearLayout>
         </LinearLayout>
+
     </ScrollView>
-</LinearLayout>
+
+
+</RelativeLayout>

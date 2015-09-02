@@ -7,6 +7,7 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 
 import com.shwootide.metabolictreat.entity.Common;
+import com.shwootide.metabolictreat.entity.UserInfo;
 import com.shwootide.metabolictreat.network.WebServiceFetcher;
 import com.shwootide.metabolictreat.utils.CommonUtil;
 
@@ -33,10 +34,13 @@ public class LoginActivity extends BaseActivity {
 
     @OnClick(R.id.btn_login)
     void login() {
+        Intent intent = new Intent(mContext, MainActivity.class);
+        startActivity(intent);
+        finish();
         Map<String, String> params = new WeakHashMap<>();
         params.put("UserName", etLoginUsername.getText().toString().trim());
         params.put("usrPwd", etLoginPassword.getText().toString().trim());
-        new WebServiceFetcher<>().fetch(mContext, "UserLogin", params);
+        new WebServiceFetcher().fetch(UserInfo.class,mContext, "UserLogin", params);
     }
 
     @Override

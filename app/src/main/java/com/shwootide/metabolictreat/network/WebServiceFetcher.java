@@ -32,9 +32,9 @@ import de.greenrobot.event.EventBus;
  * Created by GMY on 2015/8/25 10:10.
  * Contact me via email gmyboy@qq.com.
  */
-public class WebServiceFetcher<T> {
+public class WebServiceFetcher {
     private Gson gson;
-    private T t;
+
 
     public WebServiceFetcher() {
         gson = new Gson();
@@ -43,25 +43,32 @@ public class WebServiceFetcher<T> {
     /**
      * 取到返回单层数据
      *
-     * @param list
+     * @param
      * @param function 方法名
      * @param params   参数集合
      * @return
      */
-    public void fetch(Context context, final String function, final Map<String, String> params) {
+    public <T> T fetch(final Class<T> mClass, Context context, final String function, final Map<String, String> params) {
+        T t = null;
+
         if (Network.isAvailable(context)) {
             new Thread() {
                 @Override
                 public void run() {
                     String json = post(function, params);
                     if (!TextUtils.isEmpty(json)) {
-                        t = gson.fromJson(json, new TypeToken<T>() {
-                        }.getType());
+                        try {
+//                            t = gson.fromJson(json, mClass);
+//                            EventBus.getDefault().post(t);
+                        } catch (Exception e) {
+                        }
                     }
-                    EventBus.getDefault().post(t);
+
+
                 }
             }.start();
         }
+        return t;
     }
 
     /**

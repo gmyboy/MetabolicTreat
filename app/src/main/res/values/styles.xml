@@ -3,14 +3,24 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorAccent">@color/main_light</item>
     </style>
 
     <style name="FullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowNoTitle">true</item>
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="colorAccent">@color/main_light</item>
     </style>
 
+    <style name="TitleTextView">
+        <item name="android:textColor">@color/main_light</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:textSize">20sp</item>
+    </style>
 
     <style name="HeaderTextView">
         <item name="android:textColor">@android:color/white</item>
@@ -57,5 +67,33 @@
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">1dip</item>
         <item name="android:background">@color/grey</item>
+    </style>
+
+    <style name="RadioButtonStyle">
+        <item name="android:button">@null</item>
+        <item name="android:textSize">18sp</item>
+        <!--<item name="android:textColor">@drawable/rb_textcolor</item>-->
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dip</item>
+    </style>
+
+    <style name="InputText">
+        <item name="android:layout_width">250dip</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginLeft">60dp</item>
+        <item name="android:background">@mipmap/input</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+    <style name="FullTextTip">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/main_light</item>
     </style>
 </resources>
