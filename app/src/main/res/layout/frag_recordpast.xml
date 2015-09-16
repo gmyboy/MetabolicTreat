@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ChangeButton="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_line">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/itemheight"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="高血脂" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.shwootide.metabolictreat.widget.ChangeButton
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/md_checked"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/titleTextSize"
+                            ChangeButton:offText="无"
+                            ChangeButton:onText="有" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="高血压" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.shwootide.metabolictreat.widget.ChangeButton
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/md_checked"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/titleTextSize"
+                            ChangeButton:offText="无"
+                            ChangeButton:onText="有" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/itemheight"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="高尿酸" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.shwootide.metabolictreat.widget.ChangeButton
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/md_checked"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/titleTextSize"
+                            ChangeButton:offText="无"
+                            ChangeButton:onText="有" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="痛风" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.shwootide.metabolictreat.widget.ChangeButton
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/md_checked"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/titleTextSize"
+                            ChangeButton:offText="无"
+                            ChangeButton:onText="有" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/itemheight"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="脂肪肝" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.shwootide.metabolictreat.widget.ChangeButton
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/md_checked"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/titleTextSize"
+                            ChangeButton:offText="无"
+                            ChangeButton:onText="有" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="冠心病/心梗" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.shwootide.metabolictreat.widget.ChangeButton
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/md_checked"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/titleTextSize"
+                            ChangeButton:offText="无"
+                            ChangeButton:onText="有" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/itemheight"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="脑梗/脑出血" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.shwootide.metabolictreat.widget.ChangeButton
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/md_checked"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/titleTextSize"
+                            ChangeButton:offText="无"
+                            ChangeButton:onText="有" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="劲动脉斑块" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.shwootide.metabolictreat.widget.ChangeButton
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/md_checked"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/titleTextSize"
+                            ChangeButton:offText="无"
+                            ChangeButton:onText="有" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/itemheight"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="下肢动脉斑块" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.shwootide.metabolictreat.widget.ChangeButton
+                            android:layout_width="50dp"
+                            android:layout_height="45dp"
+                            android:background="@drawable/md_checked"
+                            android:gravity="center"
+                            android:textColor="@android:color/white"
+                            android:textSize="@dimen/titleTextSize"
+                            ChangeButton:offText="无"
+                            ChangeButton:onText="有" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemRecordTextView"
+                        android:layout_weight="1"
+                        android:text="恶性肿瘤" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/bg_edit"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="@dimen/headerTextSize" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

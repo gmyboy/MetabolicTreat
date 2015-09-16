@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/MetabolicTreat.iml" filepath="$PROJECT_DIR$/MetabolicTreat.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/dragdemo/dragdemo.iml" filepath="$PROJECT_DIR$/dragdemo/dragdemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/segmentedgroup/segmentedgroup.iml" filepath="$PROJECT_DIR$/segmentedgroup/segmentedgroup.iml" />
     </modules>
   </component>
 </project>

@@ -3,12 +3,16 @@ package com.shwootide.metabolictreat;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.PopupMenu;
 import android.util.TypedValue;
+import android.view.MenuItem;
 
 import com.shwootide.metabolictreat.adapter.DiagnosisPageAdapter;
+import com.shwootide.metabolictreat.event.MessageEvent;
 import com.shwootide.metabolictreat.widget.PagerSlidingTabStrip;
 
 import butterknife.Bind;
+import de.greenrobot.event.EventBus;
 
 /**
  * 诊疗tab父页
@@ -62,6 +66,30 @@ public class DiagnosisActivity extends BaseActivity {
      * mPagerSlidingTabStrip默认值配置
      */
     private void initTabsValue() {
+        tabs.setExpandTab(4);
+        tabs.setExpandMenuId(R.menu.pop_diagnosis);
+        tabs.setMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                int position = 0;
+                switch (item.getItemId()) {
+                    case R.id.zhidao:
+                        position = 0;
+                        break;
+                    case R.id.yaowu:
+                        position = 1;
+                        break;
+                    case R.id.huayandan:
+                        position = 2;
+                        break;
+                    case R.id.xiaci:
+                        position = 3;
+                        break;
+                }
+                EventBus.getDefault().post(new MessageEvent<>("TellFragment", position));
+                return false;
+            }
+        });
         // 底部游标颜色
         tabs.setIndicatorColor(getResources().getColor(R.color.tab_indicator));
         // tab的分割线颜色

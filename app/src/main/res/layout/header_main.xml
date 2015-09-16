@@ -5,13 +5,15 @@
     android:layout_gravity="center_horizontal"
     android:layout_marginTop="20dp"
     android:background="@color/main_light"
-    android:layout_marginLeft="170dp"
-    android:layout_marginRight="170dp"
+    android:layout_below="@+id/rl_main"
+    android:id="@+id/ll_header_main"
+    android:layout_marginLeft="70dp"
+    android:layout_marginRight="70dp"
     android:orientation="horizontal">
 
     <TextView
         style="@style/HeaderTextView"
-        android:layout_weight="1"
+        android:layout_weight="2.5"
         android:text="@string/header_main_name" />
 
     <View style="@style/LineVertical" />
@@ -25,13 +27,13 @@
 
     <TextView
         style="@style/HeaderTextView"
-        android:layout_weight="1"
+        android:layout_weight="3"
         android:text="@string/header_main_birthday" />
 
     <View style="@style/LineVertical" />
 
     <TextView
         style="@style/HeaderTextView"
-        android:layout_weight="1"
+        android:layout_weight="3.5"
         android:text="@string/header_main_recordID" />
 </LinearLayout>

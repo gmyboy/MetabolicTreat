@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_diagnosis"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:layout_alignParentTop="true"
+    android:background="@color/main_light"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="诊断名称" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="诊断名称" />
+
+</LinearLayout>

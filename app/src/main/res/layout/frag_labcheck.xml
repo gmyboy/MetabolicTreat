@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/header_labcheck" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_labcheck_bottom"
+        android:layout_below="@+id/ll_header_labcheck"
+        android:background="@color/grey_line">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="空腹血糖" />
+
+
+                <EditText
+                    style="@style/ItemLabEditText"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="mmol/L" />
+
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="糖化血红蛋白" />
+
+
+                <EditText
+                    style="@style/ItemLabEditText"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="%" />
+
+
+            </LinearLayout>
+
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="甘油三酯" />
+
+
+                <EditText
+                    style="@style/ItemLabEditText"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="mmol/L" />
+
+
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="血脂" />
+
+
+                <EditText
+                    style="@style/ItemLabEditText"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="mmol/L" />
+
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="总胆固醇" />
+
+
+                <EditText
+                    style="@style/ItemLabEditText"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="mmol/L" />
+
+
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="低密度脂蛋白(LDL-C)" />
+
+
+                <EditText
+                    style="@style/ItemLabEditText"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="mmol/L" />
+
+
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="谷丙转氨酶（ALT）" />
+
+
+                <EditText
+                    style="@style/ItemLabEditText"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="U/L" />
+
+
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="谷草转氨酶（AST）" />
+
+
+                <EditText
+                    style="@style/ItemLabEditText"
+                    android:layout_weight="1" />
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="U/L" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_labcheck_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_common_bg"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="拍照"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/titleTextSize" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_common_bg"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="查看"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/titleTextSize" />
+    </LinearLayout>
+</RelativeLayout>

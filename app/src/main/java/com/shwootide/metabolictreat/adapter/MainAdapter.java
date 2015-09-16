@@ -31,6 +31,14 @@ public class MainAdapter extends BaseAdapter {
         this.datas = datas;
     }
 
+    /**
+     * 清除所有已有的数据
+     */
+    public void clear() {
+        datas.clear();
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getCount() {
         return datas.size();
@@ -58,8 +66,8 @@ public class MainAdapter extends BaseAdapter {
             convertView.setTag(holder);
         }
         record = datas.get(position);
-        holder.tvItemMainRecordID.setText(String.valueOf(record.getId()));
-        holder.tvItemMainBirthday.setText(record.getBirthday());
+        holder.tvItemMainRecordID.setText(String.valueOf(record.getMedicalRecordNo()));
+        holder.tvItemMainBirthday.setText(record.getBirth());
         holder.tvItemMainName.setText(record.getName());
         holder.tvItemMainSex.setText(record.getSex());
         return convertView;

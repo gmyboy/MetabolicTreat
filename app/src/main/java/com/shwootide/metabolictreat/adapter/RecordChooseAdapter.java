@@ -17,7 +17,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
- * 科室选择适配器
+ * 疾病选择适配器
  * Created by GMY on 2015/8/25 09:20.
  * Contact me via email gmyboy@qq.com.
  */
@@ -28,13 +28,6 @@ public class RecordChooseAdapter extends BaseAdapter {
 
     public RecordChooseAdapter(Context context) {
         this.context = context;
-        for (int i = 0; i < 100; i++) {
-            Record record = new Record();
-            record.setDiagnosisTime("2015年3月6日" + i);
-            record.setDiagnosisCount(String.valueOf(i));
-            record.setDoctor("doctor" + i);
-            datas.add(record);
-        }
     }
 
     @Override
@@ -64,9 +57,9 @@ public class RecordChooseAdapter extends BaseAdapter {
             convertView.setTag(holder);
         }
         record = datas.get(position);
-        holder.tvItemDiagnosistime.setText(record.getDiagnosisTime());
-        holder.tvItemDiagnosiscount.setText(record.getDiagnosisCount());
-        holder.tvItemDoctor.setText(record.getDoctor());
+//        holder.tvItemDiagnosistime.setText(record.getDiagnosisTime());
+//        holder.tvItemDiagnosiscount.setText(record.getDiagnosisCount());
+//        holder.tvItemDoctor.setText(record.getDoctor());
         return convertView;
     }
 

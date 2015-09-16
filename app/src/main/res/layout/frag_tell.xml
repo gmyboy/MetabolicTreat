@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_tell1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_line"
+        android:orientation="vertical">
+
+        <include layout="@layout/header_tell" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemheight"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="1"
+                android:text="正常体型者参考食谱一" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="1"
+                android:text="III级" />
+
+        </LinearLayout>
+
+        <View style="@style/LineHorizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemheight"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="1"
+                android:text="正常体型者参考食谱一" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="1"
+                android:text="III级" />
+
+        </LinearLayout>
+
+        <View style="@style/LineHorizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemheight"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="1"
+                android:text="正常体型者参考食谱一" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="1"
+                android:text="III级" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemheight"
+            android:orientation="horizontal">
+
+            <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
+                android:id="@+id/spinner_tell1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="@dimen/headerTextSize" />
+
+            <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
+                android:id="@+id/spinner_tell2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textSize="@dimen/headerTextSize" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_tell2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_line"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include layout="@layout/header_recordnow3" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemheight"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="5"
+                android:text="降糖类" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="格列吡嗪" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="降糖药" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="3"
+                android:text="50mg/片(粒)" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="3"
+                android:text="3片/次" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="3次/日" />
+
+        </LinearLayout>
+
+        <View style="@style/LineHorizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemheight"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="5"
+                android:text="降糖类" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="格列吡嗪" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="降糖药" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="3"
+                android:text="50mg/片(粒)" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="3"
+                android:text="3片/次" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="3次/日" />
+
+        </LinearLayout>
+
+        <View style="@style/LineHorizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemheight"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="5"
+                android:text="降糖类" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="格列吡嗪" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="降糖药" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="3"
+                android:text="50mg/片(粒)" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="3"
+                android:text="3片/次" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="3次/日" />
+
+        </LinearLayout>
+
+        <View style="@style/LineHorizontal" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemheight"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="5"
+                android:text="降糖类" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="格列吡嗪" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="降糖药" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="3"
+                android:text="50mg/片(粒)" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="3"
+                android:text="3片/次" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="3次/日" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/itemheight"
+            android:orientation="horizontal">
+
+            <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
+                android:id="@+id/spinner_now1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5"
+                android:gravity="center"
+                android:textSize="@dimen/headerTextSize" />
+
+            <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
+                android:id="@+id/spinner_now2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:textSize="@dimen/headerTextSize" />
+
+            <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
+                android:id="@+id/spinner_now3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:gravity="center"
+                android:textSize="@dimen/headerTextSize" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:hint="规格"
+                android:textSize="@dimen/headerTextSize" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:hint="用量"
+                android:textSize="@dimen/headerTextSize" />
+
+            <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:hint="服用方法"
+                android:textSize="@dimen/headerTextSize" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

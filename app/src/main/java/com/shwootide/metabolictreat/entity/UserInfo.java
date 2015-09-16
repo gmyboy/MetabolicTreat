@@ -7,29 +7,47 @@ package com.shwootide.metabolictreat.entity;
 public class UserInfo {
 
     /**
+     * flg : 本医院数据
+     * OrganizationName : 仁济医院
      * UserName : changbao
      * UserState : 启动
-     * StaffID : 016907ce-d298-46d8-bb45-d17118532ce2
-     * UserID : 1
+     * code : RJ
      * HospitalID : 1
-     * fdate : 2014-09-18T09:24:54
      * UserToStaff : 常宝
-     * Tel :
+     * RoleID : 20
+     * FDate : 2014-09-18T09:24:54
+     * USERREALNAME : 常宝
+     * RoleName : 医生组
+     * UserID : 1
+     * Tel : null
      * DepartmentID : 1001
      * Pwd : 888888
-     * RoleID : 20
+     * staffID : 016907ce-d298-46d8-bb45-d17118532ce2
      */
-    private String UserName;
-    private String UserState;
-    private String StaffID;
-    private int UserID;
-    private String HospitalID;
-    private String fdate;
-    private String UserToStaff;
-    private String Tel;
-    private String DepartmentID;
-    private String Pwd;
-    private int RoleID;
+    private String flg="";
+    private String OrganizationName="";
+    private String UserName="";
+    private String UserState="";
+    private String code="";
+    private String HospitalID="";
+    private String UserToStaff="";
+    private int RoleID=0;
+    private String FDate="";
+    private String USERREALNAME="";
+    private String RoleName="";
+    private int UserID=0;
+    private String Tel="";
+    private String DepartmentID="";
+    private String Pwd="";
+    private String staffID="";
+
+    public void setFlg(String flg) {
+        this.flg = flg;
+    }
+
+    public void setOrganizationName(String OrganizationName) {
+        this.OrganizationName = OrganizationName;
+    }
 
     public void setUserName(String UserName) {
         this.UserName = UserName;
@@ -39,24 +57,36 @@ public class UserInfo {
         this.UserState = UserState;
     }
 
-    public void setStaffID(String StaffID) {
-        this.StaffID = StaffID;
-    }
-
-    public void setUserID(int UserID) {
-        this.UserID = UserID;
+    public void setCode(String code) {
+        this.code = code;
     }
 
     public void setHospitalID(String HospitalID) {
         this.HospitalID = HospitalID;
     }
 
-    public void setFdate(String fdate) {
-        this.fdate = fdate;
-    }
-
     public void setUserToStaff(String UserToStaff) {
         this.UserToStaff = UserToStaff;
+    }
+
+    public void setRoleID(int RoleID) {
+        this.RoleID = RoleID;
+    }
+
+    public void setFDate(String FDate) {
+        this.FDate = FDate;
+    }
+
+    public void setUSERREALNAME(String USERREALNAME) {
+        this.USERREALNAME = USERREALNAME;
+    }
+
+    public void setRoleName(String RoleName) {
+        this.RoleName = RoleName;
+    }
+
+    public void setUserID(int UserID) {
+        this.UserID = UserID;
     }
 
     public void setTel(String Tel) {
@@ -71,8 +101,16 @@ public class UserInfo {
         this.Pwd = Pwd;
     }
 
-    public void setRoleID(int RoleID) {
-        this.RoleID = RoleID;
+    public void setStaffID(String staffID) {
+        this.staffID = staffID;
+    }
+
+    public String getFlg() {
+        return flg;
+    }
+
+    public String getOrganizationName() {
+        return OrganizationName;
     }
 
     public String getUserName() {
@@ -83,24 +121,36 @@ public class UserInfo {
         return UserState;
     }
 
-    public String getStaffID() {
-        return StaffID;
-    }
-
-    public int getUserID() {
-        return UserID;
+    public String getCode() {
+        return code;
     }
 
     public String getHospitalID() {
         return HospitalID;
     }
 
-    public String getFdate() {
-        return fdate;
-    }
-
     public String getUserToStaff() {
         return UserToStaff;
+    }
+
+    public int getRoleID() {
+        return RoleID;
+    }
+
+    public String getFDate() {
+        return FDate;
+    }
+
+    public String getUSERREALNAME() {
+        return USERREALNAME;
+    }
+
+    public String getRoleName() {
+        return RoleName;
+    }
+
+    public int getUserID() {
+        return UserID;
     }
 
     public String getTel() {
@@ -115,7 +165,7 @@ public class UserInfo {
         return Pwd;
     }
 
-    public int getRoleID() {
-        return RoleID;
+    public String getStaffID() {
+        return staffID;
     }
 }

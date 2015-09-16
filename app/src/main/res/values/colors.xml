@@ -14,6 +14,8 @@
     <color name="grey_line">#dddddd</color>
     <color name="grey_dark">#d3d3d3</color>
 
+    <color name="main_lighter">#BBDEFB</color>
     <color name="main_light">#2F9ACF</color>
     <color name="main_dark">#005BAB</color>
+    <color name="light_gray">#fff5f5f5</color>
 </resources>

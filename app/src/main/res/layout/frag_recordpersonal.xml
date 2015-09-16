@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ChangeButton="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/grey_line">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/itemheight"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/ItemLabTextView"
+                        android:layout_weight="1"
+                        android:text="吸烟" />
+
+                    <LinearLayout
+                        android:id="@+id/ll_personal_xy"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <EditText
+                            android:id="@+id/tv_main_nian"
+                            android:layout_width="140dp"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dip"
+                            android:background="@drawable/bg_edit"
+                            android:gravity="center"
+                            android:inputType="number"
+                            android:paddingBottom="5dp"
+                            android:paddingTop="5dp"
+                            android:textColor="@android:color/black"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/tv_main_nian_tip"
+                            style="@style/TitleTextView"
+                            android:layout_marginLeft="10dip"
+                            android:text="年/月" />
+
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/itemheight"
+                android:orientation="horizontal">
+
+                <TextView
+                    style="@style/ItemLabTextView"
+                    android:layout_weight="1"
+                    android:text="腥辣食物" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.shwootide.metabolictreat.widget.ChangeButton
+                        ChangeButton:offText="无"
+                        ChangeButton:onText="有"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        android:background="@drawable/md_checked"
+                        android:gravity="center"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/titleTextSize" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

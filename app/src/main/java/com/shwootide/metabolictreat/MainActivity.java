@@ -2,27 +2,29 @@ package com.shwootide.metabolictreat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
+import com.gmy.segmentedgroup.SegmentedGroup;
 import com.shwootide.metabolictreat.adapter.MainAdapter;
-import com.shwootide.metabolictreat.entity.Common;
 import com.shwootide.metabolictreat.entity.Record;
-import com.shwootide.metabolictreat.network.WebServiceFetcher;
+import com.shwootide.metabolictreat.event.MessageEvent;
+import com.shwootide.metabolictreat.network.MutiFetcher;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Calendar;
 import java.util.Map;
 import java.util.WeakHashMap;
 
 import butterknife.Bind;
 import butterknife.OnClick;
 import butterknife.OnItemClick;
-import de.greenrobot.event.EventBus;
 
 /**
  * 主界面,用户可以新建病历+选择已有病例编辑
@@ -37,6 +39,15 @@ public class MainActivity extends BaseActivity {
     ListView lvMain;
     @Bind(R.id.btn_main_search)
     Button btnMainSearch;
+    @Bind(R.id.et_main_name)
+    EditText etMainName;
+    @Bind(R.id.sg_main_sex)
+    SegmentedGroup sgMainSex;
+    @Bind(R.id.tv_main_nian)
+    EditText tvMainNian;
+    @Bind(R.id.tv_main_yue)
+    EditText tvMainYue;
+    private MainAdapter adapter;
 
     @OnClick(R.id.btn_main_new)
     void newRecord() {
@@ -46,30 +57,26 @@ public class MainActivity extends BaseActivity {
 
     @OnClick(R.id.btn_main_search)
     void search() {
-        Map<String, String> params = new WeakHashMap<>();
-        String function = "function";
-//        params.put("userCode", userCode);
-//        params.put("password", password);
-//        params.put("deviceCode", deviceid);
-//        params.put("phoneNumber", phoneNumber);
-//        new WebServiceFetcher<List<Record>>().fetch(mContext, function, params);
-        List<Record> records=new ArrayList<>();
-        for (int i=0;i<100;i++){
-            Record r=new Record();
-            r.setId(i);
-            r.setSex("男");
-            r.setDoctor("Doctor"+i);
-            r.setName("name"+i);
-            r.setBirthday("birthday"+i);
-            records.add(r);
-            r=null;
+        String name = etMainName.getText().toString().trim();
+        String sex = sgMainSex.getCheckedRadioButtonId() == R.id.rb_main_man ? "男" : "女";
+        String nian = tvMainNian.getText().toString().trim();
+        String yue = tvMainYue.getText().toString().trim();
+        if (!TextUtils.isEmpty(yue) && TextUtils.isEmpty(nian)) {
+            showToast("必须先指定年份");
+            return;
         }
-        EventBus.getDefault().post(records);
+        Map<String, String> params = new WeakHashMap<>();
+        params.put("name", name);
+        params.put("sex", sex);
+        params.put("birth", TextUtils.isEmpty(yue) ? nian : nian + "年" + yue + "月");
+        new MutiFetcher(Record[].class).fetch(mContext, "PatientQuery", "正在查询...", params);
     }
 
     @OnItemClick(R.id.lv_main)
     void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent intent = new Intent(mContext, RecordActivity.class);
+        intent.putExtra("RECORD", (Parcelable) lvMain.getAdapter().getItem(position));
+        intent.putExtra("TYPE", 1);//0 新建   1  点击
         startActivity(intent);
     }
 
@@ -86,11 +93,20 @@ public class MainActivity extends BaseActivity {
     /**
      * 接收list消息
      *
-     * @param records
+     * @param event
      */
-    public void onEventMainThread(List<Record> records) {
-        if (records != null) {
-            lvMain.setAdapter(new MainAdapter(mContext, records));
+    public void onEventMainThread(MessageEvent event) {
+        if (event.what.equals("PatientQuery")) {
+            if (event.getCode().equals("200")) {
+                if (event.getObjects() != null) {
+                    adapter = new MainAdapter(mContext, event.getObjects());
+                    lvMain.setAdapter(adapter);
+                } else {
+                    showToast("空空如也");
+                }
+            } else if (event.getCode().equals("300")) {
+                if (adapter != null) adapter.clear();
+            }
         }
     }
 

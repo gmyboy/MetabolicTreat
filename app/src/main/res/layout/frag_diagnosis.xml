@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/header_diagnosis" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/ll_diagnosis_bottom"
+        android:layout_below="@+id/ll_diagnosis"
+        android:background="@color/grey_line">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="1型糖尿病" />
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="2型糖尿病" />
+
+
+            </LinearLayout>
+
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="LADA" />
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="妊娠糖尿病" />
+
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="糖耐量异常" />
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="糖尿病肾病III期" />
+
+            </LinearLayout>
+
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="糖尿病肾病IV期" />
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="糖尿病肾病V期" />
+
+            </LinearLayout>
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="CKD3级" />
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="CKD4级a" />
+
+            </LinearLayout>
+
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="CKD4级b" />
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="CKD5级" />
+
+            </LinearLayout>
+
+
+            <View style="@style/LineHorizontal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp"
+                android:paddingTop="10dp">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="终末期肾病" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/ll_diagnosis_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/btn_common_bg"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:paddingTop="10dp"
+            android:text="确定"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/titleTextSize" />
+
+    </LinearLayout>
+</RelativeLayout>

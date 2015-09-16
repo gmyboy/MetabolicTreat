@@ -95,6 +95,7 @@ public class SysApplication extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
+//        CrashWoodpecker.fly().to(this);
 //		ErrorHandler crashHandler = ErrorHandler.getInstance();
 //		crashHandler.init(getApplicationContext());
     }

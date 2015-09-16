@@ -27,6 +27,7 @@ public abstract class BaseActivity extends AppCompatActivity {
      * 是否注册事件
      */
     private boolean doRegisterEvent = false;
+    private boolean doRegisterStickyEvent = false;
     public Context mContext = this;
     public Toolbar mToolbar;
     private Toast toast;
@@ -40,6 +41,8 @@ public abstract class BaseActivity extends AppCompatActivity {
         SysApplication.getInstance().addActivity(this);
         if (doRegisterEvent)
             EventBus.getDefault().register(mContext);
+        if (doRegisterStickyEvent)
+            EventBus.getDefault().registerSticky(mContext);
         if (isTwiceExit)
             toast = Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT);
         setLayout();
@@ -62,7 +65,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        if (doRegisterEvent)
+        if (doRegisterEvent || doRegisterStickyEvent)
             EventBus.getDefault().unregister(mContext);
         super.onDestroy();
     }
@@ -86,6 +89,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         this.doRegisterEvent = doRegisterEvent;
     }
 
+    public void setRegisterStickyEvent(boolean doRegisterStickyEvent) {
+        this.doRegisterStickyEvent = doRegisterStickyEvent;
+    }
     /**
      * 设置是否可以按两次退出
      *

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:background="@color/main_light"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="血糖监测" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="@string/header_physical_input" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="@string/header_physical_cankao" />
+</LinearLayout>

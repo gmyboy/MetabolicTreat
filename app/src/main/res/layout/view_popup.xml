@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_popup"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="15dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+
+    <Button
+        android:id="@+id/btn_popup1"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_common_bg"
+        android:text="初诊"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/titleTextSize" />
+
+    <Button
+        android:id="@+id/btn_popup2"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_common_bg"
+        android:text="复诊"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/titleTextSize" />
+
+    <Button
+        android:id="@+id/btn_popup3"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_common_bg"
+        android:text="病历编辑"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/titleTextSize" />
+
+    <Button
+        android:id="@+id/btn_popup4"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/btn_common_bg"
+        android:text="随访"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/titleTextSize" />
+</LinearLayout>
