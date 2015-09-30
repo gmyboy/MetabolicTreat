@@ -44,19 +44,21 @@ public class MutiFetcher {
                 MessageEvent messageEvent = new MessageEvent();
                 //关闭dialog
                 if (isShowing) mDialog.dismiss();
+
+                messageEvent.what = msg.getData().getString("WHAT");
+
                 if (!TextUtils.isEmpty(json) && !json.equals("-99")) {
                     try {
                         JSONObject jb = new JSONObject(json);
                         messageEvent.setCode(jb.getString("code"));//200
+//                        if (jb.getString("code").equals("200"))
                         messageEvent.setObjects(GsonUtil.gsonToList(jb.getString("info"), cls));
-                        messageEvent.what = msg.getData().getString("WHAT");
                     } catch (Exception e) {
-//                        GLog.e(e.getMessage());
-                        messageEvent.setCode("300");//解析出错
+                        GLog.e(e.getMessage());
                         EventBus.getDefault().post(messageEvent);
                     }
                 } else {
-                    messageEvent.setCode("400");//返回为空
+                    messageEvent.setCode("999");//返回为空
                 }
                 EventBus.getDefault().post(messageEvent);
             }

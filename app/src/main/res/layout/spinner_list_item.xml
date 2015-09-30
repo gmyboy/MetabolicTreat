@@ -10,4 +10,4 @@
     android:paddingBottom="@dimen/one_and_a_half_grid_unit"
     android:paddingTop="@dimen/one_and_a_half_grid_unit"
     android:singleLine="true"
-    android:textSize="@dimen/headerTextSize" />
+    android:textSize="18sp" />

@@ -30,4 +30,89 @@
         <item>眼底镜</item>
         <item>其他</item>
     </string-array>
+
+    <string-array name="NianYue">
+        <item>年</item>
+        <item>月</item>
+    </string-array>
+    <string-array name="DMxgzy">
+        <item>无</item>
+        <item>左</item>
+        <item>右</item>
+        <item>双侧</item>
+    </string-array>
+    <string-array name="DMjielv">
+        <item>齐</item>
+        <item>不齐</item>
+        <item>早搏</item>
+    </string-array>
+    <string-array name="DMtuyan">
+        <item>齐</item>
+        <item>不齐</item>
+        <item>早搏</item>
+    </string-array>
+    <string-array name="DMjiejie">
+        <item>有增大</item>
+        <item>大小无变化</item>
+    </string-array>
+
+    <string-array name="Pcosduonang">
+        <item>无</item>
+        <item>有</item>
+        <item>不详</item>
+    </string-array>
+
+    <string-array name="Tnbpast_guanxinbing">
+        <item>无</item>
+        <item>PCI术后</item>
+        <item>心梗</item>
+        <item>不详</item>
+    </string-array>
+
+    <string-array name="Tnbpast_naozhongzu">
+        <item>无</item>
+        <item>脑梗</item>
+        <item>脑出血</item>
+        <item>不详</item>
+    </string-array>
+
+    <string-array name="medic_ywzl">
+        <item>降糖药</item>
+        <item>降脂药</item>
+        <item>降压药</item>
+        <item>甲状腺药物</item>
+        <item>保肝药物</item>
+        <item>骨质疏松药物</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="medic_hxm">
+        <item>格列齐特</item>
+        <item>格列吡嗪控释片</item>
+    </string-array>
+
+    <string-array name="medic_mqyy">
+        <item>瑞易宁</item>
+        <item>达美康</item>
+    </string-array>
+
+    <string-array name="medic_gg">
+        <item>30mg/片</item>
+        <item>5mg/片</item>
+    </string-array>
+
+    <string-array name="medic_cs">
+        <item>3次/日</item>
+        <item>10次/日</item>
+    </string-array>
+
+    <string-array name="medic_ff">
+        <item>餐前</item>
+        <item>睡前</item>
+    </string-array>
+
+    <string-array name="medic_blfy">
+        <item>头晕</item>
+        <item>低血糖反应</item>
+    </string-array>
 </resources>

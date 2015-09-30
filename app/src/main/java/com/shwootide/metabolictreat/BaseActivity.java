@@ -7,6 +7,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
+import com.shwootide.metabolictreat.adapter.MainAdapter;
 import com.shwootide.metabolictreat.app.SysApplication;
 
 import butterknife.ButterKnife;
@@ -40,9 +41,9 @@ public abstract class BaseActivity extends AppCompatActivity {
          */
         SysApplication.getInstance().addActivity(this);
         if (doRegisterEvent)
-            EventBus.getDefault().register(mContext);
+            EventBus.getDefault().register(this);
         if (doRegisterStickyEvent)
-            EventBus.getDefault().registerSticky(mContext);
+            EventBus.getDefault().registerSticky(this);
         if (isTwiceExit)
             toast = Toast.makeText(this, "再按一次退出程序", Toast.LENGTH_SHORT);
         setLayout();
@@ -92,6 +93,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     public void setRegisterStickyEvent(boolean doRegisterStickyEvent) {
         this.doRegisterStickyEvent = doRegisterStickyEvent;
     }
+
     /**
      * 设置是否可以按两次退出
      *

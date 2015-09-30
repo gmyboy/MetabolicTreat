@@ -21,28 +21,14 @@ import butterknife.ButterKnife;
  * Created by GMY on 2015/8/25 09:20.
  * Contact me via email gmyboy@qq.com.
  */
-public class RecordChooseAdapter extends BaseAdapter {
-    private List<Record> datas = new ArrayList<>();
-    private Context context;
+public class RecordChooseAdapter extends BaseCommAdapter<Record> {
 
+    public RecordChooseAdapter(Context context, List<Record> datas) {
+        super(context, datas);
+    }
 
     public RecordChooseAdapter(Context context) {
-        this.context = context;
-    }
-
-    @Override
-    public int getCount() {
-        return datas.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return datas.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
+        super(context);
     }
 
     @Override
@@ -52,11 +38,11 @@ public class RecordChooseAdapter extends BaseAdapter {
         if (convertView != null) {
             holder = (ViewHolder) convertView.getTag();
         } else {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_recordchoose, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_recordchoose, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         }
-        record = datas.get(position);
+        record = getDatas().get(position);
 //        holder.tvItemDiagnosistime.setText(record.getDiagnosisTime());
 //        holder.tvItemDiagnosiscount.setText(record.getDiagnosisCount());
 //        holder.tvItemDoctor.setText(record.getDoctor());

@@ -14,7 +14,7 @@
         android:layout_width="200dp"
         android:layout_height="50dp"
         android:layout_gravity="center"
-        android:background="@drawable/btn_common_bg"
+        android:background="@drawable/btn_item_illness_bg"
         android:text="初诊"
         android:textColor="@android:color/white"
         android:textSize="@dimen/titleTextSize" />
@@ -25,7 +25,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="@drawable/btn_common_bg"
+        android:background="@drawable/btn_item_illness_bg"
         android:text="复诊"
         android:textColor="@android:color/white"
         android:textSize="@dimen/titleTextSize" />
@@ -36,7 +36,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="@drawable/btn_common_bg"
+        android:background="@drawable/btn_item_illness_bg"
         android:text="病历编辑"
         android:textColor="@android:color/white"
         android:textSize="@dimen/titleTextSize" />
@@ -47,7 +47,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
-        android:background="@drawable/btn_common_bg"
+        android:background="@drawable/btn_item_illness_bg"
         android:text="随访"
         android:textColor="@android:color/white"
         android:textSize="@dimen/titleTextSize" />

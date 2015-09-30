@@ -20,6 +20,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 /**
+ * 辅助检查图片适配器
  * Created by GMY on 2015/9/10 17:18.
  * Contact me via email gmyboy@qq.com.
  */

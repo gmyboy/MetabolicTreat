@@ -21,37 +21,14 @@ import butterknife.ButterKnife;
  * Created by GMY on 2015/8/25 09:36.
  * Contact me via email gmyboy@qq.com.
  */
-public class MainAdapter extends BaseAdapter {
-    private List<Record> datas = new ArrayList<>();
-    private Context context;
-
+public class MainAdapter extends BaseCommAdapter<Record> {
 
     public MainAdapter(Context context, List<Record> datas) {
-        this.context = context;
-        this.datas = datas;
+        super(context, datas);
     }
 
-    /**
-     * 清除所有已有的数据
-     */
-    public void clear() {
-        datas.clear();
-        notifyDataSetChanged();
-    }
-
-    @Override
-    public int getCount() {
-        return datas.size();
-    }
-
-    @Override
-    public Object getItem(int position) {
-        return datas.get(position);
-    }
-
-    @Override
-    public long getItemId(int position) {
-        return position;
+    public MainAdapter(Context context) {
+        super(context);
     }
 
     @Override
@@ -61,11 +38,11 @@ public class MainAdapter extends BaseAdapter {
         if (convertView != null) {
             holder = (ViewHolder) convertView.getTag();
         } else {
-            convertView = LayoutInflater.from(context).inflate(R.layout.item_main, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_main, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         }
-        record = datas.get(position);
+        record = getDatas().get(position);
         holder.tvItemMainRecordID.setText(String.valueOf(record.getMedicalRecordNo()));
         holder.tvItemMainBirthday.setText(record.getBirth());
         holder.tvItemMainName.setText(record.getName());

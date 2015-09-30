@@ -61,14 +61,11 @@ public class MainActivity extends BaseActivity {
         String sex = sgMainSex.getCheckedRadioButtonId() == R.id.rb_main_man ? "男" : "女";
         String nian = tvMainNian.getText().toString().trim();
         String yue = tvMainYue.getText().toString().trim();
-        if (!TextUtils.isEmpty(yue) && TextUtils.isEmpty(nian)) {
-            showToast("必须先指定年份");
-            return;
-        }
+
         Map<String, String> params = new WeakHashMap<>();
         params.put("name", name);
         params.put("sex", sex);
-        params.put("birth", TextUtils.isEmpty(yue) ? nian : nian + "年" + yue + "月");
+        params.put("birth", TextUtils.isEmpty(nian) ? (TextUtils.isEmpty(yue) ? "" : yue + "月") : (TextUtils.isEmpty(yue) ? nian + "年" : nian + "年" + yue + "月"));
         new MutiFetcher(Record[].class).fetch(mContext, "PatientQuery", "正在查询...", params);
     }
 
@@ -98,15 +95,13 @@ public class MainActivity extends BaseActivity {
     public void onEventMainThread(MessageEvent event) {
         if (event.what.equals("PatientQuery")) {
             if (event.getCode().equals("200")) {
-                if (event.getObjects() != null) {
-                    adapter = new MainAdapter(mContext, event.getObjects());
-                    lvMain.setAdapter(adapter);
-                } else {
-                    showToast("空空如也");
-                }
-            } else if (event.getCode().equals("300")) {
-                if (adapter != null) adapter.clear();
+                adapter = new MainAdapter(mContext, event.getObjects());
+                lvMain.setAdapter(adapter);
+            } else {
+                showToast("空空如也");
+                adapter = new MainAdapter(mContext);
             }
+
         }
     }
 

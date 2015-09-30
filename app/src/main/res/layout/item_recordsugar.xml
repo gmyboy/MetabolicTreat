@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingBottom="10dp"
+    android:paddingTop="10dp"
+    android:weightSum="3">
+
+    <TextView
+        android:id="@+id/tv_item_sugar_name"
+        style="@style/ItemRecordTextView"
+        android:layout_weight="1"
+        android:text="空腹血糖" />
+
+    <LinearLayout
+        style="@style/ItemEditLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/et_item_sugar_data"
+            style="@style/ItemLayoutEdit"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tv_item_sugar_danwei"
+            style="@style/ItemMain"
+            android:layout_gravity="center_vertical|right"
+            android:layout_weight="1"
+            android:visibility="gone"
+            android:text="mmol/L" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_item_sugar_refrence"
+        style="@style/ItemRecordTextView"
+        android:layout_weight="1"
+        android:text="空腹血糖" />
+</LinearLayout>

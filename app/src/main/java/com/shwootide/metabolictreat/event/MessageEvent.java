@@ -22,6 +22,11 @@ public class MessageEvent<T> {
         this.meta = meta;
     }
 
+    public MessageEvent(String what, String message) {
+        this.what = what;
+        this.message = message;
+    }
+
     public int getMeta() {
         return meta;
     }

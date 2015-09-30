@@ -26,5 +26,12 @@ public class Config {
     public static final String BASE_PATH = Environment.getExternalStorageDirectory().toString() + "/metabolictreat";
     /*   拍照图片保存路径*/
     public static final String IMG_PATH = BASE_PATH + "/img/";
-
+    /**
+     * 提交新的病史信息时，对不同的病史的标志位
+     */
+    public static final String TYPE_RECORD_NOW = "01";
+    public static final String TYPE_RECORD_PAST = "04";
+    public static final String TYPE_RECORD_FAMILY = "05";
+    public static final String TYPE_RECORD_PERSONAL = "06";
+    public static final String TYPE_DIAGNOSIS = "10";
 }

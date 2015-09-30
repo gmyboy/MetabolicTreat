@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="50dip"
     android:background="@color/main_light"
-    android:weightSum="6"
     android:orientation="horizontal">
 
     <TextView
@@ -13,7 +12,7 @@
 
     <TextView
         style="@style/HeaderTextView"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:text="@string/header_physical_input" />
 
     <TextView
@@ -22,6 +21,6 @@
         android:text="@string/header_physical_index" />
     <TextView
         style="@style/HeaderTextView"
-        android:layout_weight="2"
+        android:layout_weight="1"
         android:text="@string/header_physical_input" />
 </LinearLayout>

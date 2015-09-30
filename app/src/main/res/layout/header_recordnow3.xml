@@ -8,7 +8,7 @@
     <TextView
         style="@style/HeaderTextView"
         android:layout_weight="3"
-        android:text="药名" />
+        android:text="目前用药" />
 
     <TextView
         style="@style/HeaderTextView"
@@ -27,11 +27,11 @@
 
     <TextView
         style="@style/HeaderTextView"
-        android:layout_weight="5"
+        android:layout_weight="3"
         android:text="使用方法" />
 
     <TextView
         style="@style/HeaderTextView"
-        android:layout_weight="4"
+        android:layout_weight="5"
         android:text="注意事项" />
 </LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_other"
+        style="@style/EditTextStyle"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:hint="其他"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tv_full_doctor_tip"
+        style="@style/TitleTextView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="70dp"
+        android:layout_toRightOf="@+id/et_other"
+        android:text="医生:" />
+
+    <TextView
+        android:id="@+id/tv_full_doctor"
+        style="@style/TitleTextView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dip"
+        android:layout_toRightOf="@+id/tv_full_doctor_tip"
+        android:gravity="center"
+        android:text="常宝" />
+    <TextView
+        android:id="@+id/tv_full_bingren_tip"
+        style="@style/TitleTextView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/tv_full_doctor"
+        android:text="患者:" />
+
+    <TextView
+        android:id="@+id/tv_full_bingren"
+        style="@style/TitleTextView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dip"
+        android:layout_toRightOf="@+id/tv_full_bingren_tip"
+        android:gravity="center"
+        android:text="常宝" />
+    <Button
+        android:id="@+id/btn_fragment_certain"
+        style="@style/BottomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="确认" />
+
+    <Button
+        android:id="@+id/btn_fragment_back"
+        style="@style/BottomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/btn_fragment_certain"
+        android:text="返回" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_fragment_certain"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="5dp"
+        android:background="@color/grey_line"
+        android:orientation="vertical">
+
+        <!--<include layout="@layout/header_labcheck" />-->
+
+        <se.emilsjolander.stickylistheaders.StickyListHeadersListView
+            android:id="@+id/slhlv_labcheck"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

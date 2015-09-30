@@ -1,140 +1,96 @@
 package com.shwootide.metabolictreat.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.LinearLayout;
 
+import com.shwootide.metabolictreat.DiagnosisActivity;
 import com.shwootide.metabolictreat.R;
+import com.shwootide.metabolictreat.adapter.RecordnowAdapter;
+import com.shwootide.metabolictreat.entity.MHistory_Now;
 import com.shwootide.metabolictreat.event.MessageEvent;
+import com.shwootide.metabolictreat.network.MutiFetcher;
+import com.shwootide.metabolictreat.utils.CommonUtil;
+import com.shwootide.metabolictreat.utils.PreferenceUtil;
 import com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner;
 
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import de.greenrobot.event.EventBus;
 
 /**
  * 现病史
  * Created by GMY on 2015/9/9 13:18.
  * Contact me via email gmyboy@qq.com.
  */
-public class RecordNowFragment extends Fragment {
+public class RecordNowFragment extends BaseFragment {
 
-    @Bind(R.id.ll_now1)
-    LinearLayout llNow1;
-    @Bind(R.id.ll_now2)
-    LinearLayout llNow2;
-    @Bind(R.id.ll_now3)
-    LinearLayout llNow3;
+    private RecordnowAdapter adapter;
+    private String illnessid = "";
 
-    @Bind(R.id.spinner_now1)
-    NiceSpinner spinnerNow1;
-    @Bind(R.id.spinner_now2)
-    NiceSpinner spinnerNow2;
-    @Bind(R.id.spinner_now3)
-    NiceSpinner spinnerNow3;
-    @Bind(R.id.ns_recordnow)
-    NiceSpinner nsRecordnow;
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        EventBus.getDefault().register(this);
+    public static RecordNowFragment newInstance(String illnessid) {
+        Bundle args = new Bundle();
+        args.putString("IllnessID", illnessid);
+        RecordNowFragment fragment = new RecordNowFragment();
+        fragment.setArguments(args);
+        return fragment;
     }
 
     @Override
-    public void onStop() {
-        EventBus.getDefault().unregister(this);
-        super.onStop();
+    public int bindViewById() {
+        switch (illnessid) {
+            case "1"://糖尿病
+                return R.layout.frag_recordnow1;
+            case "2"://dm
+                return R.layout.frag_recordnow2;
+            case "3"://pcos
+                return R.layout.frag_recordnow3;
+            case "9000"://other
+                return R.layout.frag_recordnow4;
+            default:
+                return R.layout.frag_recordnow1;
+        }
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.frag_recordnow, null);
-        ButterKnife.bind(this, view);
-        List<String> dataset = new LinkedList<>(Arrays.asList("佳", "不佳", "失眠"));
-        nsRecordnow.attachDataSource(dataset);
-        List<String> dataset1 = new LinkedList<>(Arrays.asList("降糖类", "降压类", "降脂类"));
-        spinnerNow1.attachDataSource(dataset1);
-        spinnerNow1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                List<String> dataset2;
-                switch (position) {
-                    case 0:
-                        dataset2 = new LinkedList<>(Arrays.asList("格列吡嗪", "格列吡嗪控释片", "格列本脲"));
-                        spinnerNow2.attachDataSource(dataset2);
-                        spinnerNow2.showDropDown();
-                        break;
-                    case 1:
-                        dataset2 = new LinkedList<>(Arrays.asList("降压宝"));
-                        spinnerNow2.attachDataSource(dataset2);
-                        spinnerNow2.showDropDown();
-                        break;
-                    case 2:
-                        dataset2 = new LinkedList<>(Arrays.asList("降脂宝"));
-                        spinnerNow2.attachDataSource(dataset2);
-                        spinnerNow2.showDropDown();
-                        break;
-                }
-                spinnerNow2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-                    @Override
-                    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                        List<String> dataset3 = new LinkedList<>(Arrays.asList("格列本脲", "格列波脲", "瑞格列奈", "米格列奈", "阿格列汀"));
-                        spinnerNow3.attachDataSource(dataset3);
-                        spinnerNow3.showDropDown();
-                    }
-
-                    @Override
-                    public void onNothingSelected(AdapterView<?> parent) {
-
-                    }
-                });
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
-        return view;
+    public void certainSubmit() {
+        Intent intent = new Intent(getActivity(), DiagnosisActivity.class);
+        intent.putExtra("IllnessID", illnessid);
+        startActivity(intent);
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        illnessid = getArguments().getString("IllnessID");
+    }
+
+    @Override
     public void onEventMainThread(MessageEvent event) {
-        if (event.what.equals("RecordNowFragment")) {
-            switch (event.getMeta()) {
-                case 0:
-                    llNow1.setVisibility(View.VISIBLE);
-                    llNow2.setVisibility(View.GONE);
-                    llNow3.setVisibility(View.GONE);
-                    break;
-                case 1:
-                    llNow2.setVisibility(View.VISIBLE);
-                    llNow1.setVisibility(View.GONE);
-                    llNow3.setVisibility(View.GONE);
-                    break;
-                case 2:
-                    llNow3.setVisibility(View.VISIBLE);
-                    llNow1.setVisibility(View.GONE);
-                    llNow2.setVisibility(View.GONE);
-                    break;
+        if (event.what.equals("GetAllIllnessMHistoryType01")) {
+            adapter = new RecordnowAdapter(getActivity(), event.getObjects(), PreferenceUtil.getUser(getActivity(), "UserInfo"));
+//            lvRecordnow1.setAdapter(adapter);
+            mHasLoadedOnce = true;
+        } else if (event.what.equals("AddMedicalRecordHistoryAll")) {
+            if (event.getCode().equals("200")) {
+                CommonUtil.showToast(getActivity(), "提交成功");
+            } else {
+                CommonUtil.showToast(getActivity(), "提交失败");
             }
         }
     }
 
-
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        ButterKnife.unbind(this);
+    public void lazyLoad() {
+        Map<String, String> params = new WeakHashMap<>();
+        params.put("IllnessID", illnessid);
+//        new MutiFetcher(MHistory_Now[].class).fetch(getActivity(), "GetAllIllnessMHistoryType01", "正在加载...", params);
     }
 }

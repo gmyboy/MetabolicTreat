@@ -22,10 +22,14 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.PopupWindow;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.shwootide.metabolictreat.R;
+import com.shwootide.metabolictreat.utils.GLog;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -48,21 +52,23 @@ public class NiceSpinner extends TextView {
     private AdapterView.OnItemClickListener mOnItemClickListener;
     private AdapterView.OnItemSelectedListener mOnItemSelectedListener;
     private boolean mHideArrow;
+    private CharSequence[] mDefaultData;
+    private int mDefaultDataId = 0;
 
     @SuppressWarnings("ConstantConditions")
     public NiceSpinner(Context context) {
         super(context);
-        init(context, null);
+        init(context, null, 0);
     }
 
     public NiceSpinner(Context context, AttributeSet attrs) {
         super(context, attrs);
-        init(context, attrs);
+        init(context, attrs, 0);
     }
 
     public NiceSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        init(context, attrs);
+        init(context, attrs, defStyleAttr);
     }
 
     @Override
@@ -109,14 +115,13 @@ public class NiceSpinner extends TextView {
         super.onRestoreInstanceState(savedState);
     }
 
-    private void init(Context context, AttributeSet attrs) {
+    private void init(Context context, AttributeSet attrs, int defStyleAttr) {
         Resources resources = getResources();
-        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NiceSpinner);
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.NiceSpinner, defStyleAttr, 0);
         int defaultPadding = resources.getDimensionPixelSize(R.dimen.one_and_a_half_grid_unit);
 
         setGravity(Gravity.CENTER_VERTICAL | Gravity.CENTER);
-        setPadding(resources.getDimensionPixelSize(R.dimen.three_grid_unit), defaultPadding, defaultPadding,
-            defaultPadding);
+        setPadding(resources.getDimensionPixelSize(R.dimen.three_grid_unit), defaultPadding, defaultPadding, defaultPadding);
         setClickable(true);
         setBackgroundResource(R.drawable.selector);
 
@@ -183,7 +188,14 @@ public class NiceSpinner extends TextView {
             }
             setCompoundDrawablesWithIntrinsicBounds(null, null, mDrawable, null);
         }
-
+        mDefaultDataId = typedArray.getResourceId(R.styleable.NiceSpinner_niceEntries, R.array.NianYue);
+        if (mDefaultDataId != 0) {
+            mDefaultData = context.getResources().getStringArray(mDefaultDataId);
+            if (mDefaultData != null) {
+                GLog.e("   sdfsf   " + mDefaultData.length);
+                attachDataSource(Arrays.asList(mDefaultData));
+            }
+        }
         typedArray.recycle();
     }
 
@@ -193,7 +205,7 @@ public class NiceSpinner extends TextView {
 
     /**
      * Set the default spinner item using its index
-     * 
+     *
      * @param position the item's position
      */
     public void setSelectedIndex(int position) {

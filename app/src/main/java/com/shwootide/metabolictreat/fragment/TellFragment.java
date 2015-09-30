@@ -22,7 +22,7 @@ import butterknife.ButterKnife;
 import de.greenrobot.event.EventBus;
 
 /**
- * 体格检查
+ * 医嘱
  * Created by GMY on 2015/8/25 09:36.
  * Contact me via email gmyboy@qq.com.
  */

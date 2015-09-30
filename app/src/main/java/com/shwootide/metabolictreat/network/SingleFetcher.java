@@ -9,6 +9,8 @@ import android.text.TextUtils;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.shwootide.metabolictreat.entity.MHistory;
+import com.shwootide.metabolictreat.entity.MedicalRecord;
 import com.shwootide.metabolictreat.entity.Record;
 import com.shwootide.metabolictreat.entity.UserInfo;
 import com.shwootide.metabolictreat.event.MessageEvent;
@@ -49,18 +51,18 @@ public class SingleFetcher {
                 MessageEvent messageEvent = new MessageEvent();
                 //关闭dialog
                 if (isShowing) mDialog.dismiss();
-                if (!TextUtils.isEmpty(json)) {
+                messageEvent.what = msg.getData().getString("WHAT");
+                if (!TextUtils.isEmpty(json) && !json.equals("-99")) {
                     try {
                         JSONObject jb = new JSONObject(json);
                         messageEvent.setCode(jb.getString("code"));//200
                         messageEvent.setObject(GsonUtil.gsonToBean(jb.getString("info"), cls));
-                        messageEvent.what = msg.getData().getString("WHAT");
                     } catch (Exception e) {
                         GLog.e(e.getMessage());
-                        messageEvent.setCode("300");//解析出错
+                        EventBus.getDefault().post(messageEvent);
                     }
                 } else {
-                    messageEvent.setCode("400");//返回为空
+                    messageEvent.setCode("999");//返回为空
                 }
                 EventBus.getDefault().post(messageEvent);
             }
@@ -69,7 +71,7 @@ public class SingleFetcher {
 
 
     /**
-     * 取到返回多层数据
+     * 取到返回单层数据
      *
      * @param context  上下文
      * @param function 请求函数
@@ -98,7 +100,7 @@ public class SingleFetcher {
     }
 
     /**
-     * 添加就诊基本信息主表
+     * 添加就诊基本信息表
      *
      * @param context
      * @param message
@@ -120,6 +122,97 @@ public class SingleFetcher {
                     Bundle bundle = new Bundle();
                     bundle.putString("JSON", json);
                     bundle.putString("WHAT", "AddPersonInfo");
+                    msg.setData(bundle);
+                    handler.sendMessage(msg);
+                }
+            }.start();
+        }
+    }
+
+    /**
+     * 修改就诊基本信息表
+     *
+     * @param context
+     * @param message
+     * @param record
+     */
+    public void updatePersonInfo(Context context, String message, final Record record) {
+        if (Network.isAvailable(context)) {
+            if (!TextUtils.isEmpty(message)) {
+                mDialog = CustomProgressDialog.show(context, message);
+                isShowing = true;
+            }
+            new Thread() {
+                @Override
+                public void run() {
+                    Map<String, String> params = new WeakHashMap<>();
+                    params.put("InputData", GsonUtil.gsonString(record));
+                    params.put("id", record.getId());
+                    String json = post("UpdatePersonInfo", params);
+                    Message msg = new Message();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("JSON", json);
+                    bundle.putString("WHAT", "UpdatePersonInfo");
+                    msg.setData(bundle);
+                    handler.sendMessage(msg);
+                }
+            }.start();
+        }
+    }
+
+    /**
+     * 添加一条就诊基本信息主表
+     *
+     * @param context
+     * @param message
+     * @param medicalRecord
+     */
+    public void addMedicalRecord(Context context, String message, final MedicalRecord medicalRecord) {
+        if (Network.isAvailable(context)) {
+            if (!TextUtils.isEmpty(message)) {
+                mDialog = CustomProgressDialog.show(context, message);
+                isShowing = true;
+            }
+            new Thread() {
+                @Override
+                public void run() {
+                    Map<String, String> params = new WeakHashMap<>();
+                    params.put("InputData", GsonUtil.gsonString(medicalRecord));
+                    String json = post("AddMedicalRecord", params);
+                    Message msg = new Message();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("JSON", json);
+                    bundle.putString("WHAT", "AddMedicalRecord");
+                    msg.setData(bundle);
+                    handler.sendMessage(msg);
+                }
+            }.start();
+        }
+    }
+
+    /**
+     * 批量添加就诊病史
+     *
+     * @param context
+     * @param message
+     * @param mHistories
+     */
+    public void addMedicalRecordHistoryAll(Context context, String message, final List<MHistory> mHistories) {
+        if (Network.isAvailable(context)) {
+            if (!TextUtils.isEmpty(message)) {
+                mDialog = CustomProgressDialog.show(context, message);
+                isShowing = true;
+            }
+            new Thread() {
+                @Override
+                public void run() {
+                    Map<String, String> params = new WeakHashMap<>();
+                    params.put("InputData", GsonUtil.gsonString(mHistories));
+                    String json = post("AddMedicalRecordHistoryAll", params);
+                    Message msg = new Message();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("JSON", json);
+                    bundle.putString("WHAT", "AddMedicalRecordHistoryAll");
                     msg.setData(bundle);
                     handler.sendMessage(msg);
                 }

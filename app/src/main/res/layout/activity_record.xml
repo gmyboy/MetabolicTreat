@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@mipmap/main_bg"
     android:orientation="vertical">
 
     <ImageView
@@ -20,11 +18,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="@dimen/marginbottom"
         android:layout_marginLeft="@dimen/marginleft"
-        android:text="带*为必填项"
+        android:text="*为必填项"
         android:textColor="@color/red"
-        android:textSize="@dimen/titleTextSize" />
+        android:textSize="16sp" />
 
     <View
         android:id="@+id/v_record"
@@ -46,53 +44,36 @@
         android:textColor="@android:color/white"
         android:textSize="@dimen/logintextsize" />
 
-    <LinearLayout
-        android:id="@+id/ll_record"
+
+    <Button
+        android:id="@+id/btn_reocrd_certain"
+        style="@style/BottomBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_marginBottom="@dimen/marginbottom"
         android:layout_marginRight="127dp"
-        android:orientation="horizontal">
+        android:text="确认" />
 
-        <Button
-            android:id="@+id/btn_reocrd_certain"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_common_bg"
-            android:paddingBottom="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="10dp"
-            android:text="确认"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/titleTextSize" />
-
-        <Button
-            android:id="@+id/btn_record_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="15dp"
-            android:background="@drawable/btn_common_bg"
-            android:paddingBottom="10dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:paddingTop="10dp"
-            android:text="返回"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/titleTextSize" />
-    </LinearLayout>
+    <Button
+        android:id="@+id/btn_record_back"
+        style="@style/BottomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/marginbottom"
+        android:layout_marginRight="20dp"
+        android:layout_toLeftOf="@+id/btn_reocrd_certain"
+        android:text="返回" />
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/ll_record"
+        android:layout_above="@+id/btn_reocrd_certain"
         android:layout_below="@+id/btn_record"
         android:layout_marginLeft="@dimen/marginleft"
         android:layout_marginRight="@dimen/marginright"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:orientation="horizontal">
 
         <LinearLayout
@@ -105,7 +86,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:orientation="horizontal">
 
                 <TextView style="@style/StarTextView" />
@@ -122,7 +103,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
 
                 <TextView style="@style/StarTextView" />
@@ -139,7 +120,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
 
                 <TextView style="@style/StarTextView" />
@@ -187,7 +168,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="50dp"
                 android:orientation="horizontal">
 
                 <TextView style="@style/StarTextView" />
@@ -205,7 +186,7 @@
 
                     <EditText
                         android:id="@+id/tv_main_nian"
-                        style="@style/EditTextStyle"
+                        style="@style/MainInputText"
                         android:layout_width="100dp"
                         android:layout_height="wrap_content"
                         android:inputType="number"
@@ -220,7 +201,7 @@
 
                     <EditText
                         android:id="@+id/tv_main_yue"
-                        style="@style/EditTextStyle"
+                        style="@style/MainInputText"
                         android:layout_width="70dp"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dip"
@@ -249,8 +230,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal">
 
                 <TextView
                     style="@style/TitleTextView"
@@ -264,8 +245,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
 
                 <TextView
                     style="@style/TitleTextView"
@@ -279,8 +260,8 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="40dp">
+                android:layout_marginTop="50dp"
+                android:orientation="horizontal">
 
                 <TextView
                     style="@style/TitleTextView"

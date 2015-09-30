@@ -8,10 +8,13 @@
     <dimen name="headerTextSize">20sp</dimen>
     <dimen name="marginleft">70dp</dimen>
     <dimen name="marginright">70dp</dimen>
-    <dimen name="marginbottom">100dp</dimen>
+    <dimen name="marginbottom">30dp</dimen>
     <dimen name="itemheight">60dp</dimen>
     <!--nicespinner-->
-    <dimen name="three_grid_unit">24dp</dimen>
-    <dimen name="one_and_a_half_grid_unit">12dp</dimen>
+    <dimen name="three_grid_unit">20dp</dimen>
+    <dimen name="one_and_a_half_grid_unit">8dp</dimen>
     <dimen name="logintextsize">30sp</dimen>
+    <dimen name="spinnerTextSize">18sp</dimen>
+    <dimen name="horizontal_lay">40dp</dimen>
+    <dimen name="horizontal_lay_smarl">20dp</dimen>
 </resources>

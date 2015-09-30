@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
@@ -109,23 +110,13 @@
 
             <TextView
                 style="@style/ContentTextView"
-                android:layout_weight="5"
-                android:text="降糖类" />
-
-            <TextView
-                style="@style/ContentTextView"
-                android:layout_weight="4"
-                android:text="格列吡嗪" />
-
-            <TextView
-                style="@style/ContentTextView"
-                android:layout_weight="4"
-                android:text="降糖药" />
-
-            <TextView
-                style="@style/ContentTextView"
                 android:layout_weight="3"
-                android:text="50mg/片(粒)" />
+                android:text="达美康" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="30mg/片" />
 
             <TextView
                 style="@style/ContentTextView"
@@ -134,8 +125,18 @@
 
             <TextView
                 style="@style/ContentTextView"
-                android:layout_weight="4"
+                android:layout_weight="3"
                 android:text="3次/日" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="5"
+                android:text="餐前" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="头晕" />
 
         </LinearLayout>
 
@@ -148,23 +149,13 @@
 
             <TextView
                 style="@style/ContentTextView"
-                android:layout_weight="5"
-                android:text="降糖类" />
-
-            <TextView
-                style="@style/ContentTextView"
-                android:layout_weight="4"
-                android:text="格列吡嗪" />
-
-            <TextView
-                style="@style/ContentTextView"
-                android:layout_weight="4"
-                android:text="降糖药" />
-
-            <TextView
-                style="@style/ContentTextView"
                 android:layout_weight="3"
-                android:text="50mg/片(粒)" />
+                android:text="达美康" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="30mg/片" />
 
             <TextView
                 style="@style/ContentTextView"
@@ -173,8 +164,18 @@
 
             <TextView
                 style="@style/ContentTextView"
-                android:layout_weight="4"
+                android:layout_weight="3"
                 android:text="3次/日" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="5"
+                android:text="餐前" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="头晕" />
 
         </LinearLayout>
 
@@ -187,23 +188,13 @@
 
             <TextView
                 style="@style/ContentTextView"
-                android:layout_weight="5"
-                android:text="降糖类" />
-
-            <TextView
-                style="@style/ContentTextView"
-                android:layout_weight="4"
-                android:text="格列吡嗪" />
-
-            <TextView
-                style="@style/ContentTextView"
-                android:layout_weight="4"
-                android:text="降糖药" />
-
-            <TextView
-                style="@style/ContentTextView"
                 android:layout_weight="3"
-                android:text="50mg/片(粒)" />
+                android:text="达美康" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="30mg/片" />
 
             <TextView
                 style="@style/ContentTextView"
@@ -212,8 +203,18 @@
 
             <TextView
                 style="@style/ContentTextView"
-                android:layout_weight="4"
+                android:layout_weight="3"
                 android:text="3次/日" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="5"
+                android:text="餐前" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="头晕" />
 
         </LinearLayout>
 
@@ -226,23 +227,13 @@
 
             <TextView
                 style="@style/ContentTextView"
-                android:layout_weight="5"
-                android:text="降糖类" />
-
-            <TextView
-                style="@style/ContentTextView"
-                android:layout_weight="4"
-                android:text="格列吡嗪" />
-
-            <TextView
-                style="@style/ContentTextView"
-                android:layout_weight="4"
-                android:text="降糖药" />
-
-            <TextView
-                style="@style/ContentTextView"
                 android:layout_weight="3"
-                android:text="50mg/片(粒)" />
+                android:text="达美康" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="30mg/片" />
 
             <TextView
                 style="@style/ContentTextView"
@@ -251,8 +242,18 @@
 
             <TextView
                 style="@style/ContentTextView"
-                android:layout_weight="4"
+                android:layout_weight="3"
                 android:text="3次/日" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="5"
+                android:text="餐前" />
+
+            <TextView
+                style="@style/ContentTextView"
+                android:layout_weight="4"
+                android:text="头晕" />
 
         </LinearLayout>
 
@@ -265,9 +266,10 @@
                 android:id="@+id/spinner_now1"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="5"
+                android:layout_weight="4"
                 android:gravity="center"
-                android:textSize="@dimen/headerTextSize" />
+                android:textSize="@dimen/spinnerTextSize"
+                app:niceEntries="@array/medic_ywzl" />
 
             <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
                 android:id="@+id/spinner_now2"
@@ -275,42 +277,66 @@
                 android:layout_height="match_parent"
                 android:layout_weight="4"
                 android:gravity="center"
-                android:textSize="@dimen/headerTextSize" />
+                android:textSize="@dimen/spinnerTextSize"
+                app:niceEntries="@array/medic_hxm" />
 
             <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
                 android:id="@+id/spinner_now3"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"
+                android:layout_weight="3"
                 android:gravity="center"
-                android:textSize="@dimen/headerTextSize" />
+                android:textSize="@dimen/spinnerTextSize"
+                app:niceEntries="@array/medic_mqyy" />
+
+            <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="3.5"
+                android:gravity="center"
+                android:textSize="@dimen/spinnerTextSize"
+                app:niceEntries="@array/medic_gg" />
 
             <EditText
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:textSize="@dimen/spinnerTextSize" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:text="片/次"
+                android:textSize="@dimen/spinnerTextSize" />
+
+            <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:background="@android:color/white"
                 android:gravity="center"
-                android:hint="规格"
-                android:textSize="@dimen/headerTextSize" />
+                android:textSize="@dimen/spinnerTextSize"
+                app:niceEntries="@array/medic_cs" />
 
-            <EditText
+            <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="3"
-                android:background="@android:color/white"
                 android:gravity="center"
-                android:hint="用量"
-                android:textSize="@dimen/headerTextSize" />
+                android:textSize="@dimen/spinnerTextSize"
+                app:niceEntries="@array/medic_ff" />
 
-            <EditText
+            <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="4"
-                android:background="@android:color/white"
+                android:layout_weight="3"
                 android:gravity="center"
-                android:hint="服用方法"
-                android:textSize="@dimen/headerTextSize" />
+                android:textSize="@dimen/spinnerTextSize"
+                app:niceEntries="@array/medic_blfy" />
 
         </LinearLayout>
     </LinearLayout>

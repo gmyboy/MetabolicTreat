@@ -1,0 +1,315 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ChangeButton="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/et_other"
+        style="@style/EditTextStyle"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:hint="其他"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/tv_full_doctor_tip"
+        style="@style/TitleTextView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="70dp"
+        android:layout_toRightOf="@+id/et_other"
+        android:text="医生:" />
+
+    <TextView
+        android:id="@+id/tv_full_doctor"
+        style="@style/TitleTextView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dip"
+        android:layout_toRightOf="@+id/tv_full_doctor_tip"
+        android:gravity="center"
+        android:text="常宝" />
+
+    <TextView
+        android:id="@+id/tv_full_bingren_tip"
+        style="@style/TitleTextView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="30dp"
+        android:layout_toRightOf="@+id/tv_full_doctor"
+        android:text="患者:" />
+
+    <TextView
+        android:id="@+id/tv_full_bingren"
+        style="@style/TitleTextView2"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="10dip"
+        android:layout_toRightOf="@+id/tv_full_bingren_tip"
+        android:gravity="center"
+        android:text="常宝" />
+
+    <Button
+        android:id="@+id/btn_fragment_certain"
+        style="@style/BottomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:text="确认" />
+
+    <Button
+        android:id="@+id/btn_fragment_back"
+        style="@style/BottomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/btn_fragment_certain"
+        android:text="返回" />
+
+    <LinearLayout
+        android:id="@+id/ll_now1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_fragment_certain"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="10dp"
+        android:background="@color/grey_line"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/Style_Item_Layout">
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="0.375"
+                android:text="甲状腺超声" />
+
+            <LinearLayout
+                style="@style/ItemEditLayout"
+                android:layout_marginRight="@dimen/horizontal_lay">
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.6"
+                    android:text="(  日期: " />
+
+                <EditText
+                    style="@style/CommonItemLayoutEdit"
+                    android:layout_weight="2" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="年" />
+
+                <EditText
+                    style="@style/CommonItemLayoutEdit"
+                    android:layout_weight="1.6" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="月" />
+
+                <EditText
+                    style="@style/CommonItemLayoutEdit"
+                    android:layout_weight="1.6" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="日  )" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/LineGreyHorizontal" />
+
+        <LinearLayout style="@style/Style_Item_Layout">
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="甲状腺大小:" />
+
+            <LinearLayout
+                style="@style/ItemEditLayout"
+                android:layout_marginRight="@dimen/horizontal_lay"
+                android:layout_weight="4">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="左" />
+
+                <LinearLayout
+                    style="@style/ItemEditLayout"
+                    android:layout_marginRight="@dimen/horizontal_lay">
+
+                    <EditText
+                        style="@style/ItemLayoutEdit"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        style="@style/TipTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="mm" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="右" />
+
+                <LinearLayout style="@style/ItemEditLayout">
+
+                    <EditText
+                        style="@style/ItemLayoutEdit"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        style="@style/TipTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="mm" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="峡部" />
+
+                <LinearLayout style="@style/ItemEditLayout">
+
+                    <EditText
+                        style="@style/ItemLayoutEdit"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        style="@style/TipTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="mm" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/LineGreyHorizontal" />
+
+        <LinearLayout style="@style/Style_Item_Layout">
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="结节大小:" />
+
+            <LinearLayout
+                style="@style/ItemEditLayout"
+                android:layout_marginRight="@dimen/horizontal_lay"
+                android:layout_weight="4"
+                android:weightSum="7.5">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="左最大" />
+
+                <LinearLayout
+                    style="@style/ItemEditLayout"
+                    android:layout_marginRight="@dimen/horizontal_lay">
+
+                    <EditText
+                        style="@style/ItemLayoutEdit"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        style="@style/TipTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="mm" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="钙化" />
+
+                <LinearLayout style="@style/ItemEditLayout">
+
+                    <com.shwootide.metabolictreat.widget.ChangeButton
+                        style="@style/ChangeButton"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        ChangeButton:offText="无"
+                        ChangeButton:onText="有" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout style="@style/Style_Item_Layout">
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="结节大小"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                style="@style/ItemEditLayout"
+                android:layout_marginRight="@dimen/horizontal_lay"
+                android:layout_weight="4"
+                android:weightSum="7.5">
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="右最大" />
+
+                <LinearLayout
+                    style="@style/ItemEditLayout"
+                    android:layout_marginRight="@dimen/horizontal_lay">
+
+                    <EditText
+                        style="@style/ItemLayoutEdit"
+                        android:layout_weight="1.5" />
+
+                    <TextView
+                        style="@style/TipTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="mm" />
+                </LinearLayout>
+
+                <TextView
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="钙化" />
+
+                <LinearLayout style="@style/ItemEditLayout">
+
+                    <com.shwootide.metabolictreat.widget.ChangeButton
+                        style="@style/ChangeButton"
+                        android:layout_width="50dp"
+                        android:layout_height="45dp"
+                        ChangeButton:offText="无"
+                        ChangeButton:onText="有" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

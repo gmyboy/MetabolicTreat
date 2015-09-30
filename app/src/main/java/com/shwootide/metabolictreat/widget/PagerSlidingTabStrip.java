@@ -16,6 +16,8 @@
 
 package com.shwootide.metabolictreat.widget;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Locale;
 
 
@@ -87,6 +89,14 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
     private int expandTab = -1;
     //下拉后弹出的popmenu的布局id
     private int expandMenuId = -1;
+
+    //存放所有的可以有下拉的tab
+    private List<Integer> expandTabs = new ArrayList<>();
+    //存放所有的下拉后弹出的popmenu的布局id
+    private List<Integer> expandMenuIds = new ArrayList<>();
+    //存放所有的事件监听
+    private List<PopupMenu.OnMenuItemClickListener> onMenuItemClickListeners = new ArrayList<>();
+
     private PopupMenu popupMenu;
     private PopupMenu.OnMenuItemClickListener menuItemClickListener;
     private int scrollOffset = 52;
@@ -252,22 +262,24 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         tab.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (expandTab == pager.getCurrentItem() && expandTab == position && expandMenuId != -1)
-                    showPopMenu(tab);
-                pager.setCurrentItem(position);
+                for (int i = 0; i < expandTabs.size(); i++) {
+                    if (expandTabs.get(i) == pager.getCurrentItem() && expandTabs.get(i) == position && expandMenuIds.get(i) != -1) {
+                        showPopMenu(i, tab);
+                    }
+                    pager.setCurrentItem(position);
+                }
             }
         });
-
         tab.setPadding(tabPadding, 0, tabPadding, 0);
         tabsContainer.addView(tab, position, shouldExpand ? expandedTabLayoutParams : defaultTabLayoutParams);
     }
 
-    private void showPopMenu(View currentTab) {
+    private void showPopMenu(int i, View currentTab) {
         PopupMenu popup = new PopupMenu(getContext(), currentTab);
         //Inflating the Popup using xml file
-        popup.getMenuInflater().inflate(expandMenuId, popup.getMenu());
+        popup.getMenuInflater().inflate(expandMenuIds.get(i), popup.getMenu());
         //registering popup with OnMenuItemClickListener
-        popup.setOnMenuItemClickListener(menuItemClickListener);
+        popup.setOnMenuItemClickListener(onMenuItemClickListeners.get(i));
         popup.show(); //showing popup menu
     }
 
@@ -419,7 +431,7 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
         return expandMenuId;
     }
 
-    public void setExpandMenuId(int expandMenuId) {
+    public void setExpandMenuId(int tabId, int expandMenuId) {
         this.expandMenuId = expandMenuId;
     }
 
@@ -429,6 +441,23 @@ public class PagerSlidingTabStrip extends HorizontalScrollView {
 
     public void setExpandTab(int expandTab) {
         this.expandTab = expandTab;
+    }
+
+    public List<Integer> getExpandMenuIds() {
+        return expandMenuIds;
+    }
+
+    public void setExpandMenuIds(List<Integer> expandMenuIds, List<PopupMenu.OnMenuItemClickListener> onMenuItemClickListeners) {
+        this.expandMenuIds = expandMenuIds;
+        this.onMenuItemClickListeners = onMenuItemClickListeners;
+    }
+
+    public List<Integer> getExpandTabs() {
+        return expandTabs;
+    }
+
+    public void setExpandTabs(List<Integer> expandTabs) {
+        this.expandTabs = expandTabs;
     }
 
     public PopupMenu.OnMenuItemClickListener getMenuItemClickListener() {
