@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_header_main"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:layout_gravity="center_horizontal"
+    android:background="@color/main_light"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_remind_name_sort"
+        style="@style/HeaderTextView"
+        android:layout_weight="5"
+        android:text="@string/header_main_name" />
+
+    <View style="@style/LineVertical" />
+
+    <TextView
+        android:id="@+id/tv_remind_timeout_sort"
+        style="@style/HeaderTextView"
+        android:layout_weight="5"
+        android:text="@string/header_remind_timeout" />
+
+    <View style="@style/LineVertical" />
+
+    <TextView
+        android:id="@+id/tv_remind_way_sort"
+        style="@style/HeaderTextView"
+        android:layout_weight="7"
+        android:text="@string/header_remind_way" />
+
+    <View style="@style/LineVertical" />
+
+    <TextView
+        android:id="@+id/tv_remind_timestart_sort"
+        style="@style/HeaderTextView"
+        android:layout_weight="7"
+        android:text="@string/header_remind_timestart" />
+
+    <View style="@style/LineVertical" />
+
+    <TextView
+        android:id="@+id/tv_remind_timeend_sort"
+        style="@style/HeaderTextView"
+        android:layout_weight="7"
+        android:text="@string/header_remind_timeend" />
+</LinearLayout>

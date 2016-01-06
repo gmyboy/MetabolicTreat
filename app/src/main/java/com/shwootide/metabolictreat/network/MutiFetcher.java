@@ -7,7 +7,6 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.TextUtils;
 
-import com.shwootide.metabolictreat.entity.Record;
 import com.shwootide.metabolictreat.event.MessageEvent;
 import com.shwootide.metabolictreat.utils.Config;
 import com.shwootide.metabolictreat.utils.GLog;
@@ -21,7 +20,6 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 import org.ksoap2.transport.HttpTransportSE;
 
 import java.util.Map;
-import java.util.WeakHashMap;
 
 import de.greenrobot.event.EventBus;
 
@@ -50,9 +48,18 @@ public class MutiFetcher {
                 if (!TextUtils.isEmpty(json) && !json.equals("-99")) {
                     try {
                         JSONObject jb = new JSONObject(json);
-                        messageEvent.setCode(jb.getString("code"));//200
-//                        if (jb.getString("code").equals("200"))
-                        messageEvent.setObjects(GsonUtil.gsonToList(jb.getString("info"), cls));
+                        if (jb.has("code")) {
+                            messageEvent.setCode(jb.getString("code"));//200
+                        }
+                        if (jb.has("info")) {
+                            messageEvent.setObjects(GsonUtil.gsonToList(jb.getString("info"), cls));
+                        }
+                        if (jb.has("Message")) {
+                            messageEvent.setMessage(jb.getString("Message"));
+                        }
+                        if (jb.has("otherinfo")) {
+                            messageEvent.setOtherinfo(jb.getString("otherinfo"));
+                        }
                     } catch (Exception e) {
                         GLog.e(e.getMessage());
                         EventBus.getDefault().post(messageEvent);
@@ -77,7 +84,7 @@ public class MutiFetcher {
     public void fetch(Context context, final String function, String message, final Map<String, String> params) {
         if (Network.isAvailable(context)) {
             if (!TextUtils.isEmpty(message)) {
-                mDialog = CustomProgressDialog.show(context, message);
+                mDialog = CustomProgressDialog.showCancelable(context, message);
                 isShowing = true;
             }
             new Thread() {
@@ -115,6 +122,7 @@ public class MutiFetcher {
             /**
              * 添加所有参数
              */
+            GLog.e("function -------" + function);
             for (String strKey : params.keySet()) {
                 GLog.e(strKey + "-------" + params.get(strKey));
                 rpc.addProperty(strKey, params.get(strKey));

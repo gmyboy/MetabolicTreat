@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    android:clipToPadding="true"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <com.shwootide.metabolictreat.widget.HackyViewPager
+        android:id="@+id/viewpage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/layout_show" />
+
+    <RelativeLayout
+        android:id="@+id/layout_show"
+        android:layout_width="match_parent"
+        android:layout_height="50dip"
+        android:layout_gravity="top|center_horizontal"
+        android:background="@android:color/transparent">
+
+        <Button
+            android:id="@+id/show_back"
+            android:layout_width="40dip"
+            android:layout_height="40dip"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dip"
+            android:background="@drawable/btn_back"
+            android:clickable="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/show_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@drawable/tv_imageshow_bg"
+            android:paddingBottom="5dip"
+            android:paddingLeft="15dip"
+            android:paddingRight="15dip"
+            android:paddingTop="5dip"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_mainRadio"
+        android:layout_width="160dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <RadioButton
+            android:id="@+id/rb_add"
+            style="@style/MenuRadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_timer_auto_white_36dp"
+            android:text="新患者" />
+
+        <RadioButton
+            android:id="@+id/rb_search"
+            style="@style/MenuRadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_search_white_36dp"
+            android:text="查询" />
+
+        <RadioButton
+            android:id="@+id/rb_schedule"
+            style="@style/MenuRadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_schedule_white_36dp"
+            android:text="日程" />
+
+        <RadioButton
+            android:id="@+id/rb_remind"
+            style="@style/MenuRadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_alarm_white_36dp"
+            android:text="提醒" />
+
+        <RadioButton
+            android:id="@+id/rb_setting"
+            style="@style/MenuRadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:drawableLeft="@mipmap/ic_settings_white_36dp"
+            android:text="设置" />
+
+        <RadioButton
+            android:id="@+id/rb_help"
+            style="@style/MenuRadioBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@mipmap/ic_help_white_36dp"
+            android:text="帮助" />
+
+
+    </RadioGroup>
+
+</FrameLayout>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_main_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/md_white"
+    android:orientation="vertical"
+    android:paddingTop="20dp">
+
+    <RelativeLayout
+        android:id="@+id/rl_remind"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btn_remind_search"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/btn_common_bg"
+            android:padding="10dp"
+            android:text="@string/btn_main_search"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/titleTextSize" />
+
+        <TextView
+            android:id="@+id/tv_remind_name_tip"
+            style="@style/TitleTextView"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dip"
+            android:text="姓名:" />
+
+        <EditText
+            android:id="@+id/et_remind_name"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dip"
+            android:layout_toRightOf="@+id/tv_remind_name_tip"
+            android:background="@drawable/bg_edit"
+            android:gravity="center"
+            android:maxLength="7"
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/titleTextSize" />
+
+        <TextView
+            android:id="@+id/tv_remind_time_tip"
+            style="@style/TitleTextView"
+            android:layout_marginLeft="46dip"
+            android:layout_toRightOf="@+id/et_remind_name"
+            android:text="复诊时间:" />
+
+        <Button
+            android:id="@+id/tv_remind_time_start"
+            style="@style/TitleTextView"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dip"
+            android:layout_toRightOf="@id/tv_remind_time_tip"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="开始时间"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_remind_time_dao"
+            style="@style/TitleTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@id/tv_remind_time_start"
+            android:text="一" />
+
+        <Button
+            android:id="@+id/tv_remind_time_end"
+            style="@style/TitleTextView"
+            android:layout_width="220dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:layout_toRightOf="@id/tv_remind_time_dao"
+            android:paddingBottom="15dp"
+            android:paddingTop="15dp"
+            android:text="结束时间"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_main"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical">
+
+        <include layout="@layout/header_remind" />
+
+        <ListView
+            android:id="@+id/lv_remind"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal" />
+    </LinearLayout>
+</LinearLayout>

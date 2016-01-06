@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">诊疗及随访系统</string>
+    <string name="app_name">EDMS</string>
     <string name="action_settings">设置</string>
     <!--登陆-->
     <string name="app_full_name">内分泌代谢病门诊及随访系统</string>
@@ -13,12 +13,23 @@
     <string name="header_main_name">姓名</string>
     <string name="header_main_sex">性别</string>
     <string name="header_main_birthday">出生年月</string>
+    <string name="header_main_first_his">首诊医院</string>
+    <string name="header_main_first_dis">首诊疾病</string>
+    <string name="header_main_first_doc">首诊医生</string>
     <string name="header_main_recordID">病历编号</string>
+    <!--提醒-->
+    <string name="header_remind_name">姓名</string>
+    <string name="header_remind_timeout">倒计时</string>
+    <string name="header_remind_birthday">出生年月</string>
+    <string name="header_remind_way">复诊方式</string>
+    <string name="header_remind_timestart">开始时间</string>
+    <string name="header_remind_timeend">结束时间</string>
     <!--病历基本信息-->
     <string name="action_certain">确认</string>
     <string name="label_record">病历基本信息</string>
     <string name="tv_record_name">姓&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;名</string>
     <string name="tv_record_sex">性&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;别</string>
+    <string name="tv_record_adress">地&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;址</string>
     <string name="tv_record_birthday">出生年月</string>
     <string name="tv_record_hospital">就诊医院</string>
     <string name="tv_record_phone">联系方式</string>
@@ -41,7 +52,7 @@
     <string name="header_physical_index">测量指标</string>
     <string name="header_physical_input">指标录入</string>
     <string name="header_physical_unit">单位</string>
-    <string name="header_physical_cankao">参考值</string>
+    <string name="header_physical_cankao">检测日期</string>
     <string name="tv_physical_xy">血压</string>
     <string name="tv_unit_physical_xy">mmHg</string>
     <string name="tv_physical_xl">心率</string>
@@ -61,5 +72,14 @@
     <string name="tv_physical_xzsz">下肢水肿</string>
     <string name="tv_physical_zbdm">足背动脉</string>
     <string name="dialog_positive">确定</string>
+    <string name="dialog_positive_submit">确定并提交</string>
+    <string name="dialog_negative">取消</string>
+    <string name="dialog_title">提醒：请确认您要添加的用药信息</string>
+    <string name="dialog_title_chufang">提醒：请确认您要添加的处方信息</string>
     <string name="dialog_neutral">全选/全不选</string>
+
+    <string name="hint_other">点击输入其他内容</string>
+    <string name="hint_date">点击输入日期</string>
+
+    <string name="record_certain">保存</string>
 </resources>

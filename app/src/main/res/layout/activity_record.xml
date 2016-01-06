@@ -2,279 +2,355 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@mipmap/main_back"
     android:orientation="vertical">
 
     <ImageView
         android:id="@+id/iv_record"
-        android:layout_width="170dp"
-        android:layout_height="100dp"
+        android:layout_width="@dimen/logo_wid"
+        android:layout_height="@dimen/logo_hei"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="@dimen/marginleft"
-        android:src="@mipmap/logo" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="@dimen/marginbottom"
-        android:layout_marginLeft="@dimen/marginleft"
-        android:text="*为必填项"
-        android:textColor="@color/red"
-        android:textSize="16sp" />
-
-    <View
-        android:id="@+id/v_record"
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_below="@+id/iv_record"
-        android:background="@color/main_dark" />
-
-    <Button
-        android:id="@+id/btn_record"
-        android:layout_width="240dp"
-        android:layout_height="60dp"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/v_record"
-        android:layout_marginLeft="@dimen/marginleft"
-        android:layout_marginTop="10dp"
-        android:background="@mipmap/btn_newrecord"
-        android:text="基本信息"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/logintextsize" />
-
-
-    <Button
-        android:id="@+id/btn_reocrd_certain"
-        style="@style/BottomBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="@dimen/marginbottom"
-        android:layout_marginRight="127dp"
-        android:text="确认" />
-
-    <Button
-        android:id="@+id/btn_record_back"
-        style="@style/BottomBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/marginbottom"
-        android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/btn_reocrd_certain"
-        android:text="返回" />
-
+        android:src="@mipmap/logo_light" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/btn_reocrd_certain"
-        android:layout_below="@+id/btn_record"
-        android:layout_marginLeft="@dimen/marginleft"
-        android:layout_marginRight="@dimen/marginright"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/iv_record"
         android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
+        <RadioGroup
+            android:id="@+id/rg_mainRadio"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
             android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_add"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_timer_auto_white_36dp"
+                android:text="新患者" />
+
+            <RadioButton
+                android:id="@+id/rb_search"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_search_white_36dp"
+                android:text="查询" />
+
+            <RadioButton
+                android:id="@+id/rb_schedule"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_schedule_white_36dp"
+                android:text="日程" />
+
+            <RadioButton
+                android:id="@+id/rb_remind"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_alarm_white_36dp"
+                android:text="提醒" />
+
+            <RadioButton
+                android:id="@+id/rb_setting"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:drawableLeft="@mipmap/ic_settings_white_36dp"
+                android:text="设置" />
+
+            <RadioButton
+                android:id="@+id/rb_help"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_help_white_36dp"
+                android:text="帮助" />
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="@dimen/marginbottom"
+                android:layout_marginLeft="@dimen/marginleft"
+                android:text="*为必填项，确认后不可更改"
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_record"
+                android:layout_width="240dp"
+                android:layout_height="60dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/marginleft"
+                android:layout_marginTop="10dp"
+                android:background="@mipmap/btn_newrecord"
+                android:text="基本信息"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/logintextsize" />
+
+            <Button
+                android:id="@+id/btn_reocrd_certain"
+                style="@style/BottomBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/marginbottom"
+                android:layout_marginRight="100dp"
+                android:text="确认" />
+
+            <Button
+                android:id="@+id/btn_record_back"
+                style="@style/BottomBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="@dimen/marginbottom"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/btn_reocrd_certain"
+                android:text="返回" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/btn_reocrd_certain"
+                android:layout_below="@+id/btn_record"
+                android:layout_marginLeft="@dimen/marginleft"
+                android:layout_marginRight="@dimen/marginright"
                 android:layout_marginTop="30dp"
                 android:orientation="horizontal">
 
-                <TextView style="@style/StarTextView" />
-
-                <TextView
-                    style="@style/TitleTextView"
-                    android:text="@string/tv_record_name" />
-
-                <EditText
-                    android:id="@+id/et_record_name"
-                    style="@style/InputText" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:orientation="horizontal">
-
-                <TextView style="@style/StarTextView" />
-
-                <TextView
-                    style="@style/TitleTextView"
-                    android:text="@string/tv_record_hospital" />
-
-                <TextView
-                    android:id="@+id/et_record_hospital"
-                    style="@style/InputText" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:orientation="horizontal">
-
-                <TextView style="@style/StarTextView" />
-
-                <TextView
-                    style="@style/TitleTextView"
-                    android:text="@string/tv_record_sex" />
-
                 <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="60dp"
-                    android:layout_marginLeft="60dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
 
-                    <com.gmy.segmentedgroup.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/sg_record_sex"
+                    <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        segmentedgroup:sc_border_width="2dp"
-                        segmentedgroup:sc_corner_radius="7dp">
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
 
-                        <RadioButton
-                            android:id="@+id/rb_record_man"
-                            style="@style/RadioButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="男"
-                            android:textSize="@dimen/titleTextSize" />
+                        <TextView style="@style/StarTextView" />
 
-                        <RadioButton
-                            android:id="@+id/rb_record_woman"
-                            style="@style/RadioButton"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="女"
-                            android:textSize="@dimen/titleTextSize" />
-                    </com.gmy.segmentedgroup.SegmentedGroup>
+                        <TextView
+                            style="@style/TitleTextView"
+                            android:text="@string/tv_record_name" />
+
+                        <EditText
+                            android:id="@+id/et_record_name"
+                            style="@style/InputText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal">
+
+                        <TextView style="@style/StarTextView" />
+
+                        <TextView
+                            style="@style/TitleTextView"
+                            android:text="@string/tv_record_hospital" />
+
+                        <TextView
+                            android:id="@+id/et_record_hospital"
+                            style="@style/InputText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal">
+
+                        <TextView style="@style/StarTextView" />
+
+                        <TextView
+                            style="@style/TitleTextView"
+                            android:text="@string/tv_record_sex" />
+
+                        <LinearLayout
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="60dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.gmy.segmentedgroup.SegmentedGroup xmlns:segmentedgroup="http://schemas.android.com/apk/res-auto"
+                                android:id="@+id/sg_record_sex"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                segmentedgroup:sc_border_width="2dp"
+                                segmentedgroup:sc_corner_radius="7dp">
+
+                                <RadioButton
+                                    android:id="@+id/rb_record_man"
+                                    style="@style/RadioButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="男"
+                                    android:textSize="@dimen/titleTextSize" />
+
+                                <RadioButton
+                                    android:id="@+id/rb_record_woman"
+                                    style="@style/RadioButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="女"
+                                    android:textSize="@dimen/titleTextSize" />
+                            </com.gmy.segmentedgroup.SegmentedGroup>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal">
+
+                        <TextView style="@style/StarTextView" />
+
+                        <TextView
+                            style="@style/TitleTextView"
+                            android:text="@string/tv_record_birthday" />
+
+                        <LinearLayout
+                            android:layout_width="300dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="60dp"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <EditText
+                                android:id="@+id/tv_main_nian"
+                                style="@style/MainInputText"
+                                android:layout_width="100dp"
+                                android:layout_height="wrap_content"
+                                android:inputType="number"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/titleTextSize" />
+
+                            <TextView
+                                android:id="@+id/tv_main_nian_tip"
+                                style="@style/TitleTextView"
+                                android:layout_marginLeft="20dip"
+                                android:text="年" />
+
+                            <EditText
+                                android:id="@+id/tv_main_yue"
+                                style="@style/MainInputText"
+                                android:layout_width="70dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dip"
+                                android:inputType="number"
+                                android:textColor="@android:color/black"
+                                android:textSize="@dimen/titleTextSize" />
+
+                            <TextView
+                                android:id="@+id/tv_main_yue_tip"
+                                style="@style/TitleTextView"
+                                android:layout_marginLeft="20dip"
+                                android:text="月" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:orientation="horizontal">
-
-                <TextView style="@style/StarTextView" />
-
-                <TextView
-                    style="@style/TitleTextView"
-                    android:text="@string/tv_record_birthday" />
 
                 <LinearLayout
-                    android:layout_width="300dp"
-                    android:layout_height="50dp"
-                    android:layout_marginLeft="60dp"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal">
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-                    <EditText
-                        android:id="@+id/tv_main_nian"
-                        style="@style/MainInputText"
-                        android:layout_width="100dp"
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/titleTextSize" />
+                        android:layout_marginTop="30dp"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tv_main_nian_tip"
-                        style="@style/TitleTextView"
-                        android:layout_marginLeft="20dip"
-                        android:text="年" />
+                        <TextView
+                            style="@style/TitleTextView"
+                            android:text="@string/tv_record_phone" />
 
-                    <EditText
-                        android:id="@+id/tv_main_yue"
-                        style="@style/MainInputText"
-                        android:layout_width="70dp"
+                        <EditText
+                            android:id="@+id/et_record_phone"
+                            style="@style/InputText"
+                            android:inputType="phone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dip"
-                        android:inputType="number"
-                        android:textColor="@android:color/black"
-                        android:textSize="@dimen/titleTextSize" />
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tv_main_yue_tip"
-                        style="@style/TitleTextView"
-                        android:layout_marginLeft="20dip"
-                        android:text="月" />
+                        <TextView
+                            style="@style/TitleTextView"
+                            android:text="@string/tv_record_weinum" />
+
+                        <EditText
+                            android:id="@+id/et_record_weixin"
+                            style="@style/InputText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TitleTextView"
+                            android:text="@string/tv_record_ID" />
+
+                        <TextView
+                            android:id="@+id/et_record_binlino"
+                            style="@style/InputText" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="50dp"
+                        android:layout_marginTop="50dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            style="@style/TitleTextView"
+                            android:text="@string/tv_record_adress" />
+
+                        <EditText
+                            android:id="@+id/et_record_adress"
+                            style="@style/InputText" />
+                    </LinearLayout>
                 </LinearLayout>
+
             </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:layout_weight="1"
-            android:gravity="center"
-            android:orientation="vertical">
-
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TitleTextView"
-                    android:text="@string/tv_record_phone" />
-
-                <EditText
-                    android:id="@+id/et_record_phone"
-                    style="@style/InputText" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TitleTextView"
-                    android:text="@string/tv_record_weinum" />
-
-                <EditText
-                    android:id="@+id/et_record_weixin"
-                    style="@style/InputText" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    style="@style/TitleTextView"
-                    android:text="@string/tv_record_ID" />
-
-                <TextView
-                    android:id="@+id/et_record_binlino"
-                    style="@style/InputText" />
-            </LinearLayout>
-
-        </LinearLayout>
-
+        </RelativeLayout>
     </LinearLayout>
-
-
 </RelativeLayout>

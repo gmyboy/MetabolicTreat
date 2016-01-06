@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/main_back"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_full"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="@dimen/marginleft"
+        android:layout_marginRight="@dimen/marginright">
+
+        <ImageView
+            android:id="@+id/iv_logotitle"
+            android:layout_width="@dimen/logo_wid"
+            android:layout_height="@dimen/logo_hei"
+            android:layout_alignParentLeft="true"
+            android:src="@mipmap/logo_light" />
+
+        <Button
+            android:id="@+id/btn_follow_dial"
+            style="@style/BottomBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dip"
+            android:gravity="center"
+            android:text="联系他" />
+
+        <TextView
+            android:id="@+id/tv_follow_name"
+            style="@style/TitleTextView2"
+            android:layout_marginRight="50dip"
+            android:layout_toLeftOf="@+id/btn_follow_dial"
+            android:text="张三"
+            android:textSize="@dimen/titleTextSize" />
+
+        <TextView
+            android:id="@+id/tv_follow_name_tip"
+            style="@style/TitleTextView2"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@+id/tv_follow_name"
+            android:text="患者姓名:"
+            android:textSize="@dimen/titleTextSize" />
+
+        <TextView
+            android:id="@+id/tv_full_jibing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@id/tv_follow_name_tip"
+            android:layout_toRightOf="@id/iv_logotitle"
+            android:gravity="center"
+            android:textColor="@color/main_light"
+            android:textSize="@dimen/maxtextsize"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/rl_full"
+        android:orientation="horizontal">
+
+        <RadioGroup
+            android:id="@+id/rg_mainRadio"
+            android:layout_width="160dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/rb_add"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_timer_auto_white_36dp"
+                android:text="新患者" />
+
+            <RadioButton
+                android:id="@+id/rb_search"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_search_white_36dp"
+                android:text="查询" />
+
+            <RadioButton
+                android:id="@+id/rb_schedule"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_schedule_white_36dp"
+                android:text="日程" />
+
+            <RadioButton
+                android:id="@+id/rb_remind"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_alarm_white_36dp"
+                android:text="提醒" />
+
+            <RadioButton
+                android:id="@+id/rb_setting"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="250dp"
+                android:drawableLeft="@mipmap/ic_settings_white_36dp"
+                android:text="设置" />
+
+            <RadioButton
+                android:id="@+id/rb_help"
+                style="@style/MenuRadioBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@mipmap/ic_help_white_36dp"
+                android:text="帮助" />
+
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_white"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="@dimen/marginleft"
+                android:layout_marginBottom="18dp"
+                android:text="检查内容每次最多选择三个"
+                android:textColor="@color/red"
+                android:textSize="16sp" />
+
+            <Button
+                android:id="@+id/btn_follow_reset"
+                style="@style/BottomBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="@dimen/marginright"
+                android:text="重置" />
+            <LinearLayout
+                android:id="@+id/ll_followup_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:background="@color/main_light"
+                android:orientation="horizontal"
+                android:paddingBottom="20dp"
+                android:paddingTop="20dp">
+
+                <LinearLayout
+                    style="@style/ItemEditLayout"
+                    android:layout_marginRight="@dimen/horizontal_lay_large"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp">
+
+                    <TextView
+                        style="@style/ItemFollowTextView"
+                        android:layout_weight="1"
+                        android:text="就诊次数" />
+
+                    <Button
+                        android:id="@+id/spinner_follow_1"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:background="@android:color/white"
+                        android:text="点击选择"
+                        android:textSize="23sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    style="@style/ItemEditLayout"
+                    android:layout_marginRight="@dimen/horizontal_lay_large"
+                    android:paddingLeft="40dp"
+                    android:paddingRight="40dp">
+
+                    <TextView
+                        style="@style/ItemFollowTextView"
+                        android:layout_weight="1"
+                        android:text="检查内容" />
+
+                    <Button
+                        android:id="@+id/spinner_follow_2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1.5"
+                        android:background="@android:color/white"
+                        android:text="点击选择"
+                        android:textSize="23sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:id="@+id/v_followup_title"
+                style="@style/LineGreyHorizontal"
+                android:layout_below="@id/ll_followup_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/v_followup_title"
+                android:layout_above="@id/btn_follow_reset"
+                android:background="@color/grey_line"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tv_follow_item1"
+                        style="@style/RowTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:id="@+id/tv_follow_item2"
+                        style="@style/RowTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="待选择" />
+
+                    <TextView
+                        android:id="@+id/tv_follow_item3"
+                        style="@style/RowTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="待选择" />
+
+                    <TextView
+                        android:id="@+id/tv_follow_item4"
+                        style="@style/RowTextView"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="待选择" />
+                </LinearLayout>
+
+                <ListView
+                    android:id="@+id/lv_follow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</RelativeLayout>

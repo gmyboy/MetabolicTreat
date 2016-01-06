@@ -19,13 +19,11 @@ import butterknife.ButterKnife;
  */
 public abstract class BaseCommAdapter<T extends Parcelable> extends BaseAdapter {
     private Context context;
-    private List<T> datas;
-    private boolean isTwoLine = false;//是否是两行显示
+    private List<T> datas = new ArrayList<>();
     public BaseCommAdapter(Context context, List<T> datas) {
         this.context = context;
         this.datas = datas;
     }
-
     public BaseCommAdapter(Context context) {
         this.context = context;
     }
@@ -46,17 +44,9 @@ public abstract class BaseCommAdapter<T extends Parcelable> extends BaseAdapter 
         this.datas = datas;
     }
 
-    public boolean isTwoLine() {
-        return isTwoLine;
-    }
-
-    public void setIsTwoLine(boolean isTwoLine) {
-        this.isTwoLine = isTwoLine;
-    }
-
     @Override
     public int getCount() {
-        return isTwoLine ? datas.size() / 2 + datas.size() % 2 : datas.size();
+        return datas.size();
     }
 
     @Override

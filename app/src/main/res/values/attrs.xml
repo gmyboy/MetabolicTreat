@@ -45,6 +45,9 @@
     <declare-styleable name="NiceSpinner">
         <attr name="arrowTint" format="color" />
         <attr name="hideArrow" format="boolean" />
+        <attr name="arrowUp" format="boolean" />
         <attr name="niceEntries" format="reference"/>
+        <attr name="textBackground" format="reference" />
+        <attr name="dropdownTextSize" format="dimension|reference" />
     </declare-styleable>
 </resources>

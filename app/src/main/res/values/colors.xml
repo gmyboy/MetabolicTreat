@@ -3,23 +3,24 @@
     <color name="header_bg">#03A9F4</color>
     <color name="background_tab_pressed">#6633B5E5</color>
     <!--tabs-->
-    <color name="tab_txt_normal">#000000</color>
-    <color name="tab_txt_selected">#03A9F4</color>
-    <color name="tab_indicator">#fa5f19</color>
-    <color name="tab_bg">#ffffff</color>
+    <color name="tab_txt_normal">#424242</color>
+    <color name="tab_txt_selected">#d3d3d3</color>
+    <color name="tab_indicator">#005BAB</color>
 
     <color name="red">#ff0000</color>
 
     <color name="grey">#efefef</color>
+    <color name="grey_up">#EEEEEE</color>
     <color name="grey_line">#dddddd</color>
     <color name="grey_dark">#d3d3d3</color>
+    <color name="grey_spinner">#F5F5F5</color>
 
     <color name="main_lighter">#BBDEFB</color>
     <color name="main_light">#2F9ACF</color>
     <color name="main_dark">#005BAB</color>
     <color name="light_gray">#fff5f5f5</color>
-
-
+    <color name="menu_trans">#00000000</color>
+    <color name="menu_trans_helf">#44000000</color>
     <!-- ActionBarStyle -->
     <string-array name="actionbarBgColors">
         <item>#ffe51c23</item>

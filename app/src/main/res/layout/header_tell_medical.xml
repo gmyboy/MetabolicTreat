@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="50dip"
+    android:background="@color/main_light"
+    android:orientation="horizontal">
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="治疗用药" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="商品名" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="剂量" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="服用次数" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="使用方法" />
+
+    <TextView
+        style="@style/HeaderTextView"
+        android:layout_weight="1"
+        android:text="规格*盒数" />
+</LinearLayout>

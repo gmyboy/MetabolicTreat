@@ -1,284 +1,160 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ChangeButton="http://schemas.android.com/apk/res-auto"
-    xmlns:NiceSpinner="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_other"
-        style="@style/EditTextStyle"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:hint="其他"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/tv_full_doctor_tip"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="70dp"
-        android:layout_toRightOf="@+id/et_other"
-        android:text="医生:" />
-
-    <TextView
-        android:id="@+id/tv_full_doctor"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dip"
-        android:layout_toRightOf="@+id/tv_full_doctor_tip"
-        android:gravity="center"
-        android:text="常宝" />
-
-    <Button
-        android:id="@+id/btn_fragment_certain"
-        style="@style/BottomBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="确认" />
-    <TextView
-        android:id="@+id/tv_full_bingren_tip"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@+id/tv_full_doctor"
-        android:text="患者:" />
-
-    <TextView
-        android:id="@+id/tv_full_bingren"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dip"
-        android:layout_toRightOf="@+id/tv_full_bingren_tip"
-        android:gravity="center"
-        android:text="常宝" />
-    <Button
-        android:id="@+id/btn_fragment_back"
-        style="@style/BottomBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/btn_fragment_certain"
-        android:text="返回" />
+    <include layout="@layout/include_frag_bottom" />
 
     <LinearLayout
-        android:id="@+id/ll_now1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_fragment_certain"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/content_margin_bottom"
         android:background="@color/grey_line"
         android:orientation="vertical">
 
         <!--<include layout="@layout/header_physical" />-->
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="血压" />
 
-
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
-
-                <EditText
-                    style="@style/CommonItemLayoutEdit"
-                    android:layout_weight="1.2" />
+            <LinearLayout style="@style/input_layout_in">
 
                 <TextView
-                    style="@style/TipTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/et_physical2_1_1"
+                    style="@style/input_txt"
+                    android:textSize="16sp" />
+
+                <TextView
+                    style="@style/input_txt_dost"
                     android:layout_weight="0.2"
                     android:text="/" />
 
-                <EditText
-                    style="@style/CommonItemLayoutEdit"
-                    android:layout_weight="1.2" />
+                <TextView
+                    android:id="@+id/et_physical2_1_2"
+                    style="@style/input_txt"
+                    android:textSize="16sp" />
 
                 <TextView
-                    style="@style/TipTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="mmHg"
-                    android:textSize="14sp" />
+                    style="@style/input_txt_dost"
+                    android:layout_weight="1.8"
+                    android:text="mmHg" />
             </LinearLayout>
 
-
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="心率" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
-
-                <EditText
-                    style="@style/ItemLayoutEdit"
-                    android:layout_weight="1.5" />
+            <LinearLayout style="@style/input_layout_in">
 
                 <TextView
-                    style="@style/TipTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:id="@+id/et_physical2_2"
+                    style="@style/input_txt" />
+
+                <TextView
+                    style="@style/input_txt_dost"
                     android:text="次/分" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="节律" />
 
-            <LinearLayout style="@style/ItemEditLayout">
+            <LinearLayout style="@style/input_layout_in_nodimen">
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_physical1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_physical2_3"
+                    style="@style/input_spinner_full"
+                    app:niceEntries="@array/DMjielv" />
             </LinearLayout>
         </LinearLayout>
 
         <View style="@style/LineGreyHorizontal" />
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="甲状腺大小" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in">
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_physical2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_physical2_4"
+                    style="@style/input_spinner_full"
+                    app:niceEntries="@array/DMdaxiao" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_personal_yinjiu_time"
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="质地" />
 
-            <LinearLayout
-                android:id="@+id/ll_personal_yinjiu_time"
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in_null">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/md_checked"
-                    android:gravity="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/titleTextSize"
-                    ChangeButton:offText="软"
-                    ChangeButton:onText="硬" />
+                    android:id="@+id/cb_physical2_5"
+                    style="@style/ChangeButton"
+                    app:offText="软"
+                    app:onText="硬" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_personal_yinjiu_count"
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="甲状腺压痛" />
 
-            <LinearLayout
-                android:id="@+id/ll_personal_yinjiu_count"
-                style="@style/ItemEditLayout">
+            <LinearLayout style="@style/input_layout_in_null_nodimen">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/md_checked"
-                    android:gravity="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/titleTextSize"
-                    ChangeButton:offText="无"
-                    ChangeButton:onText="有" />
+                    android:id="@+id/cb_physical2_6"
+                    style="@style/ChangeButton"
+                    app:offText="无"
+                    app:onText="有" />
             </LinearLayout>
         </LinearLayout>
 
         <View style="@style/LineGreyHorizontal" />
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="突眼" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in">
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_physical3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_physical2_7"
+                    style="@style/input_spinner_full"
+                    app:niceEntries="@array/DMxgzy" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_personal_smoke_time"
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="双手细震" />
 
-            <LinearLayout
-                android:id="@+id/ll_personal_smoke_time"
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in_null">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
-                    android:background="@drawable/md_checked"
-                    android:gravity="center"
-                    android:textColor="@android:color/white"
-                    android:textSize="@dimen/titleTextSize"
-                    ChangeButton:offText="无"
-                    ChangeButton:onText="有" />
+                    android:id="@+id/cb_physical2_8"
+                    style="@style/ChangeButton"
+                    app:offText="无"
+                    app:onText="有" />
             </LinearLayout>
 
             <TextView
-                android:id="@+id/tv_personal_smoke_count"
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
-                android:text="甲状腺血管杂音"
-                android:textSize="14sp" />
+                style="@style/input_txt_title"
+                android:text="血管杂音" />
 
-            <LinearLayout
-                android:id="@+id/ll_personal_smoke_count"
-                style="@style/ItemEditLayout">
+            <LinearLayout style="@style/input_layout_in_nodimen">
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_physical4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_physical2_9"
+                    style="@style/input_spinner_full"
+                    app:niceEntries="@array/DMxgzy" />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>

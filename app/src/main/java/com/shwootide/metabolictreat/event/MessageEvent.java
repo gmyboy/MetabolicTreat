@@ -11,8 +11,9 @@ public class MessageEvent<T> {
     public T object;
     public String message = "";//涵盖的消息
     public String what = "";//区分event
-    public List<T> objects;
+    public List<T> objects;//info
     public int meta;
+    public String otherinfo;
 
     public MessageEvent() {
     }
@@ -76,5 +77,11 @@ public class MessageEvent<T> {
         this.object = object;
     }
 
+    public String getOtherinfo() {
+        return otherinfo;
+    }
 
+    public void setOtherinfo(String otherinfo) {
+        this.otherinfo = otherinfo;
+    }
 }

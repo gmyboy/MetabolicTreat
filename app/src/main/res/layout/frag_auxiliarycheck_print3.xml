@@ -1,162 +1,56 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:ChangeButton="http://schemas.android.com/apk/res-auto"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/et_other"
-        style="@style/EditTextStyle"
-        android:layout_width="400dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:hint="其他"
-        android:inputType="number" />
-
-    <TextView
-        android:id="@+id/tv_full_doctor_tip"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="70dp"
-        android:layout_toRightOf="@+id/et_other"
-        android:text="医生:" />
-
-    <TextView
-        android:id="@+id/tv_full_doctor"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dip"
-        android:layout_toRightOf="@+id/tv_full_doctor_tip"
-        android:gravity="center"
-        android:text="常宝" />
-
-    <TextView
-        android:id="@+id/tv_full_bingren_tip"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@+id/tv_full_doctor"
-        android:text="患者:" />
-
-    <TextView
-        android:id="@+id/tv_full_bingren"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dip"
-        android:layout_toRightOf="@+id/tv_full_bingren_tip"
-        android:gravity="center"
-        android:text="常宝" />
-
-    <Button
-        android:id="@+id/btn_fragment_certain"
-        style="@style/BottomBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="确认" />
-
-    <Button
-        android:id="@+id/btn_fragment_back"
-        style="@style/BottomBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="10dp"
-        android:layout_toLeftOf="@+id/btn_fragment_certain"
-        android:text="返回" />
+    <include layout="@layout/include_frag_bottom" />
 
     <LinearLayout
-        android:id="@+id/ll_now1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/btn_fragment_certain"
+        android:layout_height="match_parent"
         android:layout_alignParentTop="true"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="@dimen/content_margin_bottom"
         android:background="@color/grey_line"
         android:orientation="vertical">
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="0.375"
+                style="@style/input_txt_title"
                 android:text="妇科超声" />
 
             <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+                style="@style/input_layout_in_null"
+                android:layout_weight="2.5" />
+
+            <LinearLayout
+                style="@style/input_layout_in"
+                android:layout_weight="2.5">
 
                 <TextView
-                    style="@style/TipTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1.6"
-                    android:text="(  日期: " />
-
-                <EditText
-                    style="@style/CommonItemLayoutEdit"
-                    android:layout_weight="2" />
-
-                <TextView
-                    style="@style/TipTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="年" />
-
-                <EditText
-                    style="@style/CommonItemLayoutEdit"
-                    android:layout_weight="1.6" />
-
-                <TextView
-                    style="@style/TipTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="月" />
-
-                <EditText
-                    style="@style/CommonItemLayoutEdit"
-                    android:layout_weight="1.6" />
-
-                <TextView
-                    style="@style/TipTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="日  )" />
+                    android:id="@+id/et_aux3_date_1"
+                    style="@style/input_txt"
+                    android:hint="@string/hint_date" />
             </LinearLayout>
         </LinearLayout>
 
         <View style="@style/LineGreyHorizontal" />
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="子宫内膜厚度:" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay"
-                android:layout_weight="4"
-                android:weightSum="7.5">
-
-                <EditText
-                    style="@style/ItemLayoutEdit"
-                    android:layout_weight="1.5" />
+            <LinearLayout style="@style/input_layout_in">
 
                 <TextView
-                    style="@style/TipTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
+                    android:id="@+id/et_aux3_1"
+                    style="@style/input_txt" />
+
+                <TextView
+                    style="@style/input_txt_dost"
                     android:text="mm" />
             </LinearLayout>
 
@@ -164,32 +58,20 @@
 
         <View style="@style/LineGreyHorizontal" />
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="卵巢多囊:" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay"
-                android:layout_weight="4"
-                android:weightSum="7.5">
+            <LinearLayout style="@style/input_layout_in">
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_nian6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|right"
-                    android:layout_weight="1.8"
-                    android:textSize="@dimen/spinnerTextSize"
+                    android:id="@+id/ns_aux3_2"
+                    style="@style/input_spinner_full"
                     app:niceEntries="@array/DMxgzy" />
             </LinearLayout>
 
-
         </LinearLayout>
-
-
     </LinearLayout>
 </RelativeLayout>

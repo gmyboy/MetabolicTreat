@@ -31,7 +31,6 @@ public class RecordPastAdapter extends BaseCommAdapter<MHistory_Past> {
 
     public RecordPastAdapter(Context context, List<MHistory_Past> datas) {
         super(context, datas);
-        setIsTwoLine(true);
     }
 
     public RecordPastAdapter(Context context) {

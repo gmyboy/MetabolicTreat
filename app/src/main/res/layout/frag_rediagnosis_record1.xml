@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ChangeButton="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/rl_rediagnosis"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_frag_bottom" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/content_margin_bottom"
+        android:background="@color/grey_line"
+        android:orientation="vertical">
+
+        <LinearLayout style="@style/input_layout_out">
+
+            <LinearLayout style="@style/input_layout_in_null">
+
+                <TextView
+                    style="@style/input_txt_title"
+                    android:text="糖尿病复诊伴" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/input_layout_in_null"
+                android:layout_weight="6">
+
+                <CheckBox
+                    android:id="@+id/c_re1_1"
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="高血脂"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/c_re1_2"
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="高血压"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/c_re1_3"
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="高尿酸"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/c_re1_4"
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1"
+                    android:text="脂肪肝"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/c_re1_5"
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="0.8"
+                    android:text="肥胖"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/c_re1_6"
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1.6"
+                    android:text="微血管并发症"
+                    android:textSize="14sp" />
+
+                <CheckBox
+                    android:id="@+id/c_re1_7"
+                    style="@style/ItemRecordTextView"
+                    android:layout_weight="1.5"
+                    android:text="大血管病变"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View style="@style/LineGreyHorizontal" />
+
+        <LinearLayout style="@style/input_layout_out">
+
+            <TextView
+                style="@style/input_txt_title"
+                android:text="心慌饥饿感" />
+
+            <LinearLayout style="@style/input_layout_in_null">
+
+                <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_re1_1"
+                    style="@style/ChangeButton"
+                    ChangeButton:offText="无"
+                    ChangeButton:onText="有" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/input_txt_title"
+                android:text="酮症" />
+
+            <LinearLayout style="@style/input_layout_in_null">
+
+                <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_re1_2"
+                    style="@style/ChangeButton"
+                    ChangeButton:offText="无"
+                    ChangeButton:onText="有" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/input_txt_title"
+                android:text="视物模糊" />
+
+            <LinearLayout style="@style/input_layout_in_null_nodimen">
+
+                <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_re1_3"
+                    style="@style/ChangeButton"
+                    ChangeButton:offText="无"
+                    ChangeButton:onText="有" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/LineGreyHorizontal" />
+
+        <LinearLayout style="@style/input_layout_out">
+
+            <TextView
+                style="@style/input_txt_title"
+                android:text="泡沫尿" />
+
+            <LinearLayout style="@style/input_layout_in_null">
+
+                <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_re1_4"
+                    style="@style/ChangeButton"
+                    ChangeButton:offText="无"
+                    ChangeButton:onText="有" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/input_txt_title"
+                android:text="低血糖" />
+
+            <LinearLayout style="@style/input_layout_in_null">
+
+                <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_re1_5"
+                    style="@style/ChangeButton"
+                    ChangeButton:offText="无"
+                    ChangeButton:onText="有" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_re1_1"
+                style="@style/input_txt_title"
+                android:text="最低血糖"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:id="@+id/ll_re1_1"
+                style="@style/input_layout_in_nodimen"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/et_re1_1"
+                    style="@style/input_txt" />
+
+                <TextView
+                    style="@style/input_txt_dost"
+                    android:text="mmol/L" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/LineGreyHorizontal" />
+
+        <LinearLayout style="@style/input_layout_out">
+
+            <TextView
+                style="@style/input_txt_title"
+                android:text="指端麻木" />
+
+            <LinearLayout style="@style/input_layout_in_null">
+
+                <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_re1_6"
+                    style="@style/ChangeButton"
+                    ChangeButton:offText="无"
+                    ChangeButton:onText="有" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/input_txt_title"
+                android:text="低血糖昏迷" />
+
+            <LinearLayout style="@style/input_layout_in_null">
+
+                <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_re1_7"
+                    style="@style/ChangeButton"
+                    ChangeButton:offText="无"
+                    ChangeButton:onText="有" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_re1_2"
+                style="@style/input_txt_title"
+                android:text="最低血糖"
+                android:visibility="invisible" />
+
+            <LinearLayout
+                android:id="@+id/ll_re1_2"
+                style="@style/input_layout_in_nodimen"
+                android:visibility="invisible">
+
+                <TextView
+                    android:id="@+id/et_re1_2"
+                    style="@style/input_txt" />
+
+                <TextView
+                    style="@style/input_txt_dost"
+                    android:text="mmol/L" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

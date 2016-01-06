@@ -24,22 +24,31 @@ public class UserInfo {
      * Pwd : 888888
      * staffID : 016907ce-d298-46d8-bb45-d17118532ce2
      */
-    private String flg="";
-    private String OrganizationName="";
-    private String UserName="";
-    private String UserState="";
-    private String code="";
-    private String HospitalID="";
-    private String UserToStaff="";
-    private int RoleID=0;
-    private String FDate="";
-    private String USERREALNAME="";
-    private String RoleName="";
-    private int UserID=0;
-    private String Tel="";
-    private String DepartmentID="";
-    private String Pwd="";
-    private String staffID="";
+    private String flg = "";
+    private String OrganizationName = "";
+    private String UserName = "";
+    private String UserState = "";
+    private String code = "";
+    private String HospitalID = "";
+    private String UserToStaff = "";
+    private int RoleID = 0;
+    private String FDate = "";
+    private String USERREALNAME = "";
+    private String RoleName = "";
+    private int UserID = 0;
+    private String Tel = "";
+    private String DepartmentID = "";
+    private String Pwd = "";
+    private String staffID = "";
+    private boolean autoLogin = false;
+
+    public boolean isAutoLogin() {
+        return autoLogin;
+    }
+
+    public void setAutoLogin(boolean autoLogin) {
+        this.autoLogin = autoLogin;
+    }
 
     public void setFlg(String flg) {
         this.flg = flg;

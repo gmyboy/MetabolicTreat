@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_include_frag"
+    android:layout_width="match_parent"
+    android:layout_height="65dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:layout_alignParentBottom="true">
+
+    <TextView
+        android:id="@+id/et_other"
+        style="@style/EditTextStyle"
+        android:layout_width="400dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:hint="@string/hint_other" />
+
+    <Button
+        android:id="@+id/btn_fragment_certain"
+        style="@style/BottomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:text="@string/record_certain" />
+
+    <Button
+        android:id="@+id/btn_history_look"
+        style="@style/BottomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/btn_fragment_certain"
+        android:text="上次病历"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btn_fragment_back"
+        style="@style/BottomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/btn_history_look"
+        android:text="返回" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@id/btn_fragment_back"
+        android:layout_toRightOf="@id/et_other"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_full_doctor_tip"
+            style="@style/TitleTextView2"
+            android:text="医生:" />
+
+        <TextView
+            android:id="@+id/tv_full_doctor"
+            style="@style/TitleTextView2"
+            android:layout_marginLeft="10dip" />
+
+        <TextView
+            android:id="@+id/tv_full_bingren_tip"
+            style="@style/TitleTextView2"
+            android:layout_marginLeft="30dip"
+            android:text="患者:" />
+
+        <TextView
+            android:id="@+id/tv_full_bingren"
+            style="@style/TitleTextView2"
+            android:layout_marginLeft="10dip" />
+    </LinearLayout>
+</RelativeLayout>
+
+

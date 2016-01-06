@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_light"
+        android:paddingBottom="5dp"
+        android:paddingTop="5dp">
+
+        <ImageButton
+            android:id="@+id/ib_back_pop_main"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/ic_clear_bg" />
+
+        <TextView
+            style="@style/CommTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:textColor="@color/md_white"
+            android:layout_toRightOf="@+id/ib_back_pop_main"
+            android:text="患者信息" />
+
+        <!-- <Button
+             android:id="@+id/btn_pop_main"
+             style="@style/BottomBtn"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentRight="true"
+             android:layout_centerVertical="true"
+             android:layout_marginRight="@dimen/marginright"
+             android:text="修改详细" />-->
+    </RelativeLayout>
+
+    <View style="@style/LineHorizontal" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/md_white"
+        android:orientation="horizontal">
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_pop_main1"
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="姓名：张三" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="性别：男" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="出生年月：1976年05月" />
+
+                <View style="@style/LineHorizontal" />
+
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="联系方式：12345678911" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="医生姓名：刘连勇" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="身高：178cm" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="体重：65Kg" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="FPG：11.1mmol/L" />
+
+                <View style="@style/LineHorizontal" />
+
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="家族史：有" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="餐后血糖：20.0mmol/L" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="最高空腹血糖：11.2mmol/L" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="血压：123" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="总胆固醇：***" />
+
+                <View style="@style/LineHorizontal" />
+
+                <TextView
+                    style="@style/CommTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:paddingLeft="100dp"
+                    android:text="甘油三酯：***" />
+
+                <View style="@style/LineHorizontal" />
+
+            </LinearLayout>
+        </ScrollView>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_horizontal"
+                android:paddingRight="10dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txt1"
+                    style="@style/CommTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" />
+
+                <com.github.mikephil.charting.charts.CombinedChart
+                    android:id="@+id/chart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/txt2"
+                    style="@style/CommTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp" />
+
+                <com.github.mikephil.charting.charts.CombinedChart
+                    android:id="@+id/chart2"
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</LinearLayout>

@@ -2,80 +2,33 @@ package com.shwootide.metabolictreat;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Parcelable;
-import android.text.TextUtils;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ListView;
+import android.support.v4.app.Fragment;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RadioGroup;
+import android.widget.TextView;
 
-import com.gmy.segmentedgroup.SegmentedGroup;
-import com.shwootide.metabolictreat.adapter.MainAdapter;
-import com.shwootide.metabolictreat.entity.Record;
+import com.shwootide.metabolictreat.adapter.MainPagerAdapter;
 import com.shwootide.metabolictreat.event.MessageEvent;
-import com.shwootide.metabolictreat.network.MutiFetcher;
-
-import java.util.Calendar;
-import java.util.Map;
-import java.util.WeakHashMap;
+import com.shwootide.metabolictreat.utils.CommonUtil;
 
 import butterknife.Bind;
-import butterknife.OnClick;
-import butterknife.OnItemClick;
 
 /**
- * 主界面,用户可以新建病历+选择已有病例编辑
+ * 主界面
  * Created by GMY on 2015/8/25 09:36.
  * Contact me via email gmyboy@qq.com.
  */
 public class MainActivity extends BaseActivity {
 
-    @Bind(R.id.btn_main_new)
-    Button btnMainNew;
-    @Bind(R.id.lv_main)
-    ListView lvMain;
-    @Bind(R.id.btn_main_search)
-    Button btnMainSearch;
-    @Bind(R.id.et_main_name)
-    EditText etMainName;
-    @Bind(R.id.sg_main_sex)
-    SegmentedGroup sgMainSex;
-    @Bind(R.id.tv_main_nian)
-    EditText tvMainNian;
-    @Bind(R.id.tv_main_yue)
-    EditText tvMainYue;
-    private MainAdapter adapter;
+    @Bind(R.id.tv_main_avator)
+    ImageView tvMainAvator;
+    @Bind(R.id.fl_container)
+    FrameLayout flContainer;
+    @Bind(R.id.tv_main_name)
+    TextView tvMainName;
 
-    @OnClick(R.id.btn_main_new)
-    void newRecord() {
-        Intent intent = new Intent(mContext, RecordActivity.class);
-        startActivity(intent);
-    }
-
-    @OnClick(R.id.btn_main_search)
-    void search() {
-        String name = etMainName.getText().toString().trim();
-        String sex = sgMainSex.getCheckedRadioButtonId() == R.id.rb_main_man ? "男" : "女";
-        String nian = tvMainNian.getText().toString().trim();
-        String yue = tvMainYue.getText().toString().trim();
-
-        Map<String, String> params = new WeakHashMap<>();
-        params.put("name", name);
-        params.put("sex", sex);
-        params.put("birth", TextUtils.isEmpty(nian) ? (TextUtils.isEmpty(yue) ? "" : yue + "月") : (TextUtils.isEmpty(yue) ? nian + "年" : nian + "年" + yue + "月"));
-        new MutiFetcher(Record[].class).fetch(mContext, "PatientQuery", "正在查询...", params);
-    }
-
-    @OnItemClick(R.id.lv_main)
-    void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Intent intent = new Intent(mContext, RecordActivity.class);
-        intent.putExtra("RECORD", (Parcelable) lvMain.getAdapter().getItem(position));
-        intent.putExtra("TYPE", 1);//0 新建   1  点击
-        startActivity(intent);
-    }
+    private MainPagerAdapter pagerAdapter;
 
     @Override
     public void setLayout() {
@@ -87,22 +40,55 @@ public class MainActivity extends BaseActivity {
 
     }
 
+    @Override
+    public void wentTo(RadioGroup group, int checkedId) {
+        Fragment fragment;
+        switch (checkedId) {
+            case R.id.rb_add:
+                Intent intent = new Intent(MainActivity.this, RecordActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.rb_search:
+                fragment = (Fragment) pagerAdapter.instantiateItem(flContainer, 1);
+                pagerAdapter.setPrimaryItem(flContainer, 0, fragment);
+                pagerAdapter.finishUpdate(flContainer);
+                break;
+            case R.id.rb_remind:
+                fragment = (Fragment) pagerAdapter.instantiateItem(flContainer, 2);
+                pagerAdapter.setPrimaryItem(flContainer, 0, fragment);
+                pagerAdapter.finishUpdate(flContainer);
+                break;
+            case R.id.rb_schedule:
+                fragment = (Fragment) pagerAdapter.instantiateItem(flContainer, 3);
+                pagerAdapter.setPrimaryItem(flContainer, 0, fragment);
+                pagerAdapter.finishUpdate(flContainer);
+                break;
+            case R.id.rb_help:
+                fragment = (Fragment) pagerAdapter.instantiateItem(flContainer, 4);
+                pagerAdapter.setPrimaryItem(flContainer, 0, fragment);
+                pagerAdapter.finishUpdate(flContainer);
+                break;
+            case R.id.rb_setting:
+                fragment = (Fragment) pagerAdapter.instantiateItem(flContainer, 5);
+                pagerAdapter.setPrimaryItem(flContainer, 0, fragment);
+                pagerAdapter.finishUpdate(flContainer);
+                break;
+        }
+    }
+
     /**
      * 接收list消息
      *
      * @param event
      */
     public void onEventMainThread(MessageEvent event) {
-        if (event.what.equals("PatientQuery")) {
-            if (event.getCode().equals("200")) {
-                adapter = new MainAdapter(mContext, event.getObjects());
-                lvMain.setAdapter(adapter);
-            } else {
-                showToast("空空如也");
-                adapter = new MainAdapter(mContext);
-            }
 
-        }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        rbSearch.setChecked(true);
     }
 
     @Override
@@ -110,20 +96,29 @@ public class MainActivity extends BaseActivity {
         setTwiceExit(true);
         setRegisterEvent(true);
         super.onCreate(savedInstanceState);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
+        pagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+        tvMainName.setText(getmUserInfo().getUserName() + "    " + CommonUtil.getSysDate3());
+        int flag = getIntent().getIntExtra("FLAG", 1);
+        switch (flag) {
+            case 0:
+                rbAdd.setChecked(true);
+                break;
+            case 1:
+                rbSearch.setChecked(true);
+                break;
+            case 2:
+                rbSchedule.setChecked(true);
+                break;
+            case 3:
+                rbRemind.setChecked(true);
+                break;
+            case 4:
+                rbSetting.setChecked(true);
+                break;
+            case 5:
+                rbHelp.setChecked(true);
+                break;
         }
-        return super.onOptionsItemSelected(item);
     }
+
 }

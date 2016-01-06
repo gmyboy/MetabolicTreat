@@ -2,16 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/zhidao"
-        android:title="生活方式指导" />
+        android:title="生活方式指导/治疗用药/下次随访日期" />
 
     <item
-        android:id="@+id/yaowu"
-        android:title="治疗药物" />
+        android:id="@+id/huanyandan"
+        android:title="实验室检查" />
     <item
-        android:id="@+id/huayandan"
-        android:title="开化验单/辅助检查" />
-
-    <item
-        android:id="@+id/xiaci"
-        android:title="下次随访日期" />
+        android:id="@+id/fuzhujiancha"
+        android:title="辅助检查" />
 </menu>

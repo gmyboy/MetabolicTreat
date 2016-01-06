@@ -6,12 +6,12 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.view.ViewGroup;
 
-import com.shwootide.metabolictreat.fragment.RecordFamilyFragment;
-import com.shwootide.metabolictreat.fragment.RecordMedicineFragment;
-import com.shwootide.metabolictreat.fragment.RecordNowFragment;
-import com.shwootide.metabolictreat.fragment.RecordPastFragment;
-import com.shwootide.metabolictreat.fragment.RecordPersonalFragment;
-import com.shwootide.metabolictreat.fragment.RecordSugarFragment;
+import com.shwootide.metabolictreat.fragment.MedicalRecord.PhysicalFragment;
+import com.shwootide.metabolictreat.fragment.MedicalRecord.RecordFamilyFragment;
+import com.shwootide.metabolictreat.fragment.MedicalRecord.RecordMedicineFragment;
+import com.shwootide.metabolictreat.fragment.MedicalRecord.RecordNowFragment;
+import com.shwootide.metabolictreat.fragment.MedicalRecord.RecordPastFragment;
+import com.shwootide.metabolictreat.fragment.MedicalRecord.RecordPersonalFragment;
 
 /**
  * 诊断页tab适配器
@@ -19,20 +19,20 @@ import com.shwootide.metabolictreat.fragment.RecordSugarFragment;
  * Contact me via email gmyboy@qq.com.
  */
 public class RecordFullPageAdapter extends FragmentPagerAdapter {
-    private final String[] TITLES = {"现病史", "既往史", "家族史", "个人史"};
+    private final String[] TITLES = {"现病史", "既往史", "家族史", "个人史", "体格检查"};
     private FragmentManager fm;
     private boolean[] fragmentsUpdateFlag = {false, false, false, false};
     private String illnessid = "";
-    private int changeType;//0现病史   1 血糖监测   2 现治疗用药
-    private String recordName = "";//患者姓名
-    private String position = "1";//就诊次数  默认为初诊1
+    private int changeType = 0;//0现病史   1 血糖监测   2 现治疗用药
+    private int mPosition;//就诊次数 0初诊   2编辑
+    private int mSequenceNumber = 1;
 
-    public RecordFullPageAdapter(FragmentManager fm, String illnessid, String recordName, String position) {
+    public RecordFullPageAdapter(FragmentManager fm, String illnessid, int position, int sequenceNumber) {
         super(fm);
         this.fm = fm;
         this.illnessid = illnessid;
-        this.recordName = recordName;
-        this.position = position;
+        this.mPosition = position;
+        this.mSequenceNumber = sequenceNumber;
     }
 
     public boolean[] getFragmentsUpdateFlag() {
@@ -58,32 +58,30 @@ public class RecordFullPageAdapter extends FragmentPagerAdapter {
         return TITLES.length;
     }
 
+    public int getChangeType() {
+        return changeType;
+    }
+
     @Override
-    public Object instantiateItem(ViewGroup container, int position) {
+    public Fragment instantiateItem(ViewGroup container, int position) {
         //得到缓存的fragment
-        Fragment fragment = (Fragment) super.instantiateItem(container,
-                position);
+        Fragment fragment = (Fragment) super.instantiateItem(container, position);
         //得到tag
         String fragmentTag = fragment.getTag();
-
         if (fragmentsUpdateFlag[position % fragmentsUpdateFlag.length]) {
             //如果这个fragment需要更新
             FragmentTransaction ft = fm.beginTransaction();
             //移除旧的fragment
-            ft.remove(fragment);
+            ft.hide(fragment);
             //换成新的fragment
             switch (changeType) {
                 case 0:
-                    fragment = RecordNowFragment.newInstance(illnessid);
+                    fragment = RecordNowFragment.newInstance(illnessid, mPosition, mSequenceNumber);
                     break;
                 case 1:
-                    fragment = RecordSugarFragment.newInstance(illnessid);
-                    break;
-                case 2:
-                    fragment = RecordMedicineFragment.newInstance(illnessid);
+                    fragment = RecordMedicineFragment.newInstance(illnessid, mPosition, mSequenceNumber);
                     break;
             }
-
             //添加新fragment时必须用前面获得的tag
             ft.add(container.getId(), fragment, fragmentTag);
             ft.attach(fragment);
@@ -99,16 +97,19 @@ public class RecordFullPageAdapter extends FragmentPagerAdapter {
         Fragment fragment = null;
         switch (position) {
             case 0:
-                fragment = RecordNowFragment.newInstance(illnessid);
+                fragment = RecordNowFragment.newInstance(illnessid, mPosition, mSequenceNumber);
                 break;
             case 1:
-                fragment = RecordPastFragment.newInstance(illnessid);
+                fragment = RecordPastFragment.newInstance(illnessid, mPosition, mSequenceNumber);
                 break;
             case 2:
-                fragment = RecordFamilyFragment.newInstance(illnessid);
+                fragment = RecordFamilyFragment.newInstance(illnessid, mPosition, mSequenceNumber);
                 break;
             case 3:
-                fragment = RecordPersonalFragment.newInstance(illnessid);
+                fragment = RecordPersonalFragment.newInstance(illnessid, mPosition, mSequenceNumber);
+                break;
+            case 4:
+                fragment = PhysicalFragment.newInstance(illnessid, mPosition, mSequenceNumber);
                 break;
         }
         return fragment;

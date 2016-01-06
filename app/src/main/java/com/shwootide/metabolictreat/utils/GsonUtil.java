@@ -7,6 +7,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Created by GMY on 2015/11/30 17:06.
+ * Contact me via email igmyboy@gmail.com.
+ */
 public class GsonUtil {
     private static Gson gson = null;
 

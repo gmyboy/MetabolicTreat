@@ -18,13 +18,28 @@ public class MedicalRecord implements Parcelable {
     private String InputDate;
     private String InputUser;
     private String bz;
-    private String StaffID;
     private String diagnose;
     private String complication;
     private String SequenceNumber;
     private String IllnessID;
+    private String StaffID;
     private String NextDate;
     private String USERREALNAME;//返回字段 == InputUser
+    private String NextEndDate;
+    private String Online="";
+    private String Place="";
+    private String Other1 = "";
+    private String Other2 = "";
+    private String Other3 = "";
+    private String isVisit="";
+
+    public String getIsVisit() {
+        return isVisit;
+    }
+
+    public void setIsVisit(String isVisit) {
+        this.isVisit = isVisit;
+    }
 
     public String getId() {
         return id;
@@ -154,6 +169,54 @@ public class MedicalRecord implements Parcelable {
         NextDate = nextDate;
     }
 
+    public String getNextEndDate() {
+        return NextEndDate;
+    }
+
+    public void setNextEndDate(String nextEndDate) {
+        NextEndDate = nextEndDate;
+    }
+
+    public String getOnline() {
+        return Online;
+    }
+
+    public void setOnline(String online) {
+        Online = online;
+    }
+
+    public String getPlace() {
+        return Place;
+    }
+
+    public void setPlace(String place) {
+        Place = place;
+    }
+
+    public String getOther1() {
+        return Other1;
+    }
+
+    public void setOther1(String other1) {
+        Other1 = other1;
+    }
+
+    public String getOther2() {
+        return Other2;
+    }
+
+    public void setOther2(String other2) {
+        Other2 = other2;
+    }
+
+    public String getOther3() {
+        return Other3;
+    }
+
+    public void setOther3(String other3) {
+        Other3 = other3;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -176,6 +239,13 @@ public class MedicalRecord implements Parcelable {
         dest.writeString(this.SequenceNumber);
         dest.writeString(this.IllnessID);
         dest.writeString(this.NextDate);
+        dest.writeString(this.USERREALNAME);
+        dest.writeString(this.NextEndDate);
+        dest.writeString(this.Online);
+        dest.writeString(this.Place);
+        dest.writeString(this.Other1);
+        dest.writeString(this.Other2);
+        dest.writeString(this.Other3);
     }
 
     public MedicalRecord() {
@@ -197,6 +267,13 @@ public class MedicalRecord implements Parcelable {
         this.SequenceNumber = in.readString();
         this.IllnessID = in.readString();
         this.NextDate = in.readString();
+        this.USERREALNAME = in.readString();
+        this.NextEndDate = in.readString();
+        this.Online = in.readString();
+        this.Place = in.readString();
+        this.Other1 = in.readString();
+        this.Other2 = in.readString();
+        this.Other3 = in.readString();
     }
 
     public static final Creator<MedicalRecord> CREATOR = new Creator<MedicalRecord>() {

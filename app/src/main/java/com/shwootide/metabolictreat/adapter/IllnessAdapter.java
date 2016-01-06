@@ -3,31 +3,28 @@ package com.shwootide.metabolictreat.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
-import android.support.v7.widget.PopupMenu;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.PopupWindow;
 
-import com.afollestad.materialdialogs.GravityEnum;
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.shwootide.metabolictreat.FollowUpActivity;
+import com.shwootide.metabolictreat.IllnessChooseActivity;
 import com.shwootide.metabolictreat.R;
 import com.shwootide.metabolictreat.RecordChooseActivity;
-import com.shwootide.metabolictreat.RecordFullActivity;
+import com.shwootide.metabolictreat.app.SysApplication;
 import com.shwootide.metabolictreat.entity.Illness;
-import com.shwootide.metabolictreat.entity.Record;
+import com.shwootide.metabolictreat.network.SingleFetcher;
+import com.shwootide.metabolictreat.utils.PreferenceUtil;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.WeakHashMap;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.OnItemClick;
 
 /**
  * 疾病选择的adapter
@@ -38,20 +35,14 @@ public class IllnessAdapter extends BaseCommAdapter<Illness> {
     private PopupWindow pop;
     //popup的三个按钮
     private Button btn1, btn2, btn3, btn4;
-    private String personID = "";
-    private String recordNo = "";
-    private String recordName = "";
 
-    public IllnessAdapter(Context context, List<Illness> datas, String personID, String recordNo, String recordName) {
+    public IllnessAdapter(Context context, List<Illness> datas) {
         super(context, datas);
         initPopWindow();
-        this.personID = personID;
-        this.recordNo = recordNo;
-        this.recordName = recordName;
     }
 
     private void initPopWindow() {
-        View contentView = LayoutInflater.from(getContext()).inflate(R.layout.view_popup, null);
+        View contentView = LayoutInflater.from(getContext()).inflate(R.layout.view_popup_illness, null);
         btn1 = (Button) contentView.findViewById(R.id.btn_popup1);
         btn2 = (Button) contentView.findViewById(R.id.btn_popup2);
         btn3 = (Button) contentView.findViewById(R.id.btn_popup3);
@@ -64,7 +55,7 @@ public class IllnessAdapter extends BaseCommAdapter<Illness> {
     public void showPop(View parent, int x, int y, int postion) {
         int[] location = new int[2];
         parent.getLocationOnScreen(location);
-        pop.showAtLocation(parent, Gravity.NO_GRAVITY, location[0] + parent.getWidth() + 6, location[1] - parent.getHeight());
+        pop.showAtLocation(parent, Gravity.NO_GRAVITY, x + parent.getWidth() + 6, y - parent.getHeight());
         pop.setFocusable(true);
         pop.setOutsideTouchable(true);
         pop.update();
@@ -89,6 +80,15 @@ public class IllnessAdapter extends BaseCommAdapter<Illness> {
             convertView.setTag(holder);
         }
         illness = getDatas().get(position);
+        /**
+         * 男性没有pcos
+         * @time 2015-12-01
+         */
+        if (illness.getId().equals("3") && SysApplication.getInstance().getmRecord().getSex().equals("男")) {
+            holder.btnItemIllnesschoose.setEnabled(false);
+        } else {
+            holder.btnItemIllnesschoose.setEnabled(true);
+        }
         holder.btnItemIllnesschoose.setText(illness.getName());
         holder.btnItemIllnesschoose.setOnClickListener(new popAction(position));
         return convertView;
@@ -142,31 +142,39 @@ public class IllnessAdapter extends BaseCommAdapter<Illness> {
             Intent intent = new Intent();
             switch (v.getId()) {
                 case R.id.btn_popup1:
-                    intent.setClass(getContext(), RecordFullActivity.class);
-                    intent.putExtra("Position", "1");//初诊
-                    intent.putExtra("IllnessID", illnessid);
-                    intent.putExtra("PersonID", personID);
-                    intent.putExtra("RecordNo", recordNo);
-                    intent.putExtra("RecordName", recordName);//患者姓名
-                    getContext().startActivity(intent);
-                    break;
                 case R.id.btn_popup2:
-                    intent.setClass(getContext(), RecordFullActivity.class);
-                    intent.putExtra("Position", "2");//复诊
-                    intent.putExtra("IllnessID", illnessid);
-                    intent.putExtra("PersonID", personID);
-                    intent.putExtra("RecordNo", recordNo);
-                    intent.putExtra("RecordName", recordName);//患者姓名
-                    getContext().startActivity(intent);
+                    getRecordNum(illnessid, v.getId());
                     break;
                 case R.id.btn_popup3:
-
+                    intent.setClass(getContext(), RecordChooseActivity.class);
+                    intent.putExtra("Position", 2);//病历编辑
+                    intent.putExtra("IllnessID", illnessid);
+                    getContext().startActivity(intent);
                     break;
                 case R.id.btn_popup4:
-
+                    intent.setClass(getContext(), FollowUpActivity.class);
+//                    intent.putExtra("Position", 2);//随访
+                    intent.putExtra("IllnessID", illnessid);
+                    getContext().startActivity(intent);
                     break;
             }
 
         }
+    }
+
+    /**
+     * 获取person 医院 今天的就诊总数
+     *
+     * @param illnessid
+     * @param id
+     */
+    private void getRecordNum(String illnessid, int id) {
+        IllnessChooseActivity.position = id;
+        IllnessChooseActivity.illnessid = illnessid;
+        Map<String, String> params = new WeakHashMap<>();
+        params.put("PersonID", SysApplication.getInstance().getmRecord().getId());
+        params.put("HospitalID", PreferenceUtil.getUser(getContext(), "UserInfo").getHospitalID());
+        params.put("IllnessID", illnessid);
+        new SingleFetcher(String.class).fetch(getContext(), "FindMedicalRecordOne", null, params);
     }
 }

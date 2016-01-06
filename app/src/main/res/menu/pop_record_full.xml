@@ -3,11 +3,8 @@
     <item
         android:id="@+id/good"
         android:title="现病史" />
-
     <item
         android:id="@+id/mid"
-        android:title="血糖监测" />
-    <item
-        android:id="@+id/bad"
-        android:title="现治疗用药" />
+        android:title="目前用药/血糖监测" />
+
 </menu>

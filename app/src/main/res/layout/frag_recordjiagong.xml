@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_frag_bottom" />
+
+    <LinearLayout
+        android:id="@+id/ll_now1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/content_margin_bottom"
+        android:background="@color/grey_line"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout style="@style/Style_Item_Layout">
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="甲功及抗体" />
+
+            <LinearLayout
+                style="@style/ItemEditLayout"
+                android:layout_marginLeft="@dimen/horizontal_lay"
+                android:layout_marginRight="@dimen/horizontal_lay"
+                android:layout_weight="2">
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1.6"
+                    android:text="(  日期: " />
+
+                <EditText
+                    style="@style/CommonItemLayoutEdit"
+                    android:layout_weight="2" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="年" />
+
+                <EditText
+                    style="@style/CommonItemLayoutEdit"
+                    android:layout_weight="1.6" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="月" />
+
+                <EditText
+                    style="@style/CommonItemLayoutEdit"
+                    android:layout_weight="1.6" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="日  )" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/LineGreyHorizontal" />
+
+        <LinearLayout style="@style/Style_Item_Layout">
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="FT3" />
+
+            <LinearLayout
+                style="@style/ItemEditLayout"
+                android:layout_marginRight="@dimen/horizontal_lay">
+
+                <EditText
+                    style="@style/ItemLayoutEdit"
+                    android:layout_weight="1.5" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PmoI/L"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="FT4" />
+
+            <LinearLayout
+                style="@style/ItemEditLayout"
+                android:layout_marginRight="@dimen/horizontal_lay">
+
+                <EditText
+                    style="@style/ItemLayoutEdit"
+                    android:layout_weight="1.5" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="PmoI/L"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="TSH" />
+
+            <LinearLayout style="@style/ItemEditLayout">
+
+                <EditText
+                    style="@style/ItemLayoutEdit"
+                    android:layout_weight="1.5" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="MIU/L"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/LineGreyHorizontal" />
+
+        <LinearLayout style="@style/Style_Item_Layout">
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="TPOAb" />
+
+            <LinearLayout
+                style="@style/ItemEditLayout"
+                android:layout_marginRight="@dimen/horizontal_lay">
+
+                <EditText
+                    style="@style/ItemLayoutEdit"
+                    android:layout_weight="1.5" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="IU/ML"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="TGAb" />
+
+            <LinearLayout
+                style="@style/ItemEditLayout"
+                android:layout_marginRight="@dimen/horizontal_lay">
+
+                <EditText
+                    style="@style/ItemLayoutEdit"
+                    android:layout_weight="1.5" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="IU/ML"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/ItemRecordTextView"
+                android:layout_weight="1"
+                android:text="TRAb" />
+
+            <LinearLayout style="@style/ItemEditLayout">
+
+                <EditText
+                    style="@style/ItemLayoutEdit"
+                    android:layout_weight="1.5" />
+
+                <TextView
+                    style="@style/TipTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="IU/L"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

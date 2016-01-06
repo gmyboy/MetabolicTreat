@@ -4,82 +4,92 @@
     xmlns:NiceSpinner="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="10dp"
     android:orientation="vertical">
 
-    <EditText
+    <TextView
         android:id="@+id/et_other"
         style="@style/EditTextStyle"
-        android:layout_width="300dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:hint="其他"
-        android:inputType="number" />
+        android:layout_marginLeft="10dp"
+        android:hint="@string/hint_other" />
 
-    <TextView
-        android:id="@+id/tv_tip"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="20dp"
-        android:layout_toRightOf="@+id/et_other"
-        android:text="*HT：桥本氏甲状腺炎"
-        android:textColor="@color/red"
-        android:textSize="16sp" />
-
-    <TextView
-        android:id="@+id/tv_full_doctor_tip"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="70dp"
-        android:layout_toRightOf="@+id/tv_tip"
-        android:text="医生:" />
-
-    <TextView
-        android:id="@+id/tv_full_doctor"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dip"
-        android:layout_toRightOf="@+id/tv_full_doctor_tip"
-        android:gravity="center"
-        android:text="常宝" />
-    <TextView
-        android:id="@+id/tv_full_bingren_tip"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="30dp"
-        android:layout_toRightOf="@+id/tv_full_doctor"
-        android:text="患者:" />
-
-    <TextView
-        android:id="@+id/tv_full_bingren"
-        style="@style/TitleTextView2"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="10dip"
-        android:layout_toRightOf="@+id/tv_full_bingren_tip"
-        android:gravity="center"
-        android:text="常宝" />
     <Button
         android:id="@+id/btn_fragment_certain"
         style="@style/BottomBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:text="确认" />
+        android:layout_marginRight="10dp"
+        android:text="@string/record_certain" />
+
+    <Button
+        android:id="@+id/btn_history_look"
+        style="@style/BottomBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp"
+        android:layout_toLeftOf="@+id/btn_fragment_certain"
+        android:text="上次病历"
+        android:visibility="gone" />
 
     <Button
         android:id="@+id/btn_fragment_back"
         style="@style/BottomBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_marginRight="20dp"
-        android:layout_toLeftOf="@+id/btn_fragment_certain"
+        android:layout_toLeftOf="@+id/btn_history_look"
         android:text="返回" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:layout_toLeftOf="@id/btn_fragment_back"
+        android:layout_toRightOf="@id/et_other"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*HT：桥本氏甲状腺炎"
+            android:textColor="@color/red"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_full_doctor_tip"
+            style="@style/TitleTextView2"
+            android:layout_marginLeft="30dp"
+            android:text="医生:" />
+
+        <TextView
+            android:id="@+id/tv_full_doctor"
+            style="@style/TitleTextView2"
+            android:layout_marginLeft="10dip"
+            android:text="常宝" />
+
+        <TextView
+            android:id="@+id/tv_full_bingren_tip"
+            style="@style/TitleTextView2"
+            android:layout_marginLeft="30dp"
+            android:text="患者:" />
+
+        <TextView
+            android:id="@+id/tv_full_bingren"
+            style="@style/TitleTextView2"
+            android:layout_marginLeft="10dip"
+            android:text="常宝" />
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/ll_now1"
@@ -91,121 +101,91 @@
         android:background="@color/grey_line"
         android:orientation="vertical">
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="甲亢病史" />
 
+            <LinearLayout style="@style/input_layout_in">
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
-
-                <EditText
-                    style="@style/ItemLayoutEdit"
-                    android:layout_weight="1.5" />
+                <TextView
+                    android:id="@+id/et_recordnow2_1_1"
+                    style="@style/input_txt" />
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_nian"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|right"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_recordnow2_1_2"
+                    style="@style/input_spinner" />
 
             </LinearLayout>
 
-
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="甲亢复发" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in">
 
-                <EditText
-                    style="@style/ItemLayoutEdit"
-                    android:layout_weight="1.5" />
+                <TextView
+                    android:id="@+id/et_recordnow2_2_1"
+                    style="@style/input_txt" />
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_nian2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|right"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_recordnow2_2_2"
+                    style="@style/input_spinner" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="突眼" />
 
-            <LinearLayout style="@style/ItemEditLayout">
+            <LinearLayout style="@style/input_layout_in_nodimen">
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_recordnow_type1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="@dimen/spinnerTextSize"
+                    android:id="@+id/ns_recordnow2_3"
+                    style="@style/input_spinner"
                     NiceSpinner:niceEntries="@array/DMxgzy" />
             </LinearLayout>
         </LinearLayout>
 
         <View style="@style/LineGreyHorizontal" />
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="心悸多汗" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in_null">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_recordnow2_4"
                     style="@style/ChangeButton"
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
                     ChangeButton:offText="无"
                     ChangeButton:onText="有" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="体重下降" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in_null">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_recordnow2_5"
                     style="@style/ChangeButton"
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
                     ChangeButton:offText="无"
                     ChangeButton:onText="有" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="周期性麻痹" />
 
-            <LinearLayout style="@style/ItemEditLayout">
+            <LinearLayout style="@style/input_layout_in_null_nodimen">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_recordnow2_6"
                     style="@style/ChangeButton"
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
                     ChangeButton:offText="无"
                     ChangeButton:onText="有" />
             </LinearLayout>
@@ -213,58 +193,45 @@
 
         <View style="@style/LineGreyHorizontal" />
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="甲减" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in">
 
-                <EditText
-                    style="@style/ItemLayoutEdit"
-                    android:layout_weight="1.5" />
+                <TextView
+                    android:id="@+id/et_recordnow2_7_1"
+                    style="@style/input_txt" />
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_nian3"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|right"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_recordnow2_7_2"
+                    style="@style/input_spinner" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="体重增加" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in_null">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_recordnow2_8"
                     style="@style/ChangeButton"
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
                     ChangeButton:offText="无"
                     ChangeButton:onText="有" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="下肢水肿" />
 
-            <LinearLayout style="@style/ItemEditLayout">
+            <LinearLayout style="@style/input_layout_in_null_nodimen">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_recordnow2_9"
                     style="@style/ChangeButton"
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
                     ChangeButton:offText="无"
                     ChangeButton:onText="有" />
             </LinearLayout>
@@ -272,124 +239,94 @@
 
         <View style="@style/LineGreyHorizontal" />
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="HT病史" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in">
 
-                <EditText
-                    style="@style/ItemLayoutEdit"
-                    android:layout_weight="1.5" />
+                <TextView
+                    android:id="@+id/et_recordnow2_10_1"
+                    style="@style/input_txt" />
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_nian4"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|right"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_recordnow2_10_2"
+                    style="@style/input_spinner" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="颈部增粗" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in_null">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_recordnow2_11"
                     style="@style/ChangeButton"
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
                     ChangeButton:offText="无"
                     ChangeButton:onText="有" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="抗体异常" />
 
-            <LinearLayout style="@style/ItemEditLayout">
+            <LinearLayout style="@style/input_layout_in_nodimen">
 
-                <EditText
-                    style="@style/ItemLayoutEdit"
-                    android:layout_weight="1.5" />
+                <TextView
+                    android:id="@+id/et_recordnow2_12_1"
+                    style="@style/input_txt" />
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_nian5"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|right"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_recordnow2_12_2"
+                    style="@style/input_spinner" />
             </LinearLayout>
         </LinearLayout>
 
         <View style="@style/LineGreyHorizontal" />
 
-        <LinearLayout style="@style/Style_Item_Layout">
+        <LinearLayout style="@style/input_layout_out">
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+
+                style="@style/input_txt_title"
                 android:text="甲状腺结节" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in">
 
-                <EditText
-                    style="@style/ItemLayoutEdit"
-                    android:layout_weight="1.5" />
+                <TextView
+                    android:id="@+id/et_recordnow2_13_1"
+                    style="@style/input_txt" />
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_nian6"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_vertical|right"
-                    android:layout_weight="1"
-                    android:textSize="@dimen/spinnerTextSize" />
+                    android:id="@+id/ns_recordnow2_13_2"
+                    style="@style/input_spinner" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="颈部疼痛" />
 
-            <LinearLayout
-                style="@style/ItemEditLayout"
-                android:layout_marginRight="@dimen/horizontal_lay">
+            <LinearLayout style="@style/input_layout_in_null">
 
                 <com.shwootide.metabolictreat.widget.ChangeButton
+                    android:id="@+id/cb_recordnow2_14"
                     style="@style/ChangeButton"
-                    android:layout_width="50dp"
-                    android:layout_height="45dp"
                     ChangeButton:offText="无"
                     ChangeButton:onText="有" />
             </LinearLayout>
 
             <TextView
-                style="@style/ItemRecordTextView"
-                android:layout_weight="1"
+                style="@style/input_txt_title"
                 android:text="结节大小" />
 
-            <LinearLayout style="@style/ItemEditLayout">
+            <LinearLayout style="@style/input_layout_in_nodimen">
 
                 <com.shwootide.metabolictreat.widget.nicespinner.NiceSpinner
-                    android:id="@+id/ns_nian7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:textSize="@dimen/spinnerTextSize"
+                    android:id="@+id/ns_recordnow2_15"
+                    style="@style/input_spinner"
                     NiceSpinner:niceEntries="@array/DMjiejie" />
             </LinearLayout>
         </LinearLayout>

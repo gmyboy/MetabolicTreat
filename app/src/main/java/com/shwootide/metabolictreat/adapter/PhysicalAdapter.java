@@ -28,7 +28,6 @@ public class PhysicalAdapter extends BaseCommAdapter<Physical> {
 
     public PhysicalAdapter(Context context, List<Physical> datas) {
         super(context, datas);
-        setIsTwoLine(true);
     }
 
     @Override

@@ -36,13 +36,13 @@ public class StickyListAdapter extends BaseCommAdapter<MHistory_Past> implements
             headerholder.tvHeader = (TextView) view.findViewById(R.id.tv_dialog_list_header);
             view.setTag(headerholder);
         }
-        headerholder.tvHeader.setText(getDatas().get(i).getMhtype1Name());
+        headerholder.tvHeader.setText(getDatas().get(i).getIllnessName());
         return view;
     }
 
     @Override
     public long getHeaderId(int i) {
-        return Long.parseLong(getDatas().get(i).getMhtype1ID());
+        return Long.parseLong(getDatas().get(i).getIllnessName());
     }
 
     @Override

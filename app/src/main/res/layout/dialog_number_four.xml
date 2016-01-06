@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dialog_width"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="20dp">
+
+        <NumberPicker
+            android:id="@+id/np_dialog_one1"
+            android:layout_width="100dp"
+            android:layout_height="400dp"
+            android:layout_marginRight="2dp" />
+
+        <NumberPicker
+            android:id="@+id/np_dialog_one2"
+            android:layout_width="100dp"
+            android:layout_height="400dp"
+            android:layout_marginRight="2dp" />
+
+        <NumberPicker
+            android:id="@+id/np_dialog_one3"
+            android:layout_width="100dp"
+            android:layout_height="400dp"
+            android:layout_marginRight="2dp" />
+
+        <TextView
+            android:id="@+id/tv_dialog_complex_dian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="2dp"
+            android:text=" . "
+            android:textSize="30sp"
+            android:visibility="gone" />
+
+        <NumberPicker
+            android:id="@+id/np_dialog_complex_little"
+            android:layout_width="wrap_content"
+            android:layout_height="400dp"
+            android:layout_marginRight="2dp"
+            android:visibility="gone" />
+
+        <NumberPicker
+            android:id="@+id/np_dialog_one4"
+            android:layout_width="100dp"
+            android:layout_height="400dp"
+            android:layout_marginRight="2dp" />
+
+    </LinearLayout>
+
+    <EditText
+        android:id="@+id/et_dialog_four"
+        style="@style/CommTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="30dp"
+        android:hint="输入备注"
+        android:padding="8dp" />
+</LinearLayout>

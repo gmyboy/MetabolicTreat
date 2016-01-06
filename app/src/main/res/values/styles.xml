@@ -11,6 +11,7 @@
         <item name="android:windowFullscreen">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="colorAccent">@color/main_light</item>
+        <item name="android:textSize">23sp</item>
     </style>
 
     <style name="SplashTheme" parent="FullScreenTheme">
@@ -18,7 +19,7 @@
     </style>
 
     <style name="ProgressDialog" parent="@style/Dialog">
-        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowBackground">@drawable/bg_dialog</item>
         <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
     </style>
 
@@ -28,6 +29,7 @@
         <item name="android:windowBackground">@drawable/dialog_bg</item>
         <item name="android:windowIsFloating">true</item>
         <item name="android:windowContentOverlay">@null</item>
+        <item name="android:textSize">20sp</item>
     </style>
 
     <style name="StarTextView">
@@ -44,6 +46,16 @@
     <style name="PopMenuAnimation" parent="@android:style/Animation">
         <item name="android:windowEnterAnimation">@anim/scale_in</item>
         <item name="android:windowExitAnimation">@anim/scale_out</item>
+    </style>
+
+    <style name="PopUpAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_top_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_bottom_out</item>
+    </style>
+
+    <style name="PopRightAnimation" parent="@android:style/Animation">
+        <item name="android:windowEnterAnimation">@anim/slide_right_in</item>
+        <item name="android:windowExitAnimation">@anim/slide_left_out</item>
     </style>
 
     <style name="LineVertical">
@@ -67,7 +79,7 @@
     <style name="AllLineVertical">
         <item name="android:layout_width">1dip</item>
         <item name="android:layout_height">match_parent</item>
-        <item name="android:background">@color/md_grey_300</item>
+        <item name="android:background">@color/md_grey_400</item>
     </style>
 
     <style name="EditTextStyle">
@@ -89,7 +101,6 @@
         <item name="android:layout_width">300dip</item>
         <item name="android:layout_height">50dp</item>
         <item name="android:layout_marginLeft">60dp</item>
-
     </style>
 
     <style name="TitleTextView">
@@ -98,12 +109,12 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
         <item name="android:textSize">@dimen/titleTextSize</item>
     </style>
 
     <style name="TitleTextView2">
-        <item name="android:textColor">@color/main_light</item>
+        <item name="android:textColor">@color/md_white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
@@ -112,13 +123,28 @@
         <item name="android:textSize">16sp</item>
     </style>
 
-    <style name="TipTextView">
-        <item name="android:textColor">@color/main_light</item>
+    <style name="TitleTextView3">
+        <item name="android:textColor">@color/md_white</item>
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center_vertical</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:paddingLeft">40dp</item>
+        <item name="android:paddingRight">40dp</item>
+        <item name="android:paddingTop">15dp</item>
+        <item name="android:paddingBottom">15dp</item>
+    </style>
+
+    <style name="TipTextView">
+        <item name="android:textColor">@color/main_light</item>
+        <item name="android:background">@color/grey_spinner</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
         <item name="android:textSize">19sp</item>
     </style>
 
@@ -129,7 +155,7 @@
         <item name="android:layout_centerVertical">true</item>
         <item name="android:layout_gravity">center</item>
         <item name="android:gravity">center_vertical</item>
-        <item name="android:textSize">17sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="HeaderTextView">
@@ -154,14 +180,21 @@
 
     <style name="CommTextView">
         <item name="android:textColor">@android:color/black</item>
-        <item name="android:textSize">23dp</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="CommWhiteTextView">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:singleLine">true</item>
     </style>
 
     <style name="ItemTextView" parent="CommTextView">
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_width">0dip</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:singleLine">false</item>
+        <item name="android:singleLine">true</item>
     </style>
 
     <style name="ItemMain" parent="ItemTextView">
@@ -182,9 +215,17 @@
     <style name="ItemLayoutEdit" parent="CommTextView">
         <item name="android:layout_width">0dip</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">@null</item>
         <item name="android:layout_gravity">center_vertical|left</item>
         <item name="android:gravity">center</item>
+        <item name="android:digits">0123456789.</item>
+    </style>
+
+    <style name="SugarItemLayoutEdit" parent="CommTextView">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_gravity">center_vertical|left</item>
+        <item name="android:gravity">center_vertical|left</item>
     </style>
 
     <style name="CommonItemLayoutEdit" parent="CommTextView">
@@ -192,6 +233,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_gravity">center_vertical|left</item>
         <item name="android:gravity">center</item>
+        <item name="android:inputType">number</item>
     </style>
 
     <style name="ItemEditText" parent="ItemTextView">
@@ -210,9 +252,20 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:layout_width">0dip</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:singleLine">false</item>
+        <item name="android:singleLine">true</item>
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textSize">23dp</item>
+    </style>
+
+    <style name="ItemFollowTextView">
+        <item name="android:gravity">center_vertical|left</item>
+        <!--<item name="android:layout_marginLeft">10dp</item>-->
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">23sp</item>
     </style>
 
     <style name="RadioButtonStyle">
@@ -261,20 +314,19 @@
     <style name="PastDialogListTextHeader">
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textSize">@dimen/titleTextSize</item>
-        <item name="android:paddingBottom">5dp</item>
-        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:paddingTop">8dp</item>
     </style>
 
     <style name="PastDialogListText">
         <item name="android:textColor">@android:color/black</item>
         <item name="android:textSize">@dimen/titleTextSize</item>
-        <item name="android:paddingBottom">5dp</item>
+        <item name="android:paddingBottom">8dp</item>
         <item name="android:layout_marginLeft">10dp</item>
-        <item name="android:paddingTop">5dp</item>
+        <item name="android:paddingTop">8dp</item>
     </style>
 
     <style name="BottomBtn">
-        <item name="android:layout_alignParentBottom">true</item>
         <item name="android:paddingBottom">5dp</item>
         <item name="android:paddingTop">5dp</item>
         <item name="android:paddingLeft">20dp</item>
@@ -282,6 +334,19 @@
         <item name="android:background">@drawable/btn_common_bg</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">@dimen/titleTextSize</item>
+    </style>
+
+    <style name="MenuRadioBtn">
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">12dp</item>
+        <item name="android:paddingRight">10dp</item>
+        <item name="android:background">@drawable/btn_menu_bg</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:button">@null</item>
+        <item name="android:textSize">@dimen/titleTextSize</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="Style_Item_Layout">
@@ -307,14 +372,12 @@
     </style>
 
     <style name="ItemEditLayout">
-        <item name="android:paddingBottom">15dp</item>
-        <item name="android:paddingTop">15dp</item>
-        <item name="android:paddingLeft">3dp</item>
-        <item name="android:paddingRight">3dp</item>
         <item name="android:layout_width">0dp</item>
+        <item name="android:paddingLeft">3dp</item>
         <item name="android:layout_weight">1.5</item>
+        <item name="android:background">@color/md_white</item>
         <item name="android:orientation">horizontal</item>
-        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_height">50dp</item>
         <item name="android:layout_gravity">center_vertical</item>
     </style>
 
@@ -324,6 +387,148 @@
         <item name="android:layout_gravity">center</item>
         <item name="android:textColor">@android:color/white</item>
         <item name="android:textSize">20sp</item>
+        <item name="android:layout_width">50dp</item>
+        <item name="android:layout_height">45dp</item>
     </style>
 
+    <style name="TableRowTextView" parent="RowTextView">
+        <item name="android:gravity">center_vertical|left</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:digits">0123456789.-+</item>
+    </style>
+
+    <style name="RowTextView">
+        <item name="android:textColor">@android:color/black</item>
+        <item name="android:textSize">23dp</item>
+        <item name="android:background">@drawable/bg_tabletext</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingLeft">5dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="FlatTableRowTextView" parent="RowTextView">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+    <style name="input_layout_in">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1.5</item>
+        <item name="android:background">@color/grey_up</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginRight">@dimen/horizontal_lay</item>
+    </style>
+
+    <style name="input_layout_in_nodimen">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_weight">1.5</item>
+        <item name="android:background">@color/grey_up</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="input_layout_in_null">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:layout_weight">1.5</item>
+        <item name="android:background">@null</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_marginRight">@dimen/horizontal_lay</item>
+    </style>
+
+    <style name="input_layout_in_null_nodimen">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:paddingLeft">3dp</item>
+        <item name="android:layout_weight">1.5</item>
+        <item name="android:background">@null</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="input_layout_solid">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">7.5</item>
+    </style>
+
+    <style name="input_layout_out">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:weightSum">7.5</item>
+    </style>
+
+    <style name="input_spinner">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_vertical|right</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/spinnerTextSize</item>
+        <item name="android:textColor">@color/main_light</item>
+    </style>
+
+    <style name="input_spinner_full">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_vertical|right</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">@dimen/spinnerTextSize</item>
+        <item name="android:textColor">@color/main_light</item>
+    </style>
+
+    <style name="input_txt" parent="CommTextView">
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_gravity">center_vertical|left</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1.5</item>
+        <item name="android:paddingLeft">3dp</item>
+    </style>
+
+    <style name="input_txt_title" parent="CommTextView">
+        <item name="android:gravity">center_vertical|left</item>
+        <!--<item name="android:layout_marginLeft">10dp</item>-->
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_width">0dip</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="input_txt_dost">
+        <item name="android:textColor">@color/main_light</item>
+        <item name="android:background">@color/grey_spinner</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">19sp</item>
+    </style>
 </resources>

@@ -1,26 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingTop="5dp"
-    android:paddingBottom="5dp"
+    android:layout_height="50dp"
     android:orientation="horizontal">
-
-    <View style="@style/LineVertical" />
 
     <TextView
         android:id="@+id/tv_item_main_name"
         style="@style/ItemMain"
         android:layout_weight="2.5"
         android:text="@string/header_main_name" />
-
-    <View style="@style/LineVertical" />
-
-    <TextView
-        android:id="@+id/tv_item_main_sex"
-        style="@style/ItemMain"
-        android:layout_weight="1"
-        android:text="@string/header_main_sex" />
 
     <View style="@style/LineVertical" />
 
@@ -33,10 +21,30 @@
     <View style="@style/LineVertical" />
 
     <TextView
-        android:id="@+id/tv_item_main_recordID"
+        android:id="@+id/tv_item_main_first_his"
         style="@style/ItemMain"
-        android:layout_weight="3.5"
-        android:text="@string/header_main_recordID" />
+        android:layout_weight="3.5" />
 
     <View style="@style/LineVertical" />
+
+    <TextView
+        android:id="@+id/tv_item_main_first_dis"
+        style="@style/ItemMain"
+        android:layout_weight="3.5" />
+
+    <View style="@style/LineVertical" />
+
+    <TextView
+        android:id="@+id/tv_item_main_first_doc"
+        style="@style/ItemMain"
+        android:layout_weight="3" />
+
+    <View style="@style/LineVertical" />
+
+    <TextView
+        android:id="@+id/tv_item_main_recordID"
+        style="@style/ItemMain"
+        android:layout_weight="4"
+        android:text="@string/header_main_recordID" />
+
 </LinearLayout>

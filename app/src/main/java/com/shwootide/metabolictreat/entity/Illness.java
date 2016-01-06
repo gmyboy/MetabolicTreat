@@ -19,7 +19,7 @@ public class Illness implements Parcelable {
      */
     private String other;
     private String HospitalID;
-    private String name;
+    private String name="";
     private String id;
     private String DepartmentID;
     private String info;
@@ -108,4 +108,9 @@ public class Illness implements Parcelable {
             return new Illness[size];
         }
     };
+
+    @Override
+    public String toString() {
+        return name.equals("") ? super.toString() : name;
+    }
 }

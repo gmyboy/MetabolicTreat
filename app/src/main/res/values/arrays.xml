@@ -6,21 +6,25 @@
         <item>心内科</item>
         <item>耳鼻喉科</item>
     </string-array>
+
     <string-array name="Disease">
         <item>糖尿病</item>
         <item>甲状腺疾病</item>
         <item>多囊卵巢综合症</item>
-        <item>其他</item>
+        <item>其他疾病</item>
     </string-array>
+
     <string-array name="Diagnosis">
         <item>初诊</item>
         <item>复诊</item>
         <item>病历编辑</item>
     </string-array>
+
     <string-array name="Sex">
         <item>男</item>
         <item>女</item>
     </string-array>
+
     <string-array name="Paizhao">
         <item>腹部超声</item>
         <item>双侧劲动脉超声</item>
@@ -35,25 +39,61 @@
         <item>年</item>
         <item>月</item>
     </string-array>
+
+    <!--体格检查初诊相关模块-->
     <string-array name="DMxgzy">
         <item>无</item>
         <item>左</item>
         <item>右</item>
         <item>双侧</item>
     </string-array>
+
     <string-array name="DMjielv">
         <item>齐</item>
         <item>不齐</item>
         <item>早搏</item>
     </string-array>
-    <string-array name="DMtuyan">
-        <item>齐</item>
-        <item>不齐</item>
-        <item>早搏</item>
+
+    <string-array name="DMdaxiao">
+        <item>未见肿大</item>
+        <item>1度肿大</item>
+        <item>2度肿大</item>
+        <item>3度肿大</item>
     </string-array>
+
+    <string-array name="TNpifu">
+        <item>正常</item>
+        <item>色斑</item>
+        <item>破溃</item>
+    </string-array>
+
+    <string-array name="TNzubei">
+        <item>未见异常</item>
+        <item>左侧减弱</item>
+        <item>右侧减弱</item>
+        <item>双侧减弱</item>
+        <item>左侧消失</item>
+        <item>右侧消失</item>
+        <item>双侧消失</item>
+    </string-array>
+
+    <!--现病史-->
     <string-array name="DMjiejie">
         <item>有增大</item>
         <item>大小无变化</item>
+    </string-array>
+
+    <!--体格检查复诊相关模块-->
+    <string-array name="DMfuzhen">
+        <item>无</item>
+        <item>好转</item>
+        <item>无变化</item>
+    </string-array>
+
+    <string-array name="Otherfuzhen">
+        <item>无变化</item>
+        <item>增加</item>
+        <item>减少</item>
     </string-array>
 
     <string-array name="Pcosduonang">
@@ -78,17 +118,25 @@
 
     <string-array name="medic_ywzl">
         <item>降糖药</item>
+        <item>糖尿病并发症药物</item>
         <item>降脂药</item>
         <item>降压药</item>
-        <item>甲状腺药物</item>
+        <item>降尿酸和痛风药</item>
         <item>保肝药物</item>
         <item>骨质疏松药物</item>
-        <item>其他</item>
+    </string-array>
+
+    <string-array name="medic_fl">
+        <item>小类1</item>
+        <item>小类2</item>
+        <item>小类3</item>
+        <item>小类4</item>
     </string-array>
 
     <string-array name="medic_hxm">
-        <item>格列齐特</item>
-        <item>格列吡嗪控释片</item>
+        <item>甘草酸二铵</item>
+        <item>百赛诺</item>
+        <item>易善复</item>
     </string-array>
 
     <string-array name="medic_mqyy">
@@ -112,7 +160,81 @@
     </string-array>
 
     <string-array name="medic_blfy">
-        <item>头晕</item>
-        <item>低血糖反应</item>
+        <item>点击选择</item>
+        <item>一日一次</item>
+        <item>一日两次</item>
+        <item>一日三次</item>
+        <item>一日四次</item>
+        <item>隔日一次</item>
+        <item>一周一次</item>
+    </string-array>
+
+    <string-array name="medic_syff">
+        <item>点击选择</item>
+        <item>qN(睡前)</item>
+        <item>8PM</item>
+        <item>餐前</item>
+        <item>餐中</item>
+        <item>餐后</item>
+        <item>吞服</item>
+        <item>嚼服</item>
+        <item>早餐前</item>
+        <item>早餐后</item>
+        <item>晚餐前</item>
+        <item>晚餐后</item>
+    </string-array>
+
+    <string-array name="medic_tell_zhidao_yinshi">
+        <item>饮食处方</item>
+        <item>正常体型者参考食谱一</item>
+        <item>正常体型者参考食谱二</item>
+    </string-array>
+
+    <string-array name="medic_tell_zhidao_tundong">
+        <item>运动处方</item>
+        <item>I级</item>
+        <item>II级</item>
+        <item>III级</item>
+        <item>IV级</item>
+    </string-array>
+
+    <string-array name="recordpersonal_yinshi">
+        <item>普通</item>
+        <item>嗜荤</item>
+        <item>嗜素</item>
+    </string-array>
+
+    <string-array name="recordpersonal_habit">
+        <item>无</item>
+        <item>偶有</item>
+        <item>有</item>
+    </string-array>
+
+    <string-array name="recordpersonal_yundongxingshi">
+        <item>散步</item>
+        <item>慢跑</item>
+        <item>快走</item>
+        <item>游泳</item>
+        <item>羽毛球</item>
+        <item>乒乓球</item>
+        <item>自行车</item>
+        <item>其他</item>
+    </string-array>
+
+    <string-array name="recordpersonal_shuimian">
+        <item>好</item>
+        <item>一般</item>
+        <item>不好</item>
+    </string-array>
+
+    <string-array name="DMO">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="highestdost">
+        <item>mmol/L</item>
+        <item>mg/dl</item>
     </string-array>
 </resources>

@@ -30,7 +30,6 @@ public class RecordPersonalAdapter extends BaseCommAdapter<MHistory_Personal> {
 
     public RecordPersonalAdapter(Context context, List<MHistory_Personal> datas) {
         super(context, datas);
-        setIsTwoLine(true);
     }
 
     @Override

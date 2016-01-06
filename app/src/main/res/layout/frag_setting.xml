@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/btn_setting_update"
+        android:layout_width="500dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:background="@drawable/btn_common_bg"
+        android:text="软件更新(当前版本号:v5.01.1208)"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/logintextsize" />
+
+    <Button
+        android:id="@+id/btn_setting_about"
+        android:layout_width="500dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:background="@drawable/btn_common_bg"
+        android:text="关于我们"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/logintextsize" />
+
+    <Button
+        android:id="@+id/btn_setting_exit"
+        android:layout_width="500dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:background="@drawable/btn_common_bg"
+        android:text="退出登录"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/logintextsize" />
+</LinearLayout>

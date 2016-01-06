@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/include_frag_bottom" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/content_margin_bottom"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2"
+            android:background="@color/grey_line"
+            android:orientation="vertical">
+
+            <include layout="@layout/header_recordnow_medical" />
+
+            <ListView
+                android:id="@+id/lv_recordmedicine2"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/itemheight"
+                android:background="@android:color/white"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/ns_recordmedicine2_1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:textSize="@dimen/spinnerTextSize" />
+
+                <Spinner
+                    android:id="@+id/ns_recordmedicine2_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:textSize="@dimen/spinnerTextSize" />
+
+                <Spinner
+                    android:id="@+id/ns_recordmedicine2_3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:textSize="@dimen/spinnerTextSize" />
+
+                <TextView
+                    android:id="@+id/et_recordmedicine2_4"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textSize="@dimen/spinnerTextSize" />
+
+                <TextView
+                    android:id="@+id/tv_recordmedicine2_5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@android:color/white"
+                    android:gravity="center"
+                    android:text="mg"
+                    android:textSize="@dimen/spinnerTextSize" />
+
+                <Spinner
+                    android:id="@+id/ns_recordmedicine2_6"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center"
+                    android:textSize="@dimen/spinnerTextSize" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@color/grey_line">
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+                    <View style="@style/LineGreyHorizontal" />
+                    <LinearLayout
+                        style="@style/input_layout_solid"
+                        android:weightSum="6">
+
+                        <LinearLayout style="@style/input_layout_in_null">
+
+                            <TextView
+                                style="@style/ItemRecordTextView"
+                                android:layout_weight="1"
+                                android:text="检验日期" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/input_layout_in">
+
+                            <TextView
+                                android:id="@+id/tv_recordmedicine2_7"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1"
+                                android:hint="点击选择日期" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/input_layout_in">
+
+                            <TextView
+                                style="@style/input_txt"
+                                android:text="FT3" />
+
+                            <TextView
+                                android:id="@+id/et_recordmedicine2_10"
+                                style="@style/input_txt" />
+
+                            <TextView
+                                style="@style/input_txt_dost"
+                                android:text="PmoI/L"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/input_layout_in_nodimen">
+
+                            <TextView
+                                style="@style/input_txt"
+                                android:text="FT4" />
+
+                            <TextView
+                                android:id="@+id/et_recordmedicine2_11"
+                                style="@style/input_txt" />
+
+                            <TextView
+                                style="@style/input_txt_dost"
+                                android:text="PmoI/L"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout
+                        style="@style/input_layout_solid"
+                        android:weightSum="6">
+
+                        <LinearLayout style="@style/input_layout_in">
+
+                            <TextView
+                                style="@style/input_txt"
+                                android:text="TSH" />
+
+                            <TextView
+                                android:id="@+id/et_recordmedicine2_12"
+                                style="@style/input_txt" />
+
+                            <TextView
+                                style="@style/input_txt_dost"
+                                android:text="MIU/L"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/input_layout_in">
+
+                            <TextView
+                                style="@style/input_txt"
+                                android:text="TPOAb" />
+
+                            <TextView
+                                android:id="@+id/et_recordmedicine2_13"
+                                style="@style/input_txt" />
+
+                            <TextView
+                                style="@style/input_txt_dost"
+                                android:text="IU/ML"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/input_layout_in">
+
+                            <TextView
+                                style="@style/input_txt"
+                                android:text="TGAb" />
+
+                            <TextView
+                                android:id="@+id/et_recordmedicine2_14"
+                                style="@style/input_txt" />
+
+                            <TextView
+                                style="@style/input_txt_dost"
+                                android:text="IU/ML"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/input_layout_in_nodimen">
+
+                            <TextView
+                                style="@style/input_txt"
+                                android:text="TRAb" />
+
+                            <TextView
+                                android:id="@+id/et_recordmedicine2_15"
+                                style="@style/input_txt" />
+
+                            <TextView
+                                style="@style/input_txt_dost"
+                                android:text="IU/L"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout
+                        style="@style/input_layout_solid"
+                        android:weightSum="6">
+
+                        <LinearLayout style="@style/input_layout_in">
+
+                            <TextView
+                                style="@style/input_txt"
+                                android:text="ALT" />
+
+                            <TextView style="@style/input_txt" />
+
+                            <TextView
+                                style="@style/input_txt_dost"
+                                android:text="U/L"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/input_layout_in">
+
+                            <TextView
+                                style="@style/input_txt"
+                                android:text="AST" />
+
+                            <TextView style="@style/input_txt" />
+
+                            <TextView
+                                style="@style/input_txt_dost"
+                                android:text="U/L"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/input_layout_in">
+
+                            <TextView
+                                style="@style/input_txt"
+                                android:text="γ-GT" />
+
+                            <TextView style="@style/input_txt" />
+
+                            <TextView
+                                style="@style/input_txt_dost"
+                                android:text="U/L"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+
+                        <LinearLayout style="@style/input_layout_in_null_nodimen"/>
+
+                    </LinearLayout>
+                    <View style="@style/LineGreyHorizontal" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

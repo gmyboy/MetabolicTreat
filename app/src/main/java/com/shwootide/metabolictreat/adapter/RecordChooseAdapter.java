@@ -4,13 +4,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.shwootide.metabolictreat.R;
+import com.shwootide.metabolictreat.entity.MedicalRecord;
 import com.shwootide.metabolictreat.entity.Record;
+import com.shwootide.metabolictreat.utils.CommonUtil;
+import com.shwootide.metabolictreat.utils.Config;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.Bind;
@@ -21,20 +22,41 @@ import butterknife.ButterKnife;
  * Created by GMY on 2015/8/25 09:20.
  * Contact me via email gmyboy@qq.com.
  */
-public class RecordChooseAdapter extends BaseCommAdapter<Record> {
+public class RecordChooseAdapter extends BaseCommAdapter<MedicalRecord> {
+    public static final String SORT_FIELDS = "getSequenceNumber";//排序的字段
+    private String type = null;//排序的顺序,默认升序
 
-    public RecordChooseAdapter(Context context, List<Record> datas) {
+    public RecordChooseAdapter(Context context, List<MedicalRecord> datas) {
         super(context, datas);
+        CommonUtil.sortList(datas, SORT_FIELDS, type);
     }
 
     public RecordChooseAdapter(Context context) {
         super(context);
     }
 
+    public void changeType() {
+        if (getType() != null && "desc".equals(getType())) {
+            setType("");
+        } else {
+            setType(Config.SORT_DESC);
+        }
+        CommonUtil.sortList(getDatas(), SORT_FIELDS, type);
+        notifyDataSetChanged();
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
-        Record record;
+        MedicalRecord record;
         if (convertView != null) {
             holder = (ViewHolder) convertView.getTag();
         } else {
@@ -43,9 +65,9 @@ public class RecordChooseAdapter extends BaseCommAdapter<Record> {
             convertView.setTag(holder);
         }
         record = getDatas().get(position);
-//        holder.tvItemDiagnosistime.setText(record.getDiagnosisTime());
-//        holder.tvItemDiagnosiscount.setText(record.getDiagnosisCount());
-//        holder.tvItemDoctor.setText(record.getDoctor());
+        holder.tvItemDiagnosistime.setText(CommonUtil.parseStr(record.getRecordDate()));
+        holder.tvItemDiagnosiscount.setText(record.getSequenceNumber());
+        holder.tvItemDoctor.setText(record.getUSERREALNAME());
         return convertView;
     }
 

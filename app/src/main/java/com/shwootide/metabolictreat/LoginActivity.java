@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioGroup;
 
 import com.shwootide.metabolictreat.entity.UserInfo;
 import com.shwootide.metabolictreat.event.MessageEvent;
@@ -61,15 +62,20 @@ public class LoginActivity extends BaseActivity {
     public void setTitleBarOption() {
 
     }
-
+    @Override
+    public void wentTo(RadioGroup group, int checkedId) {
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setRegisterEvent(true);
         super.onCreate(savedInstanceState);
         UserInfo userInfo = PreferenceUtil.getUser(mContext, Config.USERINFO);
+        if (userInfo.isAutoLogin()) {
+            etLoginPassword.setText(userInfo.getPwd());
+        }
         etLoginUsername.setText(userInfo.getUserName());
-        etLoginPassword.setText(userInfo.getPwd());
+        cbLogin.setChecked(userInfo.isAutoLogin());
     }
 
     /**
@@ -78,17 +84,19 @@ public class LoginActivity extends BaseActivity {
      * @param event 病历单
      */
     public void onEventMainThread(MessageEvent event) {
-        if (event != null) {
+        if (event.getWhat().equals("UserLogin")) {
             if (event.getCode().equals("200")) {
-                CommonUtil.showToast(mContext, "登陆成功");
                 //保存用户所有信息
-                if (PreferenceUtil.saveUser(mContext, Config.USERINFO, (UserInfo) event.getObjects().get(0))) {
+                UserInfo userInfo = (UserInfo) event.getObjects().get(0);
+                CommonUtil.showToast(mContext, userInfo.getUserToStaff()+"医生，欢迎您登陆");
+                userInfo.setAutoLogin(cbLogin.isChecked());
+                if (PreferenceUtil.saveUser(mContext, Config.USERINFO, userInfo)) {
                     Intent intent = new Intent(mContext, MainActivity.class);
                     startActivity(intent);
                     finish();
                 }
             } else
-                CommonUtil.showToast(mContext, event.getMessage());
+                CommonUtil.showToast(mContext, "登录失败");
         }
     }
 }

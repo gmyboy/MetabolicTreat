@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/itemheight"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_item_tellmedicine1"
+        style="@style/ContentTextView"
+        android:layout_weight="1"
+        android:text="保肝药物" />
+
+    <TextView
+        android:id="@+id/tv_item_tellmedicine2"
+        style="@style/ContentTextView"
+        android:layout_weight="1"
+        android:text="甘草酸二铵" />
+
+    <TextView
+        android:id="@+id/tv_item_tellmedicine3"
+        style="@style/ContentTextView"
+        android:layout_weight="1"
+        android:text="50mg" />
+
+    <TextView
+        android:id="@+id/tv_item_tellmedicine4"
+        style="@style/ContentTextView"
+        android:layout_weight="1"
+        android:text="一日三次" />
+
+    <TextView
+        android:id="@+id/tv_item_tellmedicine5"
+        style="@style/ContentTextView"
+        android:layout_weight="1"
+        android:text="餐前" />
+
+    <TextView
+        android:id="@+id/tv_item_tellmedicine6"
+        style="@style/ContentTextView"
+        android:layout_weight="1"
+        android:text="50mg*24片*2" />
+
+</LinearLayout>
+

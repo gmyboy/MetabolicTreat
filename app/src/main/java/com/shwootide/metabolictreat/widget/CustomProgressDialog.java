@@ -2,8 +2,10 @@ package com.shwootide.metabolictreat.widget;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -46,8 +48,7 @@ public class CustomProgressDialog extends Dialog {
      * @Title show
      * @Description 显示进度条
      */
-    public static CustomProgressDialog showCancelable(Context context,
-                                                      String message) {
+    public static CustomProgressDialog showCancelable(Context context, String message) {
         return show(context, null, message, false);
     }
 
@@ -113,6 +114,8 @@ public class CustomProgressDialog extends Dialog {
         mCustomProgressDialog = new CustomProgressDialog(context, R.style.ProgressDialog);
         mCustomProgressDialog.setContentView(R.layout.dialog_progress);
         mCustomProgressDialog.getWindow().getAttributes().gravity = Gravity.CENTER;
+        //隐藏输入框
+        mCustomProgressDialog.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
         return mCustomProgressDialog;
     }
 

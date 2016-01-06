@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dialog_width"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="20dp">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/CommTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择剂量" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="20dp">
+
+            <NumberPicker
+                android:id="@+id/np_dialog_complex1"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginRight="2dp" />
+
+            <NumberPicker
+                android:id="@+id/np_dialog_complex2"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginRight="2dp" />
+
+            <NumberPicker
+                android:id="@+id/np_dialog_complex3"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginRight="2dp" />
+
+            <TextView
+                android:id="@+id/tv_dialog_complex_dian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:text=" . "
+                android:textSize="30sp"
+                android:visibility="gone" />
+
+            <NumberPicker
+                android:id="@+id/np_dialog_complex_little"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginRight="2dp"
+                android:visibility="gone" />
+
+            <NumberPicker
+                android:id="@+id/np_dialog_complex4"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginRight="2dp" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/et_dialog_complex"
+            style="@style/CommTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"
+            android:hint="输入备注"
+            android:padding="8dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="1.5dp"
+        android:layout_height="300dp"
+        android:background="@color/md_grey_400" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            style="@style/CommTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="请选择用药的盒数" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingTop="20dp">
+
+            <TextView
+                android:id="@+id/tv_dialog_dost"
+                style="@style/FullTextTip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="5dp"
+                android:gravity="left"
+                android:textSize="18sp" />
+
+            <NumberPicker
+                android:id="@+id/np_dialog_complex5"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginRight="2dp" />
+
+            <NumberPicker
+                android:id="@+id/np_dialog_complex6"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginRight="2dp" />
+
+            <NumberPicker
+                android:id="@+id/np_dialog_complex7"
+                android:layout_width="wrap_content"
+                android:layout_height="300dp"
+                android:layout_marginRight="2dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

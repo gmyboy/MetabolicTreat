@@ -3,6 +3,10 @@ package com.shwootide.metabolictreat.app;
 import android.app.Activity;
 import android.app.Application;
 
+import com.shwootide.metabolictreat.entity.MedicalRecord;
+import com.shwootide.metabolictreat.entity.Record;
+import com.shwootide.metabolictreat.handler.ErrorHandler;
+
 import java.io.File;
 import java.util.Stack;
 
@@ -11,16 +15,57 @@ import java.util.Stack;
  * Contact me via email gmyboy@qq.com.
  */
 public class SysApplication extends Application {
+    public static final String INTENT_DISPLAYERROR = "INTENT_DISPLAYERROR";
     private File dir;
     //堆栈，用来管理activity
     private static Stack<Activity> mStack;
     private static SysApplication instance;
+    private Record mRecord;//记录患者基本信息
+    private MedicalRecord medicalRecord;//保存就诊其本主表信息
+    private String address;//暂存看病地点
 
     public synchronized static SysApplication getInstance() {
         if (null == instance) {
             instance = new SysApplication();
         }
         return instance;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    /**
+     * 获取主页面点击的患者基本信息
+     *
+     * @return
+     */
+    public Record getmRecord() {
+        if (null == mRecord) {
+            mRecord = new Record();
+        }
+        return mRecord;
+    }
+
+    public void setmRecord(Record record) {
+        mRecord = record;
+    }
+
+    /**
+     * 获取点选疾病之后的就诊基本主表信息
+     *
+     * @return
+     */
+    public MedicalRecord getMedicalRecord() {
+        return medicalRecord;
+    }
+
+    public void setMedicalRecord(MedicalRecord medicalRecord) {
+        this.medicalRecord = medicalRecord;
     }
 
     /**
@@ -96,8 +141,8 @@ public class SysApplication extends Application {
         super.onCreate();
         instance = this;
 //        CrashWoodpecker.fly().to(this);
-//		ErrorHandler crashHandler = ErrorHandler.getInstance();
-//		crashHandler.init(getApplicationContext());
+        ErrorHandler crashHandler = ErrorHandler.getInstance();
+        crashHandler.init(this);
     }
 
     @Override

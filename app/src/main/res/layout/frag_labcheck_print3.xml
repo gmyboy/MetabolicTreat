@@ -1,0 +1,653 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/include_frag_bottom" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginBottom="@dimen/content_margin_bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal">
+
+                <View style="@style/AllLineVertical" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout
+                        style="@style/Style_Item_Layout"
+                        android:weightSum="3">
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="检验日期" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginLeft="@dimen/horizontal_lay"
+                            android:layout_marginRight="@dimen/horizontal_lay"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/et_lab3_date1_1"
+                                style="@style/CommonItemLayoutEdit"
+                                android:layout_weight="1"
+                                android:hint="@string/hint_date" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout style="@style/Style_Item_Layout">
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="胆固醇" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_1"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView_Smarl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="mmoI/L" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="甘油三酯" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_2"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView_Smarl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="mmoI/L" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="LDL-C" />
+
+                        <LinearLayout style="@style/ItemEditLayout">
+
+                            <TextView
+                                android:id="@+id/et_lab3_3"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView_Smarl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="mmoI/L" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout style="@style/Style_Item_Layout">
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="ALT" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_4"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="U/L" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="AST" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_5"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="U/L" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="γ-GT" />
+
+                        <LinearLayout style="@style/ItemEditLayout">
+
+                            <TextView
+                                android:id="@+id/et_lab3_6"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="U/L" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout style="@style/Style_Item_Layout">
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="血尿酸" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_7"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView_Smarl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="umol/L" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="h-CRP" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_8"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="mg/L" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="TSH" />
+
+                        <LinearLayout style="@style/ItemEditLayout">
+
+                            <TextView
+                                android:id="@+id/et_lab3_9"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="MIU/L" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout style="@style/Style_Item_Layout">
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="LH" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_10"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="IU/L" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="FSH" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_11"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="IU/L" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="LH/FSH" />
+
+                        <LinearLayout style="@style/ItemEditLayout">
+
+                            <TextView
+                                android:id="@+id/et_lab3_12"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textSize="16sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout style="@style/Style_Item_Layout">
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="T" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_13"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView_Smarl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="nmo1/L" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="SHBG" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginRight="@dimen/horizontal_lay">
+
+                            <TextView
+                                android:id="@+id/et_lab3_14"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView_Smarl"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="nmo1/L"
+                                android:textIsSelectable="true" />
+                        </LinearLayout>
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="A2" />
+
+                        <LinearLayout style="@style/ItemEditLayout">
+
+                            <TextView
+                                android:id="@+id/et_lab3_15"
+                                style="@style/ItemLayoutEdit"
+                                android:layout_weight="1.5" />
+
+                            <TextView
+                                style="@style/TipTextView"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="ng/mL" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+                </LinearLayout>
+
+                <View
+                    style="@style/AllLineVertical"
+                    android:layout_gravity="right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal">
+
+                <View style="@style/AllLineVertical" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout
+                        style="@style/Style_Item_Layout"
+                        android:weightSum="3">
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="OGTT(75g葡萄糖/二两馒头餐)" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginLeft="@dimen/horizontal_lay"
+                            android:layout_marginRight="@dimen/horizontal_lay"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/et_lab3_date2_1"
+                                style="@style/CommonItemLayoutEdit"
+                                android:layout_weight="1"
+                                android:hint="@string/hint_date" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TableRow>
+
+                            <TextView style="@style/TableRowTextView" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="0&apos;" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="30&apos;" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="60&apos;" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="120&apos;" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="180&apos;" />
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="血糖mmol/L" />
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_1"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_2"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_3"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_4"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_5"/>
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="胰岛素mlU/L" />
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_6"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_7"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_8"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_9"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart1_10"/>
+                        </TableRow>
+
+                    </TableLayout>
+                </LinearLayout>
+
+                <View
+                    style="@style/AllLineVertical"
+                    android:layout_gravity="right" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@color/grey_line"
+                android:orientation="horizontal">
+
+                <View style="@style/AllLineVertical" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <LinearLayout
+                        style="@style/Style_Item_Layout"
+                        android:weightSum="3">
+
+                        <TextView
+                            style="@style/ItemRecordTextView"
+                            android:layout_weight="1"
+                            android:text="小剂量地塞米松试验" />
+
+                        <LinearLayout
+                            style="@style/ItemEditLayout"
+                            android:layout_marginLeft="@dimen/horizontal_lay"
+                            android:layout_marginRight="@dimen/horizontal_lay"
+                            android:layout_weight="1">
+
+                            <TextView
+                                android:id="@+id/et_lab3_date3_1"
+                                style="@style/CommonItemLayoutEdit"
+                                android:layout_weight="1"
+                                android:hint="@string/hint_date" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View style="@style/LineGreyHorizontal" />
+
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <TableRow>
+
+                            <TextView style="@style/TableRowTextView" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="第一天8AM" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="第一天4PM" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="第二天8AM" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="参考值(第一天8AM)"
+                                android:paddingBottom="14dp"
+                                android:paddingTop="14dp"
+                                android:textSize="14sp"/>
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="单位" />
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="血皮质醇" />
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart2_1"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart2_2"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart2_3"/>
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="240-618" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="nmol/L" />
+                        </TableRow>
+
+                        <TableRow>
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="ACTH" />
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart2_4"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart2_5"/>
+
+                            <TextView style="@style/TableRowTextView" android:id="@+id/et_lab3_chart2_6"/>
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="0-46" />
+
+                            <TextView
+                                style="@style/TableRowTextView"
+                                android:text="pg/ml" />
+                        </TableRow>
+
+                    </TableLayout>
+                </LinearLayout>
+
+                <View
+                    style="@style/AllLineVertical"
+                    android:layout_gravity="right" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

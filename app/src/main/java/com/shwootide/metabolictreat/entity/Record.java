@@ -26,131 +26,167 @@ public class Record implements Parcelable {
      * HospitalName : 仁济医院
      * Age :
      */
-    private String flg;
-    private String address;
-    private String MedicalRecordNo;
-    private String Sex;
-    private String HospitalID;
-    private String birth;
-    private String weixin;
-    private String name;
-    private String bz;
-    private String Tel;
-    private String CreatDate;
-    private String id;
+    private String flg = "";
+    private String address = "";
+    private String MedicalRecordNo = "";
+    private String Sex = "";
+    private String HospitalID = "";
+    private String birth = "";
+    private String weixin = "";
+    private String name = "";
+    private String bz = "";
+    private String Tel = "";
+    private String CreatDate = "";
+    private String id = "";
+    private String Age = "";
+    private String IllnessID = "";
+    private String StaffID = "";
+    private String IllnessName;
+    private String USERREALNAME;
     private String HospitalName;
-    private String Age;
 
-    public void setFlg(String flg) {
-        this.flg = flg;
+    public String getIllnessName() {
+        return IllnessName;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
+    public void setIllnessName(String illnessName) {
+        IllnessName = illnessName;
     }
 
-    public void setMedicalRecordNo(String MedicalRecordNo) {
-        this.MedicalRecordNo = MedicalRecordNo;
+    public String getUSERREALNAME() {
+        return USERREALNAME;
     }
 
-    public void setSex(String Sex) {
-        this.Sex = Sex;
-    }
-
-    public void setHospitalID(String HospitalID) {
-        this.HospitalID = HospitalID;
-    }
-
-    public void setBirth(String birth) {
-        this.birth = birth;
-    }
-
-    public void setWeixin(String weixin) {
-        this.weixin = weixin;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setBz(String bz) {
-        this.bz = bz;
-    }
-
-    public void setTel(String Tel) {
-        this.Tel = Tel;
-    }
-
-    public void setCreatDate(String CreatDate) {
-        this.CreatDate = CreatDate;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setHospitalName(String HospitalName) {
-        this.HospitalName = HospitalName;
-    }
-
-    public void setAge(String Age) {
-        this.Age = Age;
+    public void setUSERREALNAME(String USERREALNAME) {
+        this.USERREALNAME = USERREALNAME;
     }
 
     public String getFlg() {
         return flg;
     }
 
+    public void setFlg(String flg) {
+        this.flg = flg;
+    }
+
     public String getAddress() {
         return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public String getMedicalRecordNo() {
         return MedicalRecordNo;
     }
 
+    public void setMedicalRecordNo(String medicalRecordNo) {
+        MedicalRecordNo = medicalRecordNo;
+    }
+
     public String getSex() {
         return Sex;
+    }
+
+    public void setSex(String sex) {
+        Sex = sex;
     }
 
     public String getHospitalID() {
         return HospitalID;
     }
 
+    public void setHospitalID(String hospitalID) {
+        HospitalID = hospitalID;
+    }
+
     public String getBirth() {
         return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
     }
 
     public String getWeixin() {
         return weixin;
     }
 
+    public void setWeixin(String weixin) {
+        this.weixin = weixin;
+    }
+
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getBz() {
         return bz;
     }
 
+    public void setBz(String bz) {
+        this.bz = bz;
+    }
+
     public String getTel() {
         return Tel;
+    }
+
+    public void setTel(String tel) {
+        Tel = tel;
     }
 
     public String getCreatDate() {
         return CreatDate;
     }
 
+    public void setCreatDate(String creatDate) {
+        CreatDate = creatDate;
+    }
+
     public String getId() {
         return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getHospitalName() {
         return HospitalName;
     }
 
+    public void setHospitalName(String hospitalName) {
+        HospitalName = hospitalName;
+    }
+
     public String getAge() {
         return Age;
+    }
+
+    public void setAge(String age) {
+        Age = age;
+    }
+
+    public String getIllnessID() {
+        return IllnessID;
+    }
+
+    public void setIllnessID(String illnessID) {
+        IllnessID = illnessID;
+    }
+
+    public String getStaffID() {
+        return StaffID;
+    }
+
+    public void setStaffID(String staffID) {
+        StaffID = staffID;
     }
 
     @Override
@@ -174,6 +210,8 @@ public class Record implements Parcelable {
         dest.writeString(this.id);
         dest.writeString(this.HospitalName);
         dest.writeString(this.Age);
+        dest.writeString(this.IllnessID);
+        dest.writeString(this.StaffID);
     }
 
     public Record() {
@@ -194,9 +232,11 @@ public class Record implements Parcelable {
         this.id = in.readString();
         this.HospitalName = in.readString();
         this.Age = in.readString();
+        this.IllnessID = in.readString();
+        this.StaffID = in.readString();
     }
 
-    public static final Parcelable.Creator<Record> CREATOR = new Parcelable.Creator<Record>() {
+    public static final Creator<Record> CREATOR = new Creator<Record>() {
         public Record createFromParcel(Parcel source) {
             return new Record(source);
         }

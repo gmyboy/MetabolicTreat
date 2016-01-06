@@ -1,1 +1,1 @@
-include ':app', ':dragdemo', ':segmentedgroup'
+include ':app', ':segmentedgroup', ':materialdialogs'

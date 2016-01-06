@@ -51,6 +51,7 @@ public class PreferenceUtil {
                 editor.putString("code", userInfo.getCode());
                 editor.putString("OrganizationName", userInfo.getOrganizationName());
                 editor.putString("flg", userInfo.getFlg());
+                editor.putBoolean("AutoLogin", userInfo.isAutoLogin());
                 //把数据提交给文件中
                 editor.clear();
                 editor.commit();
@@ -95,6 +96,7 @@ public class PreferenceUtil {
             info.setCode(sharedPreferences.getString("code", ""));
             info.setOrganizationName(sharedPreferences.getString("OrganizationName", ""));
             info.setFlg(sharedPreferences.getString("flg", ""));
+            info.setAutoLogin(sharedPreferences.getBoolean("AutoLogin", false));
 
         } catch (Exception e) {
             info = new UserInfo();
